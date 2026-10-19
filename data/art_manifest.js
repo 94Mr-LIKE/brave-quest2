@@ -1,6 +1,16 @@
 /* 由 tools/pack_assets.py 自動產生：已放好的 GPT 美術清單（地圖背景 bg_/fg_、戰鬥背景 bb_、介面圖）。請勿手動修改。 */
 window.ART = {
- "maps": {},
+ "maps": {
+  "T01": {
+   "bg": "bg_T01.webp"
+  },
+  "T02": {
+   "bg": "bg_T02.webp"
+  },
+  "T03": {
+   "bg": "bg_T03.webp"
+  }
+ },
  "battle": {
   "badlands": "bb_badlands.png",
   "castle": "bb_castle.png",
@@ -24,6 +34,7 @@ window.ART = {
   "sign_inn": "assets/ui/sign_inn.png",
   "sign_item": "assets/ui/sign_item.png",
   "sign_weapon": "assets/ui/sign_weapon.png",
+  "title_bg": "assets/ui/title_bg.webp",
   "world_taiwan": "assets/ui/world_taiwan.png"
  }
 };

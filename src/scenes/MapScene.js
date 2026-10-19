@@ -418,6 +418,33 @@
         sg.fillStyle = '#9a9aa2'; sg.fillRect(9, 16, 2, 24);
         this.textures.addCanvas('ui:station', sc);
       }
+      // 地圖背景 v1（GPT 高解析背景）：柵門、告示牌改用程式畫的 48px 圖，不再把 16px 備援圖塊放大 3 倍貼在高解析背景上
+      if (!this.textures.exists('ui:gate48')) {   // 關著的木柵門（顏色對齊背景的木欄杆）
+        var gc = document.createElement('canvas'); gc.width = 48; gc.height = 48;
+        var gg = gc.getContext('2d');
+        gg.fillStyle = 'rgba(0,0,0,0.22)'; gg.fillRect(4, 40, 44, 5);                       // 影子
+        gg.fillStyle = '#3e2412'; gg.fillRect(2, 8, 8, 36); gg.fillRect(38, 8, 8, 36);       // 門柱外框
+        gg.fillStyle = '#7a4a24'; gg.fillRect(3, 9, 6, 34); gg.fillRect(39, 9, 6, 34);
+        gg.fillStyle = '#c98a4e'; gg.fillRect(3, 9, 6, 3); gg.fillRect(39, 9, 6, 3);         // 柱頭亮面
+        gg.fillStyle = '#3e2412'; gg.fillRect(9, 15, 30, 8); gg.fillRect(9, 29, 30, 8);      // 橫木
+        gg.fillStyle = '#9a5f30'; gg.fillRect(9, 16, 30, 6); gg.fillRect(9, 30, 30, 6);
+        gg.fillStyle = '#c98a4e'; gg.fillRect(9, 16, 30, 2); gg.fillRect(9, 30, 30, 2);
+        gg.strokeStyle = '#3e2412'; gg.lineWidth = 3; gg.beginPath(); gg.moveTo(11, 35); gg.lineTo(37, 17); gg.stroke();   // 斜撐
+        gg.strokeStyle = '#9a5f30'; gg.lineWidth = 1.5; gg.beginPath(); gg.moveTo(11, 35); gg.lineTo(37, 17); gg.stroke();
+        this.textures.addCanvas('ui:gate48', gc);
+      }
+      if (!this.textures.exists('ui:note48')) {   // 木製告示牌（牌面留白，文字由對話框顯示）
+        var nc = document.createElement('canvas'); nc.width = 48; nc.height = 56;
+        var ng = nc.getContext('2d');
+        ng.fillStyle = 'rgba(0,0,0,0.22)'; ng.fillRect(8, 50, 36, 5);
+        ng.fillStyle = '#3e2412'; ng.fillRect(10, 26, 6, 26); ng.fillRect(32, 26, 6, 26);
+        ng.fillStyle = '#7a4a24'; ng.fillRect(11, 27, 4, 24); ng.fillRect(33, 27, 4, 24);
+        ng.fillStyle = '#3e2412'; ng.fillRect(2, 4, 44, 28);
+        ng.fillStyle = '#9a5f30'; ng.fillRect(4, 6, 40, 24);
+        ng.fillStyle = '#f3e6c4'; ng.fillRect(7, 9, 34, 18);
+        ng.fillStyle = '#d9c79d'; ng.fillRect(10, 13, 28, 2); ng.fillRect(10, 18, 22, 2); ng.fillRect(10, 23, 25, 2);
+        this.textures.addCanvas('ui:note48', nc);
+      }
       bubble('ui:ready', '#7be08a', '?');
       if (!this.textures.exists('ui:spark')) {
         var c = document.createElement('canvas'); c.width = 4; c.height = 4;
@@ -503,12 +530,16 @@
         self.lamps.push({ data: l, img: img });
       });
       // 勇者大冒險II 第三批：告示牌（知識卡，擋路，按 A 播台詞）、柵門（委託完成前擋路；備援圖塊畫柵欄，打開後拿掉）
+      // 有 GPT 高解析背景時用程式畫的 48px 柵門、告示牌（ui:gate48、ui:note48）；備援圖塊模式維持原本的圖塊
+      var hd = this.hasBg && this.textures.exists('ui:gate48');
       (this.map.notes || []).forEach(function (n) {
-        var img = self.add.image(n.x * T, n.y * T + T, self.tex, self.frameOf('banner')).setOrigin(0, 1).setScale(S).setDepth((n.y + 1) * T);
+        var img = hd ? self.add.image(n.x * T + T / 2, n.y * T + T, 'ui:note48').setOrigin(0.5, 1).setDepth((n.y + 1) * T)
+          : self.add.image(n.x * T, n.y * T + T, self.tex, self.frameOf('banner')).setOrigin(0, 1).setScale(S).setDepth((n.y + 1) * T);
         self.notes.push({ data: n, img: img });
       });
       (this.map.gates || []).forEach(function (gt) {
-        var img = self.add.image(gt.x * T, gt.y * T + T, self.tex, self.frameOf('fence')).setOrigin(0, 1).setScale(S).setDepth((gt.y + 1) * T - 1);
+        var img = hd ? self.add.image(gt.x * T, gt.y * T + T, 'ui:gate48').setOrigin(0, 1).setDepth((gt.y + 1) * T - 1)
+          : self.add.image(gt.x * T, gt.y * T + T, self.tex, self.frameOf('fence')).setOrigin(0, 1).setScale(S).setDepth((gt.y + 1) * T - 1);
         self.gates.push({ data: gt, img: img, closed: true });
       });
       this.refreshGates();
@@ -853,6 +884,15 @@
         delta: delta, speed: J.PetFollow.speedFor(0.085 * S * G().moveSpeed(), this.petDist || 0, T)
       });
       pet.x = r.x; pet.y = r.y;
+      // 老闆 2026-10-19 截圖：主角圖比一格高（80px／格子 48px），阿咕在主角正上方那格時看起來像停在主角頭上。
+      // 這時只把阿咕「畫」到主角右肩後面（改 origin，不改位置，跟隨、碰撞、深度都不受影響），離開正上方再慢慢移回來。
+      var pl = this.player, behind = Math.abs(pet.x - pl.x) < T * 0.5 && pl.y - pet.y > 0 && pl.y - pet.y <= T * 1.2;
+      this.petShift = this.petShift || 0;
+      var want = behind ? T * 0.6 : 0, k = Math.min(1, delta / 120);
+      this.petShift += (want - this.petShift) * k;
+      if (Math.abs(this.petShift - want) < 0.5) this.petShift = want;
+      var ox = 0.5 - this.petShift / (pet.displayWidth || T);
+      if (Math.abs(pet.originX - ox) > 0.001) pet.setOrigin(ox, 1);
       if (r.moving) {
         var pk = pet.texture.key + '-' + r.dir;
         if (!pet.anims.isPlaying || pet.anims.currentAnim.key !== pk) pet.anims.play(pk);
@@ -1132,6 +1172,11 @@
       // v0.9.5 放大地圖（passMove 視窗）開著時，點面板外露出來的遊戲畫面也能走（只有擋路的視窗才不理會）
       if (!this.p || J.UI.blocksMove() || this.transitioning || G().busy) return;
       var x = Math.floor(pointer.worldX / T), y = Math.floor(pointer.worldY / T);
+      // 阿咕被畫到主角右肩後（updatePet 的 petShift）時，點到畫面上的阿咕就當作點阿咕所在的那一格
+      if (this.petShift && this.pet && this.pet.getBounds().contains(pointer.worldX, pointer.worldY)) {
+        var pt = this.petTile();
+        if (pt) { x = pt.x; y = pt.y; }
+      }
       if (x < 0 || y < 0 || x >= this.size.w || y >= this.size.h) return;
       var target = this.interactableAt(x, y);
       if (target) {
@@ -1392,7 +1437,7 @@
       }
       // 番薯仔跟在後面（防閃爍：方向有遲滯、短暫停頓不切站姿、站姿沿用目前方向、透明度平滑變化）
       this.updatePet(delta);
-      if (this.petMark && this.petMarkOn) this.petMark.setPosition(this.pet.x + T * 0.45, this.pet.y - this.pet.displayHeight + 6);   // 阿咕比主角矮：記號放在阿咕右上，不要疊在主角身上
+      if (this.petMark && this.petMarkOn) this.petMark.setPosition(this.pet.x + T * 0.45 + (this.petShift || 0), this.pet.y - this.pet.displayHeight + 6);   // 阿咕比主角矮：記號放在阿咕右上，不要疊在主角身上
       this.updateGhost();
 
       this.shrineCamera();

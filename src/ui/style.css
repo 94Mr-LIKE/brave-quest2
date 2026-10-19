@@ -80,9 +80,21 @@ button[aria-pressed="true"], button.selected { background: #f2c14e; color: #2a1e
 .title-screen.has-art { background-size: cover; background-position: center; justify-content: flex-start; padding-top: 6vh; }
 .title-screen.has-art .title-heroes { display: none; }
 .title-screen.has-art .sub, .title-screen.has-art .note { text-shadow: 0 2px 4px #0b1236, 0 0 8px #0b1236; }
-.title-screen.has-art .menu { margin-top: 30vh; }
+.title-screen.has-art .menu { margin-top: auto; }
+.title-screen.has-art { padding-bottom: 30px; }
 .title-screen h1 { font-size: clamp(36px, 7vw, 64px); margin: 0 0 6px; color: #fffbe8; text-shadow: 0 4px 0 #1d2b5e, 0 0 18px rgba(255, 211, 77, .7); letter-spacing: 4px; }
 .title-screen .sub { font-size: 22px; color: #fff3c8; margin-bottom: 18px; }
+/* 勇者大冒險II（老闆 2026-10-19「標題也不完全」「要滿版」）：主標下面加紅底金框的副標「怪盜與家鄉的印章」；
+   滿版插畫上方加一層由深到透明的漸層，讓標題在亮的天空上也看得清楚 */
+.title-screen h1 { display: flex; flex-direction: column; align-items: center; line-height: 1.08; }
+.title-screen h1 .title-subtitle { display: block; margin-top: 10px; padding: 4px 22px 6px; font-size: clamp(20px, 3.2vw, 34px); letter-spacing: 6px;
+  color: #fffbe8; background: linear-gradient(#d23a32, #8e1d1a); border: 3px solid #ffd34d; border-radius: 10px;
+  text-shadow: 0 2px 0 #4a0d0b; box-shadow: 0 4px 0 #4a0d0b, 0 6px 14px rgba(0, 0, 0, .35); }
+.title-screen.has-art h1 { font-size: clamp(44px, 8vw, 92px);
+  text-shadow: 0 0 2px #1d2b5e, 3px 3px 0 #1d2b5e, -3px 3px 0 #1d2b5e, 3px -3px 0 #1d2b5e, -3px -3px 0 #1d2b5e, 0 6px 0 #1d2b5e, 0 0 22px rgba(255, 211, 77, .8); }
+.title-screen.has-art::before { content: ''; position: fixed; left: 0; right: 0; top: 0; height: 42vh; z-index: -1; pointer-events: none;
+  background: linear-gradient(rgba(8, 12, 40, .55), rgba(8, 12, 40, 0)); }
+.title-screen.has-art .sub { font-size: 18px; margin: 8px 0 10px; }
 /* v1.0.1 已遊玩人數：副標題下面的小字（天空那一帶，不擋角色、開始按鈕、聯絡作者） */
 .title-screen .title-count { margin: -10px 0 10px; padding: 3px 12px; border-radius: 999px; font-size: 16px; color: #fffbe8; background: rgba(11, 18, 54, .55); text-shadow: 0 1px 2px #0b1236; flex: none; }
 .title-screen .title-count[hidden] { display: none; }
@@ -97,18 +109,20 @@ button[aria-pressed="true"], button.selected { background: #f2c14e; color: #2a1e
 .title-screen.has-art { isolation: isolate; }
 .title-screen .title-anim { position: fixed; inset: 0; width: 100%; height: 100%; display: block; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .5s ease-out; }
 .title-screen .title-anim.on { opacity: 1; }
-/* v0.9.6 老闆：「開始」下移到主角腳邊。插畫是 cover 鋪滿、置中：原圖 1 像素 = max(100vw/1280, 100vh/720) 個 CSS 像素；
-   男生最右邊在原圖 x≈693，也就是畫面中心往右 53 個原圖像素（4.15vw 或 7.37vh 取大的）。按鈕和說明放在他右邊、底部對齊腳，
-   「聯絡作者」在最下面（標題畫面內距 16px＋聯絡作者約 68px），所以底部留 90px。 */
+/* 勇者大冒險II 標題動畫（title_anim_g4.js）：畫布要在標題上方的深色漸層（::before，z-index -1）下面，標題才一樣清楚 */
+.title-screen .title-anim.title-anim-g4 { z-index: -2; }
 .title-screen .title-start { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .title-screen .title-start .note { margin: 0; }
 .title-screen .tap { word-break: keep-all; }
+/* 勇者大冒險II：滿版封面（cover 鋪滿、置中），「開始」和說明放畫面下方正中間（只擋到主角的腳），「聯絡作者」貼最底下 */
 .title-screen.has-art .title-start { position: absolute; z-index: 1; margin: 0;
-  left: calc(50% + max(4.15vw, 7.37vh) + 14px); width: min(460px, calc(50% - max(4.15vw, 7.37vh) - 26px));
-  bottom: calc(90px + env(safe-area-inset-bottom)); }
+  left: 50%; transform: translateX(-50%); width: min(820px, 94vw); gap: 6px;
+  bottom: calc(36px + env(safe-area-inset-bottom)); }
+.title-screen.has-art .title-start .tap { font-size: 24px; padding: 10px 32px; }
+.title-screen.has-art .title-start .note { font-size: 15px; padding: 4px 12px; max-width: 100%; }
+.title-screen.has-art .title-author { position: absolute; left: 0; right: 0; bottom: max(4px, env(safe-area-inset-bottom)); margin: 0; padding: 0; font-size: 13px; }
 .title-screen.has-art .title-start .tap { margin: 0; max-width: 100%; }
-.title-screen.has-art .title-start .note { font-size: 18px; max-width: 100%; }
-/* 窄的直式手機：男生右邊只剩約 110–150px → 按鈕兩行（點一下／開始）、說明字小一點 */
+/* 窄的直式手機：按鈕窄一點、說明字小一點 */
 @media (orientation: portrait) and (max-width: 680px) {
   .title-screen.has-art .title-start { gap: 8px; }
   .title-screen.has-art .title-start .tap { font-size: 24px; padding: 10px 14px; line-height: 1.25; }
@@ -117,7 +131,7 @@ button[aria-pressed="true"], button.selected { background: #f2c14e; color: #2a1e
 /* 矮的橫式（手機橫拿）：按鈕、說明小一點，不碰到上面的標題 */
 @media (orientation: landscape) and (max-height: 500px) {
   .title-screen.has-art { padding-top: 3vh; }
-  .title-screen.has-art .title-start { bottom: calc(78px + env(safe-area-inset-bottom)); gap: 6px; }
+  .title-screen.has-art .title-start { bottom: calc(26px + env(safe-area-inset-bottom)); gap: 6px; }
   .title-screen.has-art .title-start .tap { font-size: 22px; padding: 10px 24px; }
   .title-screen.has-art .title-start .note { font-size: 15px; padding: 4px 10px; }
   .title-screen.has-art .title-author { padding-top: 4px; }

@@ -11,11 +11,11 @@
    */
   function show(o) {
     var screen = h('div.title-screen', { role: 'main' });
-    // 勇者大冒險II（GDD 7.2 B8）：標題圖用 title_bg.png（美術交件後由 pack_assets.py 列進 art_manifest）；還沒有圖時用純色背景＋主角圖
+    // 勇者大冒險II（GDD 7.2 B8）：標題圖用 title_bg.webp（老闆 2026-10-19 選定封面 v1；由 pack_assets.py 列進 art_manifest）；還沒有圖時用純色背景＋主角圖
     var titleArt = J.Assets.art().ui.title_bg ? J.Assets.resolveUrl(J.Assets.art().ui.title_bg) : null;
     if (titleArt) { screen.style.backgroundImage = 'url("' + titleArt + '")'; screen.classList.add('has-art'); }
     var handle = J.UI.open(screen, { modal: false, label: '標題畫面', escClose: false });
-    // 三年級版的標題動畫（title_anim.js，專門配三年級的標題插畫）拿掉；J.TitleAnim 不存在時 anim 一律 false
+    // 標題動畫：四年級版 title_anim_g4.js（配封面 v1；三年級版 title_anim.js 不載入）；J.TitleAnim 不存在或不能播時 anim 一律 false
     var anim = !!(titleArt && J.TitleAnim && J.TitleAnim.start(screen, titleArt));
     var closeTitle = handle.close;
     handle.close = function () {
@@ -32,7 +32,8 @@
 
     function frame(children) {
       clearScreen();
-      screen.appendChild(h('h1', { text: J.CONFIG.GAME_TITLE }));
+      // 老闆 2026-10-19「標題也不完全」：主標＋副標「怪盜與家鄉的印章」都要出現；年級說明縮小放在下面
+      screen.appendChild(h('h1', { 'aria-label': J.CONFIG.GAME_TITLE + '：' + J.CONFIG.GAME_SUBTITLE }, [J.CONFIG.GAME_TITLE, h('span.title-subtitle', { text: J.CONFIG.GAME_SUBTITLE })]));
       screen.appendChild(h('div.sub', { text: '國小四年級・學習冒險' }));
       if (o.counterEl) screen.appendChild(o.counterEl);   // v1.0.1「已有 N 位冒險者加入」（game.js 讀到數字才顯示；在副標題下面的天空，不擋角色和按鈕）
       screen.appendChild(heroes);
