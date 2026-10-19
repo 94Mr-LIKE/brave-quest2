@@ -28,6 +28,9 @@ window.VOICES = {
     stall:      { name: "小攤阿伯",     gender: "m", age: "adult", stage: "中年", look: "npc_stall",      pitch: 0.90, rate: 1.04, taigi: true,  persona: "溫泉街小攤，爽朗叫賣，講台語。" },
     grandpa:    { name: "公園阿公",     gender: "m", age: "elder", stage: "老年", look: "npc_grandpa",    pitch: 0.76, rate: 0.84, taigi: true,  persona: "每天早上到北投公園散步，慢慢說、常說「哎喲」，講台語。" },
     sage:       { name: "方爺爺",       gender: "m", age: "elder", stage: "老年", look: "npc_sage",       pitch: 0.88, rate: 0.80, taigi: true,  persona: "北投的地圖賢者，退休的地圖繪製者；打招呼講台語，教學講華語，說話慢。" },
+    // 2026-10-19 溪東岸地標（千禧湯、梅庭）：沿用現有 NPC 圖，只說華語
+    bath_staff: { name: "浴池管理員伯伯", gender: "m", age: "elder", stage: "老年", look: "npc_volunteer", pitch: 0.94, rate: 0.90, taigi: false, persona: "千禧湯入口的管理員，和氣、仔細提醒泡湯安全。" },
+    meiting_guide: { name: "梅庭導覽志工", gender: "m", age: "adult", stage: "青年", look: "npc_guide",   pitch: 1.00, rate: 1.12, taigi: false, persona: "梅庭的導覽志工，喜歡老房子和書法，說話清楚有精神。" },
     // ── T03 地熱谷步道 ──
     ranger:     { name: "管理員阿伯",   gender: "m", age: "adult", stage: "中年", look: "npc_ranger",     pitch: 0.88, rate: 0.92, taigi: true,  persona: "地熱谷管理員，認真、安全第一，講台語。" },
     // ── 全區 ──

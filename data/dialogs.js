@@ -570,9 +570,44 @@ window.DIALOGS_G4_TAIPEI = {
   ]
 };
 
+// ──────────────── T02 溪東岸地標台詞（dialogs_taipei_east.js）────────────────
+/*
+ * 勇者大冒險II — T02 北投溪東岸地標的 NPC 台詞（2026-10-19 老闆核准「按照建議」A＋B）
+ * 由 tools/build_dialogs.js 併進 docs/data/dialogs.js（和 dialogs_taipei.js 同一套格式；只說華語、不加台語）。
+ * 內容只用查證過的事實：
+ *   梅庭：臺北市文化局 https://culture.gov.taipei/cp.aspx?n=95421D9B2C9744B9 （2026-10-19 查）——約建於 1930 年代末期、
+ *     日式木造、基礎及地下室是鋼筋混凝土、附有防空避難室、門柱「梅庭」是于右任寫的、屋內曾有溫泉浴池、沿著北投溪河谷蓋、
+ *     圍牆是北投在地的唭哩岸石、2006 年登錄為臺北市歷史建築；于右任被稱為「一代草聖」。
+ *   千禧湯（北投公園露天溫泉浴池）：在北投公園裡、梅庭旁邊；大家一起泡的露天溫泉；要穿泳衣、先沖洗身體再下池；
+ *     泡湯要喝水、不要泡太久（一般安全常識）。不寫開放時間、票價、有沒有開放（2025-01 起整修中，重新開放日期查不到）。
+ */
+window.SPEAKERS_G4_EAST = {
+  bath_staff: "浴池管理員伯伯", meiting_guide: "梅庭導覽志工"
+};
+
+window.DIALOGS_G4_EAST = {
+  // 千禧湯入口的管理員（T02 (68,9)）
+  D_BATH_STAFF_IDLE: [
+    { who: "bath_staff", emotion: "開心", text: "這裡是北投公園露天溫泉浴池，大家都叫它「千禧湯」。" },
+    { who: "bath_staff", emotion: "平靜", text: "這是大家一起泡的露天溫泉，泡湯要穿泳衣喔。" },
+    { who: "bath_staff", emotion: "平靜", text: "下池以前，要先把身體沖洗乾淨。" },
+    { who: "bath_staff", emotion: "擔心", text: "泡湯的時候要記得喝水，也不要泡太久。" },
+    { who: "agu", emotion: "開心", text: "咕！旁邊那間有石頭圍牆的老房子就是梅庭，去看看吧！" }
+  ],
+  // 梅庭門口的導覽志工（T02 (68,17)）
+  D_MEITING_GUIDE_IDLE: [
+    { who: "meiting_guide", emotion: "開心", text: "歡迎來到梅庭！這是大約 1930 年代末期蓋的日式木造房子。" },
+    { who: "meiting_guide", emotion: "平靜", text: "門柱上的「梅庭」兩個字，是書法家于右任寫的。" },
+    { who: "meiting_guide", emotion: "開心", text: "于右任被稱為「一代草聖」，草書寫得非常好。" },
+    { who: "meiting_guide", emotion: "神祕", text: "圍牆是北投在地的唭哩岸石，梅庭裡還有防空避難室。" },
+    { who: "agu", emotion: "驚訝", text: "咕！屋裡以前還有溫泉浴池呢！房子就沿著北投溪河谷蓋。" },
+    { who: "agu", emotion: "開心", text: "2006 年，梅庭登錄為臺北市歷史建築，要好好愛護它。" }
+  ]
+};
+
 // ──────────────── 遊戲用的全域變數 ────────────────
 // pet＝阿咕（引擎跟隨角色的舊 id）；mrt_staff2＝新北投站的站務員（T02；地圖上的 NPC id 不能和圓山站的 mrt_staff 重複，台詞仍用 mrt_staff）
-window.SPEAKERS = Object.assign({ pet: "阿咕", mrt_staff2: "站務員" }, window.SPEAKERS_G4_TAIPEI);
+window.SPEAKERS = Object.assign({ pet: "阿咕", mrt_staff2: "站務員" }, window.SPEAKERS_G4_TAIPEI, window.SPEAKERS_G4_EAST || {});
 // 賢者的「通用課」台詞：劇本第 1、2 課裡和主題無關的句子（一字不改），給第 3 課以後（自然、數學的超綱主題）用
 window.DIALOGS = Object.assign({}, window.DIALOGS_G4_TAIPEI, {
   "D_SAGE_LESSON_A": [
@@ -613,4 +648,4 @@ window.DIALOGS = Object.assign({}, window.DIALOGS_G4_TAIPEI, {
       "text": "沒關係，再看一次教學卡，慢慢來。"
     }
   ]
-});
+}, window.DIALOGS_G4_EAST || {});
