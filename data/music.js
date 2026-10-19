@@ -26,7 +26,7 @@ window.MUSIC = {
     // ------------------------------------------------------------------ 標題
     title: {
       name: '標題：怪盜與家鄉的印章', key: '降 B 大調', tempo: 100, meter: 4, loop: true,
-      audio: { file: 'assets/music/title.m4a', seconds: 91.4, loopStart: 14.6, loopEnd: 91.4, gainDb: 0, lufs: -16.2 },
+      audio: { file: 'assets/music/title.m4a', seconds: 91.4, loopStart: 14.6, loopEnd: 91.4, gainDb: 0, lufs: -16.0 },
       mood: '冒險出發的雄壯銅管主題，中段換成怪盜「夜光鷗」躡手躡腳、調皮的動機',
       origin: 'A 段以「Si♭ 起音、跳上 Fa 再級進下行」的五度號角動機開頭；B 段（G 小調）是斷奏加半音鄰音的「怪盜動機」，像踮腳偷溜；最後一段把號角動機推到高音 Re 收在主和弦。全部原創。',
       tracks: [
@@ -36,6 +36,18 @@ window.MUSIC = {
           'D5:0.5 r:0.5 C#5:0.5 D5:0.5 r:0.5 A4:0.5 Bb4:0.5 C5:0.5 | D5:0.5 G5:0.5 r:0.5 F#5:0.5 G5:1 r:1 | Eb5:0.5 r:0.5 D5:0.5 Eb5:0.5 r:0.5 Bb4:0.5 C5:0.5 D5:0.5 | F5:0.5 A5:0.5 r:0.5 G#5:0.5 A5:1 r:1 |' +
           'Bb5:0.5 A5:0.5 G5:0.5 F5:0.5 Eb5:0.5 D5:0.5 C5:0.5 Bb4:0.5 | A4:0.5 C5:0.5 F5:1 Eb5:0.5 C5:0.5 A4:1 | Bb4:0.5 D5:0.5 G5:1 F5:0.5 D5:0.5 Bb4:1 | C5:1 F4:1 A4:1 C5:1 |' +
           'Bb4:1 F5:1.5 Eb5:0.5 D5:1 | G5:0.5 A5:0.5 Bb5:1 D6:2 | C6:1.5 Bb5:0.5 A5:1 F5:1 | Bb5:3 r:1 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'D4:1 C4:1 D4:1 F4:1 | Eb4:2 Eb4:1 C4:1 | Bb3:2 Bb3:1 D4:1 | A3:1 G3:1 A3:1 Bb3:1 |' +
+          'D4:1 C4:1 D4:1 F4:1 | D4:2 A3:1 A3:1 | G3:2 A3:1 C4:1 | D4:1 F4:1 D4:1 C4:1 |' +
+          'Bb3:2 Bb3:2 | Bb3:2 Bb3:1 A3:1 | G3:2 G3:2 | A3:2 C4:1 Bb3:1 |' +
+          'D4:2 G4:2 | Eb4:2 C4:2 | D4:2 D4:2 | A3:1 C4:1 C4:1 A3:1 |' +
+          'D4:1 C4:1 D4:1 F4:1 | D4:2 F4:1 D4:1 | Eb4:1 G4:1 F4:1 A4:1 | F4:1 Eb4:1 D4:1 C4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:2.5 Eb4:0.5 F4:0.75 r:0.25 | r:4 | r:0.5 F4:0.5 F4:0.5 Bb3:0.5 C4:0.75 r:1.25 |' +
+          'r:4 | r:2.5 A4:0.5 D4:0.75 r:0.25 | r:4 | r:0.5 D4:0.5 Bb3:0.5 G4:0.5 Bb4:0.75 r:1.25 |' +
+          'r:4 | r:4 | r:4 | r:4 |' +
+          'r:4 | r:4 | r:4 | r:4 |' +
+          'r:4 | r:2.5 Bb4:0.5 D5:0.75 r:0.25 | r:4 | r:0.5 Bb4:0.5 Bb4:0.5 F4:0.5 Bb4:0.75 r:1.25 |' },
         { instrument: 'pluck', role: 'harmony', gain: 0.7, notes:
           'D4:0.5 F4:0.5 Bb4:0.5 F4:0.5 D4:0.5 F4:0.5 Bb4:0.5 F4:0.5 | Eb4:0.5 F4:0.5 A4:0.5 F4:0.5 Eb4:0.5 F4:0.5 A4:0.5 F4:0.5 | Eb4:0.5 G4:0.5 Bb4:0.5 G4:0.5 D4:0.5 F4:0.5 Bb4:0.5 F4:0.5 | C4:0.5 F4:0.5 A4:0.5 F4:0.5 C4:0.5 F4:0.5 A4:0.5 F4:0.5 |' +
           'D4:0.5 F4:0.5 Bb4:0.5 F4:0.5 D4:0.5 F4:0.5 Bb4:0.5 F4:0.5 | D4:0.5 G4:0.5 Bb4:0.5 G4:0.5 D4:0.5 F4:0.5 A4:0.5 F4:0.5 | C4:0.5 Eb4:0.5 G4:0.5 Eb4:0.5 C4:0.5 F4:0.5 A4:0.5 F4:0.5 | D4:0.5 F4:0.5 Bb4:0.5 F4:0.5 D4:0.5 F4:0.5 Bb4:0.5 F4:0.5 |' +
@@ -72,6 +84,20 @@ window.MUSIC = {
           'F#5:1 D5:0.5 F#5:0.5 B5:1 | B5:1.5 A5:0.5 D5:1 | G5:1 E5:1 A5:1 | D5:2 A4:1 |' +
           'B4:1 D5:1 G5:1 | A5:1.5 G5:0.5 E5:1 | F#5:1 A5:1 C#6:1 | B5:2 D6:1 |' +
           'D6:1.5 B5:0.5 G5:1 | A5:1 E5:1 C#5:1 | G5:1.5 E5:0.5 C#5:1 | D5:3 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'D4:2 F#4:1 | D4:2 F#4:1 | G4:2 D4:1 | C#4:1 C#4:1 D4:1 |' +
+          'F#4:2 A4:1 | D4:2 F#4:1 | E4:2 C#4:1 | F#4:1 G4:1 F#4:1 |' +
+          'G4:2 B3:1 | D4:1 C#4:1 B3:1 | G3:2 G3:1 | C#4:1 D4:1 C#4:1 |' +
+          'D4:2 F#4:1 | G4:2 B3:1 | B3:2 C#4:1 | F#4:1 G4:1 F#4:1 |' +
+          'G4:2 D4:1 | C#4:2 G3:1 | A3:2 A3:1 | D4:1 F#4:1 G4:1 |' +
+          'B3:2 D4:1 | C#4:2 E4:1 | C#4:2 E4:1 | F#4:1 A4:1 G4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:3 | r:0.5 D4:0.5 D4:0.75 r:1.25 | r:3 | r:0.5 E4:0.5 E4:0.75 r:1.25 |' +
+          'r:3 | r:3 | r:3 | r:0.5 F#4:0.5 D4:0.75 r:1.25 |' +
+          'r:3 | r:0.5 D5:0.5 A4:0.75 r:1.25 | r:3 | r:0.5 C#4:0.5 A3:0.75 r:1.25 |' +
+          'r:3 | r:3 | r:3 | r:0.5 A4:0.5 D4:0.75 r:1.25 |' +
+          'r:3 | r:3 | r:3 | r:0.5 D5:0.5 B4:0.75 r:1.25 |' +
+          'r:3 | r:3 | r:3 | r:0.5 F#4:0.5 D4:0.5 B3:0.5 D4:0.75 r:0.25 |' },
         { instrument: 'pluck', role: 'harmony', gain: 0.6, notes:
           'r:1 D4+F#4+A4:1 D4+F#4+A4:1 | r:1 D4+F#4+B4:1 D4+F#4+B4:1 | r:1 D4+G4+B4:1 D4+G4+B4:1 | r:1 C#4+E4+A4:1 C#4+E4+A4:1 |' +
           'r:1 D4+F#4+A4:1 D4+F#4+A4:1 | r:1 D4+F#4+B4:1 D4+F#4+B4:1 | r:1 C#4+E4+A4:1 C#4+E4+A4:1 | r:1 D4+F#4+A4:1 D4+F#4+A4:1 |' +
@@ -110,6 +136,18 @@ window.MUSIC = {
           'F#5:0.5 G#5:0.5 A5:1 D6:1 A5:1 | C#6:1 B5:0.5 A5:0.5 E5:2 | D5:0.5 F#5:0.5 B5:1 A5:0.5 F#5:0.5 D5:1 | E5:1 G#5:1 B5:2 |' +
           'A5:1.5 G#5:0.5 F#5:1 C#5:1 | D5:1 F#5:1 A5:1 D6:1 | A5:1 F#5:0.5 D#5:0.5 E5:1 G#5:1 | B5:3 r:1 |' +
           'D6:0.5 C#6:0.5 B5:0.5 A5:0.5 F#5:1 A5:1 | B5:1 G#5:0.5 E5:0.5 B4:1 E5:1 | C#6:1 A5:1 F#5:1 A5:1 | B5:2 G#5:1 E5:1 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'C#4:1 B3:1 A3:2 | A3:1 D4:1 F#4:1 A4:1 | A4:2 A4:2 | G#4:1 G#4:1 G#4:1 E4:1 |' +
+          'C#4:1 B3:1 A3:1 G#3:1 | A3:2 A3:1 B3:1 | D4:1 F#4:1 E4:1 D4:1 | C#4:1 E4:1 C#4:1 D4:1 |' +
+          'A3:2 A3:1 D4:1 | E4:2 C#4:1 C#4:1 | D4:2 D4:2 | B3:1 G#3:1 G#3:1 G#3:1 |' +
+          'A3:1 C#4:1 A3:1 G#3:1 | A3:1 A3:1 A3:1 A3:1 | B3:2 G#3:1 B3:1 | G#3:1 G#3:1 G#3:1 A3:1 |' +
+          'A3:2 A3:1 D4:1 | G#3:2 G#3:1 A3:1 | A3:1 C#4:1 D4:1 C#4:1 | G#3:1 G#3:1 B3:1 A3:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:2.5 A4:0.5 D4:0.75 r:0.25 | r:4 | r:2.5 E4:0.5 G#4:0.75 r:0.25 |' +
+          'r:4 | r:4 | r:4 | r:0.5 C#5:0.5 E4:0.5 A4:0.5 E4:0.75 r:1.25 |' +
+          'r:4 | r:2.5 A4:0.5 E4:0.75 r:0.25 | r:4 | r:2.5 G#4:0.5 B4:0.75 r:0.25 |' +
+          'r:4 | r:4 | r:4 | r:0.5 E4:0.5 E4:0.5 A4:0.5 B4:0.75 r:1.25 |' +
+          'r:4 | r:4 | r:4 | r:0.5 G#4:0.5 G#4:0.75 r:2.25 |' },
         { instrument: 'arp', role: 'harmony', notes:
           'C#4:0.5 E4:0.5 A4:0.5 E4:0.5 C#4:0.5 E4:0.5 A4:0.5 E4:0.5 | D4:0.5 F#4:0.5 A4:0.5 F#4:0.5 D4:0.5 F#4:0.5 A4:0.5 F#4:0.5 | E4:0.5 F#4:0.5 A4:0.5 F#4:0.5 E4:0.5 F#4:0.5 A4:0.5 F#4:0.5 | E4:0.5 G#4:0.5 B4:0.5 G#4:0.5 E4:0.5 G#4:0.5 B4:0.5 G#4:0.5 |' +
           'C#4:0.5 E4:0.5 A4:0.5 E4:0.5 C#4:0.5 E4:0.5 A4:0.5 E4:0.5 | D4:0.5 F#4:0.5 A4:0.5 F#4:0.5 D4:0.5 F#4:0.5 A4:0.5 F#4:0.5 | D4:0.5 F#4:0.5 B4:0.5 F#4:0.5 E4:0.5 G#4:0.5 B4:0.5 G#4:0.5 | C#4:0.5 E4:0.5 A4:0.5 E4:0.5 C#4:0.5 E4:0.5 A4:0.5 E4:0.5 |' +
@@ -144,6 +182,16 @@ window.MUSIC = {
           'D5:1 G5:1 A5:1.5 Bb5:0.5 | G5:2 Eb5:1 Bb4:1 | C5:1.5 D5:0.5 Eb5:1 G5:1 | F#5:2 A5:1 D5:1 |' +
           'F5:2 D5:1 Bb4:1 | C5:1 A4:1 F5:2 | G5:1.5 F5:0.5 D5:1 Bb4:1 | C5:1 E5:1 G5:1 E5:1 |' +
           'G5:2 Bb5:1 G5:1 | G5:1 Eb5:1 F#5:2 | D5:1 Bb4:1 G4:2 | A4:2 F#4:1 A4:1 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'Bb3:1 A3:1 Bb3:1 D4:1 | Eb4:1 Bb3:1 G3:1 Bb3:1 | G3:1 G3:1 G3:1 A3:1 | A3:1 A3:1 A3:1 Bb3:1 |' +
+          'Bb3:1 D4:1 C4:1 A3:1 | Bb3:1 G3:1 G3:1 G3:1 | G3:1 Eb4:1 G4:1 Eb4:1 | D4:1 Eb4:1 F#4:1 A4:1 |' +
+          'D4:1 C4:1 Bb3:1 D4:1 | A3:1 C4:1 A3:1 Bb3:1 | Bb3:1 D4:1 Bb3:1 D4:1 | E4:1 G4:1 E4:1 G4:1 |' +
+          'G4:1 Eb4:1 G4:1 Eb4:1 | Eb4:1 F#4:1 A4:1 F#4:1 | G4:1 F#4:1 D4:1 Eb4:1 | F#4:1 F#4:1 D4:1 F#4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:0.5 Bb3:0.5 G4:0.75 r:2.25 | r:0.5 E4:0.5 G4:0.75 r:2.25 | r:0.5 F#4:0.5 A4:0.5 D4:0.5 F#4:0.75 r:1.25 |' +
+          'r:4 | r:0.5 Bb4:0.5 G4:0.75 r:2.25 | r:4 | r:0.5 F#4:0.5 D4:0.75 r:2.25 |' +
+          'r:0.5 D4:0.5 F4:0.75 r:2.25 | r:2.5 A3:0.5 F4:0.75 r:0.25 | r:4 | r:4 |' +
+          'r:0.5 Eb4:0.5 G4:0.75 r:2.25 | r:2.5 D4:0.5 F#4:0.75 r:0.25 | r:2.5 Bb3:0.5 G4:0.75 r:0.25 | r:0.5 A3:0.5 A3:0.75 r:2.25 |' },
         { instrument: 'bell', role: 'harmony', gain: 0.6, notes:
           'r:1.5 D6:0.25 Bb5:0.25 r:1 G5:0.5 r:0.5 | r:1.5 Eb6:0.25 Bb5:0.25 r:1 G5:0.5 r:0.5 | r:1.5 E6:0.25 C6:0.25 r:1 G5:0.5 r:0.5 | r:1.5 F#6:0.25 D6:0.25 r:1 A5:0.5 r:0.5 |' +
           'r:1.5 G6:0.25 D6:0.25 r:1 A5:0.5 r:0.5 | r:1.5 Eb6:0.25 Bb5:0.25 r:1 G5:0.5 r:0.5 | r:1.5 Eb6:0.25 C6:0.25 r:1 G5:0.5 r:0.5 | r:1.5 F#6:0.25 D6:0.25 r:1 A5:0.5 r:0.5 |' +
@@ -175,6 +223,16 @@ window.MUSIC = {
           'F5:0.5 r:0.5 A5:0.5 r:0.5 G5:0.5 F5:0.5 E5:0.5 D5:0.5 | G5:1 Bb5:0.5 A5:0.5 G5:1 D5:1 | F5:1 D5:1 E5:1 G5:1 | E5:1 C#5:1 A4:2 |' +
           'C5:0.5 r:0.5 F5:0.5 r:0.5 A5:0.5 G5:0.5 F5:1 | E5:1 G5:0.5 E5:0.5 C5:2 | D5:0.5 E5:0.5 F5:0.5 G5:0.5 A5:1 D6:1 | C#6:2 A5:1 E5:1 |' +
           'Bb5:1 A5:0.5 G5:0.5 D5:1 G5:1 | F5:1 E5:0.5 D5:0.5 A4:2 | Bb4:1 D5:1 C#5:1 E5:1 | D5:1 F5:0.5 E5:0.5 C#5:1 r:1 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'F4:1 A4:1 A4:2 | F4:2 F4:1 E4:1 | D4:1 F4:1 D4:2 | C#4:1 C#4:1 E4:1 F4:1 |' +
+          'A4:1 F4:1 F4:2 | D4:2 Bb3:1 G3:1 | Bb3:1 A3:1 G3:1 C4:1 | C#4:1 Bb3:1 C#4:1 E4:1 |' +
+          'F4:1 A4:1 F4:2 | G4:2 E4:1 F4:1 | F4:2 F4:1 A4:1 | E4:1 C#4:1 C#4:1 C#4:1 |' +
+          'D4:2 Bb3:1 D4:1 | A3:2 F4:1 E4:1 | D4:1 F4:1 E4:1 C#4:1 | F4:2 E4:1 D4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:2.5 F4:0.5 A3:0.75 r:0.25 | r:4 | r:0.5 E4:0.5 C#4:0.75 r:2.25 |' +
+          'r:4 | r:4 | r:4 | r:2.5 C#4:0.5 A3:0.75 r:0.25 |' +
+          'r:4 | r:2.5 E4:0.5 C4:0.75 r:0.25 | r:4 | r:0.5 C#5:0.5 A4:0.75 r:2.25 |' +
+          'r:4 | r:2.5 D4:0.5 A3:0.75 r:0.25 | r:4 | r:4 |' },
         { instrument: 'bell', role: 'harmony', gain: 0.5, notes:
           'r:3 F6:0.5 r:0.5 | r:3 F6:0.5 r:0.5 | r:3 F6:0.5 r:0.5 | r:3 E6:0.5 r:0.5 |' +
           'r:3 F6:0.5 r:0.5 | r:3 G6:0.5 r:0.5 | r:3 G6:0.5 r:0.5 | r:3 A6:0.5 r:0.5 |' +
@@ -208,6 +266,20 @@ window.MUSIC = {
           'G5:1 B5:0.5 G5:0.5 E5:1 B4:1 | E5:0.5 G5:0.5 C6:1 B5:0.5 A5:0.5 G5:1 | A5:1 C6:0.5 A5:0.5 F#5:1 D5:1 | G5:3 r:1 |' +
           'E5:0.5 E5:0.5 r:0.5 G5:0.5 E5:0.5 D5:0.5 B4:1 | D5:0.5 D5:0.5 r:0.5 E5:0.5 D5:0.5 B4:0.5 A4:1 | G4:0.5 A4:0.5 C5:0.5 D5:0.5 E5:1 G5:1 | F#5:1.5 E5:0.5 D5:2 |' +
           'E5:0.5 G5:0.5 B5:0.5 G5:0.5 A5:0.5 G5:0.5 E5:1 | E5:0.5 G5:0.5 C6:0.5 B5:0.5 A5:0.5 G5:0.5 E5:1 | C6:1 A5:1 D6:1 C6:1 | A5:0.5 B5:0.5 A5:0.5 F#5:0.5 D5:2 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'B3:2 B3:1 D4:1 | E4:2 E4:1 F#4:1 | A4:2 F#4:2 | G4:2 D4:1 C4:1 |' +
+          'B3:2 B3:1 D4:1 | G4:2 G4:1 G4:1 | E4:2 D4:2 | D4:1 B3:1 B3:1 C4:1 |' +
+          'E4:2 E4:1 D4:1 | C4:2 E4:1 C4:1 | A3:2 C4:1 A3:1 | G3:1 B3:1 B3:2 |' +
+          'B3:2 G3:1 G3:1 | G3:2 G3:2 | C4:2 A3:1 B3:1 | B3:1 D4:1 B3:1 A3:1 |' +
+          'G3:2 G3:2 | A3:2 A3:2 | C4:2 G3:1 C4:1 | A3:1 A3:1 A3:1 G3:1 |' +
+          'G3:2 G3:2 | G3:2 G3:2 | A3:1 C4:1 C4:1 A3:1 | C4:2 C4:1 B3:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:4 | r:4 | r:4 |' +
+          'r:4 | r:4 | r:4 | r:4 |' +
+          'r:4 | r:4 | r:4 | r:0.5 B4:0.5 G4:0.75 r:2.25 |' +
+          'r:4 | r:4 | r:4 | r:0.5 B4:0.5 G4:0.5 D4:0.5 G4:0.75 r:1.25 |' +
+          'r:4 | r:4 | r:4 | r:2.5 F#4:0.5 D4:0.75 r:0.25 |' +
+          'r:4 | r:4 | r:4 | r:2.5 F#4:0.5 D4:0.75 r:0.25 |' },
         { instrument: 'pluck', role: 'harmony', gain: 0.7, notes:
           'r:0.5 B3+D4+G4:0.5 r:0.5 B3+D4+G4:0.5 r:0.5 B3+D4+G4:0.5 r:0.5 B3+D4+G4:0.5 | r:0.5 C4+E4+G4:0.5 r:0.5 C4+E4+G4:0.5 r:0.5 C4+E4+G4:0.5 r:0.5 C4+E4+G4:0.5 | r:0.5 D4+F#4+A4:0.5 r:0.5 D4+F#4+A4:0.5 r:0.5 D4+F#4+A4:0.5 r:0.5 D4+F#4+A4:0.5 | r:0.5 D4+G4+B4:0.5 r:0.5 D4+G4+B4:0.5 r:0.5 D4+G4+B4:0.5 r:0.5 D4+G4+B4:0.5 |' +
           'r:0.5 D4+G4+B4:0.5 r:0.5 D4+G4+B4:0.5 r:0.5 D4+G4+B4:0.5 r:0.5 D4+G4+B4:0.5 | r:0.5 E4+G4+B4:0.5 r:0.5 E4+G4+B4:0.5 r:0.5 E4+G4+B4:0.5 r:0.5 E4+G4+B4:0.5 | r:0.5 E4+A4+C5:0.5 r:0.5 E4+A4+C5:0.5 r:0.5 F#4+A4+D5:0.5 r:0.5 F#4+A4+D5:0.5 | r:0.5 G4+B4+D5:0.5 r:0.5 G4+B4+D5:0.5 r:0.5 G4+B4+D5:0.5 r:0.5 G4+B4+D5:0.5 |' +
@@ -245,6 +317,16 @@ window.MUSIC = {
           'G5:2 E5:1 G5:1 | F5:1.5 D5:0.5 Bb4:2 | C5:1 A4:1 B4:1 D5:1 | C5:3 r:1 |' +
           'A4:1 C5:1 E5:1.5 D5:0.5 | B4:2 G5:1 E5:1 | A5:1.5 G5:0.5 F5:1 C5:1 | D5:3 r:1 |' +
           'F5:1 A5:1 C6:2 | G5:1.5 E5:0.5 C6:1 G5:1 | F5:1 A5:1 D5:1 B4:1 | C5:2 D5:2 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'C4:1 G3:1 G3:1 C4:1 | A3:1 C4:1 A3:1 C4:1 | C4:1 B3:1 C4:1 E4:1 | D4:1 B3:1 B3:1 C4:1 |' +
+          'E4:1 D4:1 C4:1 D4:1 | D4:1 C4:1 D4:1 F4:1 | A4:1 F4:1 D4:1 B3:1 | E4:1 G4:1 E4:1 D4:1 |' +
+          'C4:1 E4:1 C4:1 B3:1 | G3:1 G3:1 B3:1 A3:1 | C4:1 A3:1 A3:1 A3:1 | B3:1 A3:1 B3:1 A3:1 |' +
+          'A3:1 C4:1 A3:1 G3:1 | G3:1 C4:1 E4:1 E4:1 | F4:1 E4:1 B3:1 D4:1 | E4:1 G4:1 G4:1 F4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:4 | r:0.5 A4:0.5 E4:0.75 r:2.25 | r:2.5 D4:0.5 G4:0.75 r:0.25 |' +
+          'r:0.5 G4:0.5 G4:0.75 r:2.25 | r:2.5 D4:0.5 Bb3:0.75 r:0.25 | r:4 | r:0.5 C4:0.5 C4:0.5 F4:0.5 C4:0.75 r:1.25 |' +
+          'r:4 | r:0.5 E4:0.5 B3:0.75 r:2.25 | r:4 | r:0.5 G4:0.5 G4:0.5 C4:0.5 D4:0.75 r:1.25 |' +
+          'r:2.5 A4:0.5 C5:0.75 r:0.25 | r:4 | r:4 | r:0.5 C4:0.5 C4:0.75 r:0.75 B3:0.5 B3:0.75 r:0.25 |' },
         { instrument: 'bell', role: 'harmony', gain: 0.6, notes:
           'C5:4 | r:4 | r:4 | r:4 |' +
           'E5:4 | r:4 | r:4 | r:4 |' +
@@ -279,6 +361,22 @@ window.MUSIC = {
           'Bb5:1.5 G5:0.5 Eb5:1 Bb5:1 | A5:1.5 F5:0.5 C5:1 A5:1 | F5:0.5 E5:0.5 F5:0.5 A5:0.5 D6:1 A5:1 | Bb5:0.5 A5:0.5 Bb5:0.5 D6:0.5 G6:2 |' +
           'G6:0.5 F6:0.5 Eb6:0.5 D6:0.5 C6:1 G5:1 | A5:0.5 Bb5:0.5 C6:0.5 A5:0.5 F#5:1 D5:1 | G5:1 Bb5:1 D6:1 Bb5:1 | A5:2 F#5:1 D5:1 |' +
           'Eb5:0.5 Eb5:0.5 r:0.5 G5:0.5 Bb5:0.5 r:0.5 Eb6:1 | D6:0.5 D6:0.5 r:0.5 A5:0.5 F#5:0.5 r:0.5 D5:1 | Eb5:0.5 G5:0.5 Bb5:0.5 Eb6:0.5 D6:0.5 Bb5:0.5 G5:0.5 Eb5:0.5 | D5:1 F#5:1 A5:0.5 r:0.5 D5:1 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'D4:2 D4:2 | A3:2 A3:1 G3:1 | Bb3:2 G3:1 Bb3:1 | C4:1 A3:1 A3:1 Bb3:1 |' +
+          'Bb3:2 Bb3:1 A3:1 | Bb3:2 A3:1 G3:1 | G3:2 G3:1 Eb4:1 | D4:1 F#4:1 F#4:1 A4:1 |' +
+          'F4:2 D4:1 F4:1 | A4:2 A4:1 G4:1 | D4:1 Bb3:1 Bb3:1 A3:1 | A3:2 A3:1 G3:1 |' +
+          'Bb3:2 G3:1 Bb3:1 | D4:2 D4:1 Eb4:1 | Eb4:2 Eb4:1 F#4:1 | F#4:1 Eb4:1 F#4:1 G4:1 |' +
+          'G4:1 F#4:1 G4:1 G4:1 | F4:1 F#4:1 A4:1 F4:1 | A4:2 F4:1 D4:1 | D4:2 Bb3:1 D4:1 |' +
+          'Eb4:2 Eb4:1 C4:1 | C4:2 C4:1 Bb3:1 | Bb3:1 D4:1 Bb3:1 D4:1 | F#4:1 F#4:1 A4:1 G4:1 |' +
+          'G4:2 G4:1 F#4:1 | F#4:2 A4:1 G4:1 | G4:2 G4:2 | F#4:1 Eb4:1 F#4:1 A4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:2.5 F#4:0.5 D4:0.75 r:0.25 | r:4 | r:4 |' +
+          'r:4 | r:4 | r:4 | r:2.5 A4:0.5 D5:0.75 r:0.25 |' +
+          'r:4 | r:4 | r:4 | r:2.5 A4:0.5 D4:0.75 r:0.25 |' +
+          'r:4 | r:2.5 F4:0.5 Bb4:0.75 r:0.25 | r:4 | r:4 |' +
+          'r:4 | r:4 | r:4 | r:2.5 D5:0.5 G4:0.75 r:0.25 |' +
+          'r:4 | r:4 | r:4 | r:0.5 A4:0.5 F#4:0.75 r:2.25 |' +
+          'r:4 | r:4 | r:4 | r:4 |' },
         { instrument: 'pad', role: 'pad', notes:
           'Bb3+D4+G4:4 | A3+D4+F#4:4 | Bb3+Eb4+G4:4 | C4+F4+A4:4 |' +
           'D4+G4+Bb4:4 | D4+G4+Bb4:2 D4+F#4+A4:2 | Eb4+G4+C5:4 | D4+F#4+A4:4 |' +
@@ -313,6 +411,20 @@ window.MUSIC = {
           'Db6:1.5 C6:0.5 Bb5:1 F5:1 | C6:1 Ab5:0.5 F5:0.5 C5:2 | Db5:1 Gb5:1 Bb5:1 Db6:1 | C6:3 r:1 |' +
           'F5:1 Ab5:1 Db6:2 | Eb6:1.5 Db6:0.5 Bb5:1 G5:1 | G5:1 Eb6:1 C6:2 | Ab5:1 F5:1 C5:2 |' +
           'Bb4:0.5 Db5:0.5 F5:0.5 Bb5:0.5 Ab5:1 F5:1 | G5:1 E5:1 C5:1 E5:1 | F5:1.5 Ab5:0.5 Db6:1 Ab5:1 | G5:1 Bb5:1 E5:1 G5:1 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'Ab3:1 G3:1 Ab3:1 C4:1 | Ab3:2 C4:1 Db4:1 | F4:1 E4:1 F4:1 Ab4:1 | G4:1 E4:1 E4:1 G4:1 |' +
+          'Ab4:1 G4:1 Ab4:1 G4:1 | Ab4:2 F4:1 C4:1 | Bb3:1 Db4:1 Bb3:1 Ab3:1 | G3:1 C4:1 G3:1 Ab3:1 |' +
+          'Bb3:1 C4:1 Db4:1 F4:1 | C4:1 Ab3:1 Ab3:1 G3:1 | Ab3:2 Ab3:1 Ab3:1 | G3:1 Bb3:1 Bb3:1 C4:1 |' +
+          'Db4:1 F4:1 Db4:1 C4:1 | Ab3:2 Ab3:1 Ab3:1 | Bb3:1 Db4:1 Db4:1 E4:1 | E4:1 G4:1 E4:1 F4:1 |' +
+          'Ab4:1 F4:1 F4:1 Ab4:1 | G4:1 G4:1 G4:1 Eb4:1 | Eb4:1 G4:1 Eb4:1 G4:1 | Ab4:1 Ab4:1 Ab4:1 G4:1 |' +
+          'F4:2 Db4:1 Ab3:1 | G3:1 G3:1 G3:1 Ab3:1 | Ab3:1 Ab3:1 Ab3:1 Db4:1 | E4:1 Db4:1 Bb3:1 C4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:2.5 C4:0.5 Ab4:0.75 r:0.25 | r:4 | r:0.5 E4:0.5 E4:0.75 r:2.25 |' +
+          'r:4 | r:2.5 F4:0.5 Ab4:0.75 r:0.25 | r:4 | r:2.5 G4:0.5 E4:0.75 r:0.25 |' +
+          'r:2.5 F4:0.5 Bb4:0.75 r:0.25 | r:4 | r:4 | r:2.5 G4:0.5 E4:0.75 r:0.25 |' +
+          'r:4 | r:2.5 F4:0.5 C4:0.75 r:0.25 | r:4 | r:0.5 E4:0.5 G4:0.5 Bb4:0.5 G4:0.75 r:1.25 |' +
+          'r:2.5 Ab4:0.5 Db5:0.75 r:0.25 | r:4 | r:2.5 C5:0.5 G4:0.75 r:0.25 | r:2.5 F4:0.5 C4:0.75 r:0.25 |' +
+          'r:4 | r:4 | r:4 | r:4 |' },
         { instrument: 'pad', role: 'pad', notes:
           'C4+F4+Ab4:4 | C4+F4+Ab4:4 | Db4+F4+Ab4:4 | C4+E4+G4:4 |' +
           'C4+F4+Ab4:4 | C4+F4+Ab4:4 | Db4+Gb4+Bb4:4 | C4+E4+G4:4 |' +
@@ -346,6 +458,22 @@ window.MUSIC = {
           'D6:2 A5:1 F5:1 | F5:1.5 Bb5:0.5 D6:1.5 C6:0.5 | Bb5:1.5 A5:0.5 G5:1 Bb5:1 | A5:3 G5:0.5 E5:0.5 |' +
           'F5:1 A5:1 C6:1 F6:1 | E6:1.5 D6:0.5 C6:1 G5:1 | F5:0.5 G5:0.5 Bb5:0.5 D6:0.5 F6:1 D6:1 | C#6:2 E6:2 |' +
           'D5:0.5 F5:0.5 A5:0.5 D6:0.5 F6:0.5 D6:0.5 A5:0.5 F5:0.5 | Eb5:0.5 G5:0.5 Bb5:0.5 Eb6:0.5 G6:0.5 Eb6:0.5 Bb5:0.5 G5:0.5 | F5:0.5 A5:0.5 D6:0.5 F6:0.5 A6:1 F6:1 | E6:1 C#6:1 A5:1 E5:1 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'F4:2 A4:2 | F4:2 F4:1 A4:1 | F4:2 D4:1 F4:1 | C#4:1 Bb3:1 C#4:1 C#4:1 |' +
+          'D4:1 A3:1 A3:1 F4:1 | D4:2 Bb3:1 D4:1 | G4:1 Eb4:1 G4:1 F4:1 | E4:1 D4:1 E4:1 C#4:1 |' +
+          'C4:1 Bb3:1 A3:1 C4:1 | E4:2 E4:1 F4:1 | F4:2 F4:1 A4:1 | G4:1 C#4:1 E4:1 G4:1 |' +
+          'F4:1 D4:1 D4:1 F4:1 | A4:1 A4:1 A4:1 F4:1 | D4:1 Bb3:1 Bb3:2 | C#4:1 C#4:1 E4:1 F4:1 |' +
+          'F4:1 A4:1 F4:1 A4:1 | D4:1 C#4:1 D4:1 F4:1 | D4:1 C#4:1 D4:1 C#4:1 | C#4:1 E4:1 C#4:1 Bb3:1 |' +
+          'A3:1 C4:1 A3:1 C4:1 | G3:1 G3:1 G3:1 C4:1 | D4:2 D4:1 F4:1 | E4:1 C#4:1 C#4:1 C#4:1 |' +
+          'F4:2 A4:2 | G4:2 Eb4:2 | D4:2 F4:1 A4:1 | A4:1 E4:1 C#4:1 C#4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:2.5 A4:0.5 D5:0.75 r:0.25 | r:4 | r:4 |' +
+          'r:4 | r:4 | r:4 | r:0.5 A4:0.5 A4:0.75 r:2.25 |' +
+          'r:4 | r:2.5 G4:0.5 C5:0.75 r:0.25 | r:4 | r:2.5 G4:0.5 C#5:0.75 r:0.25 |' +
+          'r:4 | r:2.5 F4:0.5 A4:0.75 r:0.25 | r:4 | r:0.5 C#5:0.5 C#5:0.75 r:2.25 |' +
+          'r:0.5 A4:0.5 D5:0.75 r:2.25 | r:4 | r:4 | r:0.5 A4:0.5 G4:0.5 Bb4:0.5 A4:0.75 r:1.25 |' +
+          'r:4 | r:4 | r:4 | r:0.5 C#5:0.5 A4:0.75 r:0.75 C#5:0.5 E4:0.75 r:0.25 |' +
+          'r:4 | r:4 | r:4 | r:4 |' },
         { instrument: 'pad', role: 'pad', notes:
           'D4+F4+A4:4 | D4+F4+A4:4 | D4+F4+Bb4:4 | C#4+E4+A4:4 |' +
           'D4+F4+A4:4 | D4+G4+Bb4:4 | Eb4+G4+Bb4:4 | C#4+E4+A4:4 |' +
@@ -369,7 +497,7 @@ window.MUSIC = {
     // ------------------------------------------------------------------ 最終頭目專屬曲（馬祖；v1.0 起用）
     final_king: {
       name: '最終頭目：霧海上的大決戰', key: 'E 小調', tempo: 92, meter: 4, loop: true,
-      audio: { file: 'assets/music/final_king.m4a', seconds: 98.6, loopStart: 15.4, loopEnd: 98.6, gainDb: 0, lufs: -16.2 },
+      audio: { file: 'assets/music/final_king.m4a', seconds: 98.6, loopStart: 15.4, loopEnd: 98.6, gainDb: 0, lufs: -16.0 },
       mood: '最後的大決戰：沉重、莊嚴、壓迫感最強，合唱與管風琴撐起氣勢，最後仍帶著希望',
       origin: '寬廣的長音主題從低音 Mi 往上推；第 6、18 小節的 F 大和弦（拿坡里和弦）讓空氣一沉，第 13 小節起旋律升到高音 Mi，像在霧海上看見燈塔。全部原創，和「最終戰」是不同的曲子。',
       tracks: [
@@ -379,6 +507,18 @@ window.MUSIC = {
           'G5:1 E5:1 C6:2 | B5:1.5 A5:0.5 G5:1 D5:1 | C5:1 E5:1 A5:2 | B5:2 A5:1 F#5:1 |' +
           'G5:2 B5:1 E6:1 | D6:2 A5:1 F#5:1 | E6:1.5 D6:0.5 C6:1 G5:1 | F#5:3 r:1 |' +
           'A5:1 C6:1 E6:2 | F6:1.5 E6:0.5 C6:1 A5:1 | E6:1 C6:1 B5:1 D#6:1 | B5:4 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'B3:1 A3:1 G3:1 B3:1 | C4:1 G3:1 G3:1 C4:1 | C4:1 E4:1 E4:1 C4:1 | D#4:1 F#4:1 D#4:1 F#4:1 |' +
+          'G4:1 E4:1 G4:1 E4:1 | F4:1 F#4:1 A4:1 G4:1 | E4:1 D#4:1 E4:1 C4:1 | D#4:1 D#4:1 F#4:1 D#4:1 |' +
+          'E4:1 G4:1 E4:1 D#4:1 | D4:1 B3:1 B3:1 B3:1 | C4:1 B3:1 C4:1 E4:1 | D#4:1 F#4:1 D#4:1 A3:1 |' +
+          'B3:1 G3:1 G3:1 A3:1 | A3:1 G3:1 A3:1 A3:1 | G3:1 G3:1 G3:1 C4:1 | D#4:1 D#4:1 D#4:1 E4:1 |' +
+          'C4:1 E4:1 C4:1 B3:1 | A3:1 C4:1 A3:1 C4:1 | C4:1 D#4:1 D#4:1 C4:1 | D#4:1 F#4:1 D#4:1 F#4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:2.5 C4:0.5 G4:0.75 r:0.25 | r:0.5 A4:0.5 C5:0.75 r:2.25 | r:0.5 B4:0.5 D#4:0.5 C4:0.5 D#4:0.75 r:1.25 |' +
+          'r:4 | r:0.5 A4:0.5 A4:0.75 r:2.25 | r:4 | r:0.5 D#4:0.5 D#4:0.75 r:0.75 F#4:0.5 D#4:0.75 r:0.25 |' +
+          'r:2.5 E4:0.5 C5:0.75 r:0.25 | r:4 | r:2.5 E4:0.5 A4:0.75 r:0.25 | r:0.5 A4:0.5 B4:0.75 r:2.25 |' +
+          'r:0.5 G4:0.5 G4:0.75 r:2.25 | r:0.5 D5:0.5 D5:0.75 r:2.25 | r:4 | r:0.5 B4:0.5 B4:0.5 E4:0.5 D#4:0.75 r:1.25 |' +
+          'r:2.5 C5:0.5 E4:0.75 r:0.25 | r:4 | r:4 | r:0.5 B4:0.5 B4:0.5 C5:0.5 F#4:1 r:1 |' },
         { instrument: 'pad', role: 'pad', notes:
           'B3+E4+G4:4 | C4+E4+G4:4 | C4+E4+A4:4 | B3+D#4+F#4:4 |' +
           'B3+E4+G4:4 | C4+F4+A4:4 | C4+E4+A4:4 | B3+D#4+F#4:4 |' +
@@ -400,12 +540,16 @@ window.MUSIC = {
     // ------------------------------------------------------------------ 戰鬥勝利號角
     victory: {
       name: '勝利號角', key: '降 E 大調', tempo: 140, meter: 4, loop: false, bgm: 'pause',
-      audio: { file: 'assets/music/victory.m4a', seconds: 7.8069, gainDb: 0, lufs: -13.5 },
+      audio: { file: 'assets/music/victory.m4a', seconds: 8.7587, gainDb: 0.1, lufs: -14.1 },
       mood: '開心、驕傲、「我們做到了！」',
       origin: '「Mi♭-Fa-Sol」快速三連上行、跳上 Si♭ 的原創號角，經 IV–V 停在高音 Mi♭。全部原創。',
       tracks: [
         { instrument: 'brass', role: 'melody', notes:
           'Eb5:0.25 F5:0.25 G5:0.5 Bb5:1 G5:0.5 Bb5:0.5 Eb6:1 | C6:0.5 Ab5:0.5 C6:0.5 Eb6:0.5 D6:1 Bb5:1 | Eb6:3 r:1 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'G4:2 Eb4:2 | Eb4:2 F4:1 G4:1 | G4:1 G4:1 G4:1 F4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:4 | r:0.5 Bb4:0.5 G4:0.5 Eb4:0.5 G4:0.75 r:1.25 |' },
         { instrument: 'pad', role: 'pad', notes:
           'Bb3+Eb4+G4:4 | C4+Eb4+Ab4:2 D4+F4+Bb4:2 | Eb4+G4+Bb4:4 |' },
         { instrument: 'bass', role: 'bass', notes:
@@ -416,12 +560,16 @@ window.MUSIC = {
     // ------------------------------------------------------------------ 升級
     levelup: {
       name: '升級了！', key: 'D 大調', tempo: 144, meter: 4, loop: false, bgm: 'pause',
-      audio: { file: 'assets/music/levelup.m4a', seconds: 7.2272, gainDb: 0, lufs: -13.9 },
+      audio: { file: 'assets/music/levelup.m4a', seconds: 6.9835, gainDb: 0, lufs: -14.0 },
       mood: '閃亮、雀躍、「我變強了！」',
       origin: '四個十六分音符衝上去、在高音 Re 附近轉一圈，再跳到最高的 La 停在 Fa#。全部原創。',
       tracks: [
         { instrument: 'lead_square', role: 'melody', notes:
           'D5:0.25 E5:0.25 F#5:0.25 A5:0.25 D6:0.5 C#6:0.5 B5:0.5 D6:0.5 A5:1 | C#6:0.5 E6:0.5 A6:1 F#6:2 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'F#4:2 G4:1 F#4:1 | E4:2 D4:1 A3:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:2.5 D5:0.5 A4:0.75 r:0.25 |' },
         { instrument: 'bell', role: 'harmony', gain: 0.6, notes:
           'F#6:0.5 D6:0.5 F#6:0.5 D6:0.5 G6:0.5 D6:0.5 F#6:0.5 D6:0.5 | E6:0.5 C#6:0.5 E6:0.5 C#6:0.5 F#6:0.5 D6:0.5 F#6:0.5 D6:0.5 |' },
         { instrument: 'pad', role: 'pad', notes:
@@ -434,12 +582,16 @@ window.MUSIC = {
     // ------------------------------------------------------------------ 委託完成
     quest_clear: {
       name: '委託完成', key: 'F 大調', tempo: 108, meter: 4, loop: false, bgm: 'pause',
-      audio: { file: 'assets/music/quest_clear.m4a', seconds: 9.9712, gainDb: 0, lufs: -13.9 },
+      audio: { file: 'assets/music/quest_clear.m4a', seconds: 10.0969, gainDb: 0, lufs: -14.0 },
       mood: '溫暖的成就感、被人感謝的開心',
       origin: '「Do 跳上 Fa、La」的開朗起句，第二句在高音 Do 轉身、經屬和弦回到主音 Fa。全部原創。',
       tracks: [
         { instrument: 'lead_tri', role: 'melody', notes:
           'C5:0.5 F5:0.5 A5:1 G5:0.5 A5:0.5 Bb5:0.5 G5:0.5 | A5:1 C6:1 G5:0.5 F5:0.5 E5:1 | F5:3 r:1 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'A3:2 Bb3:2 | C4:1 E4:1 E4:2 | A4:1 A4:1 A4:1 G4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:4 | r:0.5 A4:0.5 F4:0.5 F4:0.5 F4:0.75 r:1.25 |' },
         { instrument: 'bell', role: 'harmony', gain: 0.6, notes:
           'r:4 | r:4 | F6:0.5 C6:0.5 F6:0.5 C6:0.5 F6:0.5 C6:0.5 F6:0.5 C6:0.5 |' },
         { instrument: 'pad', role: 'pad', notes:
@@ -452,12 +604,16 @@ window.MUSIC = {
     // ------------------------------------------------------------------ 旅店休息
     inn_rest: {
       name: '旅店的晚安曲', key: 'G 大調', tempo: 96, meter: 3, loop: false, bgm: 'pause',
-      audio: { file: 'assets/music/inn_rest.m4a', seconds: 9.6015, gainDb: 2.0, lufs: -16.0 },
+      audio: { file: 'assets/music/inn_rest.m4a', seconds: 10.9151, gainDb: 0, lufs: -14.0 },
       mood: '溫柔、安心，像搖籃曲一樣睡著再醒來',
       origin: '三拍子八音盒搖籃曲：從高音 Si 沿著主和弦慢慢往下，最後停在溫暖的 Si（主和弦三音）。全部原創。',
       tracks: [
         { instrument: 'bell', role: 'melody', notes:
           'B5:1 G5:1 D5:1 | E5:1.5 G5:0.5 C5:1 | D5:1 F#5:0.5 E5:0.5 A4:1 | B4:3 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'D4:2 B3:1 | C4:2 E4:1 | F#4:2 C4:1 | D4:1 B3:1 D4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:3 | r:3 | r:3 | r:0.5 G4:0.5 D4:0.5 A3:0.5 B3:0.75 r:0.25 |' },
         { instrument: 'pad', role: 'pad', notes:
           'B3+D4+G4:3 | C4+E4+G4:3 | C4+D4+F#4:3 | B3+D4+G4:3 |' },
         { instrument: 'bass', role: 'bass', gain: 0.8, notes:
@@ -467,12 +623,16 @@ window.MUSIC = {
     // ------------------------------------------------------------------ 取得珍貴道具
     rare_item: {
       name: '得到珍貴的寶物', key: '降 A 大調', tempo: 92, meter: 4, loop: false, bgm: 'pause',
-      audio: { file: 'assets/music/rare_item.m4a', seconds: 11.8678, gainDb: 0, lufs: -14.0 },
+      audio: { file: 'assets/music/rare_item.m4a', seconds: 11.7344, gainDb: 0, lufs: -14.0 },
       mood: '驚喜、閃閃發光、「哇！」',
       origin: '分解和弦往上、在高音 Mi♭ 停一下，第二句經降 D 大和弦、F 小和弦，最後跳到最高的 La♭ 閃一下。全部原創。',
       tracks: [
         { instrument: 'lead_tri', role: 'melody', notes:
           'Eb5:0.5 Ab5:0.5 C6:0.5 Bb5:0.5 Eb6:1 C6:1 | Db6:0.5 F6:0.5 Eb6:0.5 Db6:0.5 C6:1 Ab5:1 | Eb6:1 C6:0.5 Eb6:0.5 Ab6:2 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'C4:2 C4:1 Eb4:1 | F4:2 Ab4:1 F4:1 | C4:2 C4:1 Eb4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:4 | r:2.5 C5:0.5 Eb4:0.75 r:0.25 |' },
         { instrument: 'bell', role: 'harmony', gain: 0.55, notes:
           'Eb6:0.5 C6:0.5 Eb6:0.5 C6:0.5 Eb6:0.5 C6:0.5 Eb6:0.5 C6:0.5 | F6:0.5 Db6:0.5 F6:0.5 Db6:0.5 F6:0.5 C6:0.5 F6:0.5 C6:0.5 | Eb6:0.5 C6:0.5 Eb6:0.5 C6:0.5 Eb6:0.5 C6:0.5 Eb6:0.5 C6:0.5 |' },
         { instrument: 'pad', role: 'pad', notes:
@@ -484,12 +644,16 @@ window.MUSIC = {
     // ------------------------------------------------------------------ 點燈（短曲 lamp_lit）
     lamp_lit: {
       name: '點亮了', key: 'E 大調', tempo: 144, meter: 4, loop: false, bgm: 'duck',
-      audio: { file: 'assets/music/lamp_lit.m4a', seconds: 6.698, gainDb: 0.1, lufs: -14.1 },
+      audio: { file: 'assets/music/lamp_lit.m4a', seconds: 6.8429, gainDb: 0, lufs: -13.8 },
       mood: '「叮！」想通了、心裡亮起來',
       origin: '鐘琴沿 E 大調五聲音階跳上最高的 Si，再落到 Mi，像燈一下子亮起來。全部原創。',
       tracks: [
         { instrument: 'bell', role: 'melody', notes:
           'B5:0.5 E6:0.5 G#6:1 F#6:0.5 G#6:0.5 B6:1 | E6:3 r:1 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'G#3:2 G#3:2 | A3:1 G#3:1 G#3:1 B3:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:0.5 C#5:0.5 E4:0.5 F#4:0.5 B3:0.75 r:1.25 |' },
         { instrument: 'pluck', role: 'harmony', gain: 0.6, notes:
           'r:0.5 E4+G#4+B4:0.5 r:0.5 E4+G#4+B4:0.5 r:0.5 E4+G#4+B4:0.5 r:0.5 E4+G#4+B4:0.5 | r:0.5 E4+A4+C#5:0.5 r:0.5 E4+A4+C#5:0.5 r:0.5 E4+G#4+B4:0.5 r:0.5 E4+G#4+B4:0.5 |' },
         { instrument: 'pad', role: 'pad', notes:
@@ -499,12 +663,16 @@ window.MUSIC = {
     // ------------------------------------------------------------------ 累倒
     faint: {
       name: '累倒了……', key: 'C 大調', tempo: 72, meter: 3, loop: false, bgm: 'pause',
-      audio: { file: 'assets/music/faint.m4a', seconds: 11.1747, gainDb: 0, lufs: -14.0 },
+      audio: { file: 'assets/music/faint.m4a', seconds: 10.9978, gainDb: 0, lufs: -14.0 },
       mood: '有點可惜但很溫和，像在說「沒關係，休息一下」',
       origin: '三拍子，長笛從 Sol 沿主和弦慢慢往下，經屬七和弦安穩地回到主音 Do（不用陰暗的小調）。全部原創。',
       tracks: [
         { instrument: 'flute', role: 'melody', notes:
           'G5:1.5 E5:0.5 C5:1 | F5:1 D5:1 B4:1 | C5:3 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'E4:2 G4:1 | D4:2 F4:1 | E4:1 G4:1 F4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:3 | r:3 | r:0.5 E4:0.5 C4:0.5 G4:0.5 C5:0.75 r:0.25 |' },
         { instrument: 'pad', role: 'pad', notes:
           'C4+E4+G4:3 | B3+F4+G4:3 | C4+E4+G4:3 |' },
         { instrument: 'bass', role: 'bass', notes:
@@ -514,12 +682,16 @@ window.MUSIC = {
     // ------------------------------------------------------------------ 開寶箱
     chest: {
       name: '開寶箱小號角', key: 'G 大調', tempo: 160, meter: 4, loop: false, bgm: 'duck',
-      audio: { file: 'assets/music/chest.m4a', seconds: 6.3125, gainDb: 0, lufs: -13.9 },
+      audio: { file: 'assets/music/chest.m4a', seconds: 6.3436, gainDb: 0, lufs: -13.8 },
       mood: '輕快、俏皮的「登登登－！」',
       origin: '分解和弦跳上去、空半拍後用 Fa#-Sol 小倚音再衝到高音 Re，最後停在最高的 Sol。全部原創。',
       tracks: [
         { instrument: 'brass', role: 'melody', notes:
           'B4:0.25 D5:0.25 G5:0.5 r:0.5 F#5:0.5 G5:0.5 B5:0.5 D6:1 | G6:3 r:1 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'D4:2 B3:2 | B3:1 D4:1 B3:1 G3:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:0.5 G4:0.5 B4:0.5 D5:0.5 G4:0.75 r:1.25 |' },
         { instrument: 'bell', role: 'harmony', gain: 0.6, notes:
           'r:4 | D6:0.5 B5:0.5 D6:0.5 B5:0.5 D6:0.5 B5:0.5 D6:0.5 B5:0.5 |' },
         { instrument: 'pad', role: 'pad', notes:
@@ -531,12 +703,16 @@ window.MUSIC = {
     // ------------------------------------------------------------------ 結局
     ending: {
       name: '結局：藍眼淚之夜', key: '降 B 大調', tempo: 66, meter: 4, loop: false, bgm: 'pause',
-      audio: { file: 'assets/music/ending.m4a', seconds: 10.9362, gainDb: 0, lufs: -14.0 },
+      audio: { file: 'assets/music/ending.m4a', seconds: 10.6847, gainDb: 0, lufs: -14.0 },
       mood: '感動、圓滿，像夜裡海邊閃著藍光',
       origin: '和標題曲同一個調（降 B 大調）：從 Si♭ 跳上 Fa 再飛到高音 Re，最後經 IV–V 回到主音，旋律是另外新寫的句子（呼應標題的五度跳躍，但不重複）。全部原創。',
       tracks: [
         { instrument: 'flute', role: 'melody', notes:
           'Bb4:1 F5:1 D6:1.5 C6:0.5 | Bb5:0.5 A5:0.5 G5:0.5 C6:0.5 Bb5:2 |' },
+        { instrument: 'lead_tri', role: 'counter', gain: 0.45, notes:
+          'D4:1 C4:1 Bb3:1 A3:1 | G3:1 A3:1 D4:1 F4:1 |' },
+        { instrument: 'flute', role: 'answer', gain: 0.4, notes:
+          'r:4 | r:2.5 D5:0.5 Bb4:0.75 r:0.25 |' },
         { instrument: 'bell', role: 'harmony', gain: 0.6, notes:
           'D6:0.5 Bb5:0.5 D6:0.5 Bb5:0.5 D6:0.5 Bb5:0.5 D6:0.5 Bb5:0.5 | Eb6:0.5 Bb5:0.5 C6:0.5 A5:0.5 D6:0.5 Bb5:0.5 D6:0.5 Bb5:0.5 |' },
         { instrument: 'pad', role: 'pad', notes:
