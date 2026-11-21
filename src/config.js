@@ -6,7 +6,7 @@
   'use strict';
   var CONFIG = {
     GAME_TITLE: '勇者大冒險II',
-    GAME_SUBTITLE: '怪盜與家鄉的印章',
+    GAME_SUBTITLE: '怪盜與消失的文物',
 
     // 畫面（GDD 7.3 C7、6.1；老闆裁示高解析）：邏輯格子 48px、內部解析度 960×540（16:9；三年級版 32px、640×360 的 1.5 倍）
     TILE: 48,

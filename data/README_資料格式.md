@@ -93,6 +93,8 @@
 | `dialog` | 平常說話時用的對話 ID |
 | `quest` | 第一個委託 ID；沒有委託時是 `null`。保留這欄是為了相容 6.1 |
 | `quests` | （新增）這位 NPC 會發的**所有**委託 ID |
+| `dialog_done` | （選填）`{ quest, dialog }`：那個委託完成後，平常說話改成這段 |
+| `dialog_active` | （選填，整合2）`{ quest, dialog }`：那個委託**進行中**時，平常說話改成這段（例：M6 進行中布攤阿姨說 `D_C01_CLOTH_CLUE`）；`dialog_done` 優先 |
 
 - 建議的顯示邏輯：從 `quests` 裡找第一個「還沒完成」的委託，再依狀態顯示不同對話：
   - 前置還沒完成：顯示 `dialog_locked`；沒有的話就顯示 `dialog`。
@@ -276,6 +278,29 @@ Q_TUT_1 → Q_TUT_2 → Q_TUT_3
 
 數值的計算依據寫在 `monsters.js` 檔頭。
 
+### 4.1 BQ2 v0.6 戰鬥新欄位（03b 戰鬥系統規格、03_數值 第 2、7 節；新引擎 `systems/battle_v06.js` 讀）
+
+| 欄位 | 說明 |
+|---|---|
+| `kind` | `wild` 野怪／`elite` 精英／`mboss` 迷宮小頭目／`tboss1` 怪盜第一段（變裝）／`tboss2` 怪盜第二段（原裝）。決定技能率（20／30／35%）與頭目每段至少答對題數（3／2／2） |
+| `cat` | 類別：在地自然系、發條機關、怪盜 |
+| `elem` | 屬性：金、木、水、火、土、風、光、闇（8×8 相剋表在 `battle_v06.js` 的 `CFG`） |
+| `tpl` | 家族模板（快腳、硬殼、飄浮、發條機關、均衡；只是紀錄，數值已乘好） |
+| `agi`, `pdef`, `mdef` | 速、物防、魔防 |
+| `six` | 六項能力 `{STR, VIT, AGI, INT, SPI, LUK}`。力＝攻擊、體＝物防÷0.5、精神＝魔防÷0.5（和主角同一套公式） |
+| `stars` | 普攻星數 `[低, 高]`：主角攻擊題、敵人防禦題都照這個；放技能時防禦題 +1 星（最多 4）。取代 `q_levels` |
+| `skill` | `{ name, rate, act }`：技能名、每回合放技能的機率、技能動作文字（給美術、文案）。技能傷害 ×1.5 |
+| `next_stage` | 頭目下一段的怪物 id（怪盜第一段 → 第二段；換段不補血） |
+| `stage` | 第幾段（第二段寫 2） |
+| `escort` | 精英固定帶的野怪 id |
+| `drops[].need` | 委託素材：還沒收集夠這個數量才掉（和 `quest` 一起用） |
+| `drops[].maps` | 整合2（選填）：只在這些地圖掉，例第 7 章圖畫卡 `maps:["P06"]`（P04 同一種怪不掉）。和 `quest`、`need` 可以一起用 |
+| `drops[].cond` | 整合2（選填）：條件成立才掉（同 8.x 的 cond 寫法，例 `{flag:"…"}`、`{quest:"…", status:"active"}`） |
+| `phases`, `phase_q` | BQ2：`phases` 一律 1（每段一個階段，不再每階段攻擊 +20%）；`phase_q`＝每段至少答對題數 |
+| `dialog_phase` | BQ2：`{2, 3}` 改成「HP 第一次降到 2/3、1/3 以下」時播的台詞，只播台詞、不鎖血 |
+
+- `subject`、`q_levels`、`last_q_level` 是舊畫面用的欄位，屬性不綁科目；第 2 段畫面接上新引擎後拿掉。
+
 ---
 
 ## 5. 道具 `window.ITEMS`、商店 `window.SHOPS`
@@ -293,6 +318,16 @@ Q_TUT_1 → Q_TUT_2 → Q_TUT_3
 | `atk`, `def`, `mp` | 裝備加成 |
 | `jobs` | 裝備限定的職業 ID 陣列；`null`＝誰都能裝 |
 | `desc` | 說明 |
+
+BQ2 v0.6 裝備新欄位（03b R17 第 21 項、03_數值 9.2）：
+
+| 欄位 | 說明 |
+|---|---|
+| `fam` | 裝備類別；新增 `knife`（飛刀・手套，D8-B，盜賊系） |
+| `mdef` | 防具的魔防加成（主角魔防＝0.5×精神＋mdef） |
+| `elem` | 武器屬性（普通攻擊帶這個屬性；`null`＝無屬性） |
+| `no_sell` | 起始裝備（練習木棒、布衣）：不能賣、賣回 0 |
+| （武器 `mp`） | 新引擎暫時把武器的魔力加在魔攻（規格 R3「魔攻＝智＋武器魔力」） |
 
 `SHOPS`（新增）：鍵是 `shop_id`。
 
@@ -346,6 +381,24 @@ Q_TUT_1 → Q_TUT_2 → Q_TUT_3
 | `dialog_locked` | 未滿 5 級時的對話 |
 | `dialog_open` | 可以轉職時的對話 |
 
+### 6.1 BQ2 v0.6 職業新欄位（03b R3、R15、R16）
+
+| 欄位 | 說明 |
+|---|---|
+| `mods6` | 六項能力倍率 `{STR, VIT, AGI, INT, SPI, LUK}`（框架第 7 節）。新引擎用這個；舊的 `mods {hp, mp, atk, def}` 留給現有畫面 |
+| `trait.first` | 先手：每回合一定是主角先（盜賊、俠盜、幻影盜） |
+| `trait.steal` | 答對打中時偷到一樣掉落物的機率（盜賊 0.08、俠盜 0.10、幻影盜 0.15；不偷金幣） |
+| `trait.critMult` | 爆擊倍率（戰鬥大師、神之手 1.7） |
+| `trait.chain` | 五行相生加成（幻影盜 0.40；一般 0.25） |
+| `trait.bossDmg` | 打頭目傷害倍率（魔物獵人 1.3） |
+| `trait.mirage` | 答錯時讓這回合敵人攻擊全部 Miss 的機率（奇術師 0.10） |
+| `recipe` | 中級、高級的配方（要出師的職業 id） |
+| `favs` | 多科拿手（中級、高級）；`fav` 是第一科，給舊程式 |
+
+- `window.JOBS_LATER`：中級 10 個、高級 4 個職業（台北章轉不到）。技能表、走路圖第 11 章再補，補好再搬進 `JOBS`。
+- `JOB_RULES.master_level` 加 `inter: 50`、`adv: 60`；`tier_mult` 加 `inter: 1.25`、`adv: 1.5`（一代值）。
+- 六項能力公式、轉職保底比例 `FLOOR_RATIO`（目前 0.5，待決 N6）在 `systems/battle_v06.js` 的 `CFG.P`。
+
 ## 7. 課程表 `window.CURRICULUM`、教學卡 `window.TEACH_CARDS`、賢者課程 `window.SAGE_LESSONS`（勇者大冒險II 第二批，GDD 3.4、7.3 C1–C5）
 
 - `data/curriculum.js`：`nodes`（節點 id＝「科目-序號」，例 `數學-1012`；`label`、`teach_card`）、`route`（地圖順序）、`maps[地圖].add`（這張地圖新開放的節點）、
@@ -356,3 +409,164 @@ Q_TUT_1 → Q_TUT_2 → Q_TUT_3
   `uses`／`uses_math`（`"SO:1011"` 寫法）用到的節點也要已開放；`beyond_curriculum:true` 的題目要加 **`beyond_topic`**（`SAGE_LESSONS` 的課程 id），玩家看完那一課才會出，報表另列。
 - 地圖欄位：`exp_coef`（選填，正數，有填就蓋過 `level` 的 EXP 係數）；NPC 欄位 `sage: ["課程id"]`＝賢者（對話時教課）。
 - 怪物欄位：`short_name`（選填，頭目戰前「○○會考：…」用）。
+
+---
+
+## 8. 台北章（BQ2 v0.6）地圖與委託新欄位——正式格式（前端B 定案，前端C 照這節轉資料）
+
+- 依據：`B1_細規格/ch01_台北市/02_關卡.md` 第 2 版、`圖/ch01_maps_draft.json`、`01_劇本.md` 第 2、9、10、13 節、v2 第四、五節。
+- 原則：**舊欄位一律保留、意思不變**（`type`、`exits[].requires`、`gates[].quest`、`notes[].dialog`、`npcs[].mrt`…）；新欄位全部選填，沒寫就照舊行為。
+- 所有「條件」都用同一種寫法 **cond**（下面寫 `cond`）：
+  - 字串 `"Q4_C01_M2"` ＝ 這個委託已完成（和舊的 `requires` 一樣）。
+  - 物件 `{ quest: "Q…" }` 委託完成、`{ active: "Q…" }` 委託進行中、`{ flag: "PZ_C01_CODE" }` 旗標成立、`{ all: [cond…] }` 全部成立、`{ any: [cond…] }` 任一成立、`{ not: cond }`。
+- 旗標（存在存檔 `state.flags`，讀檔後保留）：機關解開＝`puzzles[].id`（例 `PZ_C01_CODE`）；隱藏區打開＝`hidden[].id`；證人線索＝劇本的 `clue_appraiser_1/2/3`；冷笑話卡＝`joke:<卡id>`；精英／頭目打倒＝`state.bosses[怪物id]`（沿用）；前端內部旗標都以 `_` 開頭，資料不要自己取 `_` 開頭的旗標名（例外見 8.14 的 `_dlg:`）。
+- 草稿欄位對照：草稿 `type` → 正式 `kind`（`type` 照舊保留給舊程式）；草稿 `minimap:false` → `no_minimap:true`；草稿 `lamps[]`（TD2 的燈座）→ 移進 `puzzles[]`（`type:"lamps"`）；草稿 `bases[]` → 同一個 puzzle 的 `bases`；草稿 `mrt{}` → `npcs[].mrt_stations` 與 `exits[].mrt_stations`；草稿 `chests[].kind` 中文 → 英文代碼（見 8.10）；草稿 `hidden[].trigger` 文字 → 結構化 `at`＋`cells`；草稿 `events[]`／`arrive_event` → `events[]`；草稿 `rests[]` 照用（補 8.4 的選填欄）。
+
+### 8.1 地圖層級欄位
+
+| 欄位 | 型別 | 說明 |
+|---|---|---|
+| `kind` | `town`／`field`／`interior`／`dungeon` | 地圖種類。`dungeon` 預設不開小地圖、休息點會讓該層野怪重生。沒寫時照 `type` 推（`town`/`village`→town，`dungeon`→dungeon，`interior`→interior，其餘 field） |
+| `no_minimap` | 布林 | `true`＝小地圖與放大地圖都不能開，按了顯示一句說明（對話 `D_NO_MINIMAP`，沒有就用內建句）。`kind:"dungeon"` 沒寫時當 `true` |
+| `light` | `v1`／`v2`／`v3` | 這張圖的光（v1 清晨柔光、v2 黃昏暖光、v3 夜晚燈籠）。給美術與前端調色；一張圖只一種 |
+| `ground` | 字串 | （選填）給美術：`.` 代表的地面材質 |
+
+### 8.2 地標與調查點 `notes[]`（擴充）
+
+| 欄位 | 說明 |
+|---|---|
+| `x`, `y`, `label`, `dialog` | 舊欄位：位置、名稱、按 A 播的對話 |
+| `card` | （新）按 A 顯示的**知識卡**對話 ID（地標知識卡 `D_C01_CARD_*`）。有 `card` 時播 `card`（`dialog` 不播） |
+| `kind` | （新）`landmark` 地標／`clue` 機關線索／`sign` 告示牌／`investigate` 調查點。沒寫＝`sign` |
+| `block` | （新）`false`＝不擋路（地板上的字、方位盤），站在上面或面對它都能按 A；沒寫＝擋路 |
+| `requires` | （新，cond）條件不成立時這個調查點不存在 |
+
+### 8.3 隱藏區 `hidden[]`（新）
+
+| 欄位 | 說明 |
+|---|---|
+| `id` | 全遊戲唯一，打開後寫進旗標 |
+| `name` | 名稱 |
+| `at` | `{x,y}` 調查點（玩家面對它按 A；這一格擋路，通常是牆或樹叢）。可以和 `notes[]` 同格（`hidden` 優先） |
+| `cells` | `[[x,y],…]` 打開後才可以走的格子（grid 上一律寫 `U`）。**沒打開前擋路**；打開後永遠開著 |
+| `dialog` | 調查成功時播的對話（沒寫用內建「牆後面有一條小路！」） |
+| `requires`, `dialog_before` | （選填）可以打開的條件（cond）；不成立時播 `dialog_before` |
+| `chests` | `[寶箱id…]` 這個隱藏區裡的隱藏寶箱（寶箱本身寫 `kind:"hidden"`＋`hidden:"<這個id>"`） |
+
+### 8.4 休息點 `rests[]`（新）
+
+| 欄位 | 說明 |
+|---|---|
+| `x`, `y`, `label` | 位置（擋路物件：油燈＋長椅；面對它按 A）、名稱 |
+| `heal` | 沒寫＝`true`：回滿體力、魔力 |
+| `save` | 沒寫＝`true`：存檔，並記成「累倒後回來的點」（同旅店 `lastInn`） |
+| `respawn` | 沒寫：`kind:"dungeon"` 時 `true`——休息後**這一層**野怪全部重生（精英、頭目不重生） |
+| `dialog` | （選填）休息時的對話；沒寫用 `D_REST`，再沒有就用內建句 |
+
+### 8.5 柵門／密碼門／鐵門 `gates[]`（擴充）
+
+| 欄位 | 說明 |
+|---|---|
+| `x`, `y`, `dialog`, `quest` | 舊欄位：關著時擋路、按 A 播 `dialog`；`quest` 完成＝打開 |
+| `open` | （新，cond）打開條件；有寫時取代 `quest`。例：密碼門 `{flag:"PZ_C01_CODE"}`、捷徑柵門 `"Q4_C01_S1"` |
+| `kind` | （新）`fence` 木柵門／`code` 密碼門／`iron` 鐵門／`bars` 鐵柵。圖像 key：`gate_<kind>_closed`／`gate_<kind>_open`（沒有圖時用舊柵門圖） |
+| `puzzle` | （新）`kind:"code"`：按 A 打開哪一個 `puzzles[]` 的密碼輸入畫面 |
+
+### 8.6 機關 `puzzles[]`（新）
+
+共同欄位：`id`（全遊戲唯一＝解開後的旗標）、`type`、`hint`（阿咕提示組，見 8.13）、`reward`、`dialog_done`（解開時播）、`requires`＋`dialog_locked`（選填）。
+
+`reward`：`{ chest: "C_TD2_K", flag: "…", event: "<events[].id>" }`（都選填，可以同時寫）。`chest`＝讓機關寶箱出現；`event`＝立刻觸發該事件。
+
+| `type` | 欄位 | 規則 |
+|---|---|---|
+| `lamps` 點燈座 | `lamps: [{x,y,dir,order}]`（擋路物件）、`bases: [{x,y,dir}]`（空基座，擋路裝飾）、`reset: {x,y}`（重來拉桿，擋路）、`dialog_one`、`dialog_reset`（選填） | 依 `order` 1→N 點亮。點錯 → 已亮的燈**慢慢熄掉**回到全暗，不扣血、不出怪；拉重來拉桿一樣全熄。全亮 → 解開（旗標）→ `reward`。解開後保持全亮 |
+| `code` 密碼門 | `answer`（字串，例 `"362"`）、`digits`（沒寫＝`answer` 長度）、`labels`（每一位上方的字，例 `["百","十","一"]`）、`dialog_wrong`（沒寫用內建「門沒有動。」） | 由 `gates[].puzzle` 打開輸入畫面；每位用 ＋／－、方向鍵或數字鍵；無限次嘗試；答對 → 旗標 → `gates[]`（`open:{flag:id}`）打開 |
+| `lever` 拉桿 | `x`, `y`（擋路，牆上拉桿） | 按 A 一次 → 旗標成立、**自動存檔**；`exits[].requires:{flag:id}` 或 `gates[].open:{flag:id}` 接上捷徑，之後雙向通行 |
+
+### 8.7 事件 `events[]`（新；時光機關）
+
+| 欄位 | 說明 |
+|---|---|
+| `id` | 事件 ID |
+| `type` | `warp`：踩上去傳送（時光機關、回程光圈）／`talk`：NPC 選單觸發 |
+| `x`, `y` | `warp` 的位置（可走格；條件成立時顯示光圈，踩上去觸發） |
+| `requires` | cond：條件成立才出現 |
+| `to`, `tx`, `ty` | 目的地圖與落點 |
+| `dialog`, `arrive_dialog` | 傳送前／到達後播的對話（選填） |
+| `npc`, `menu_label` | `type:"talk"`：和這位 NPC 說話時多一個選項 `menu_label`（例「再坐一次時光機關」），選了播 `dialog` 再傳送（破關後 TI1 陳館長 → T08） |
+
+### 8.8 出口 `exits[]`（擴充）
+
+| 欄位 | 說明 |
+|---|---|
+| `requires` | 舊欄位（委託 id），現在也接受 **cond** 物件（例 `{flag:"PZ_C01_LEVER_E"}`） |
+| `mrt_stations` | （新）`[{ map, name, tx, ty }…]`：捷運光圈。踩到時跳「要去哪一站？」選單；有這欄時 `to/tx/ty` 只當預設值 |
+| `station` | （新）本站名稱（選單標題） |
+
+`npcs[].mrt_stations`、`npcs[].station`：站務員，格式同上；和他說話＝同一個選單；開放條件取同圖有 `mrt_stations` 那一筆出口的 `requires`。舊的 `npcs[].mrt`（單站）照舊可用。
+
+### 8.9 野怪 `spawns[]`（擴充）
+
+| 欄位 | 說明 |
+|---|---|
+| `monster`, `count`, `area`, `boss`, `quest` | 舊欄位 |
+| `group` | （新）`[怪物id…]`：碰到這隻時一起出戰的編組（例精英礦車帶 steam：`group:["steam"]`）。戰鬥端是否支援由前端A2 決定；沒支援時只打 `monster` |
+| `elite` | （新）`true`＝精英：打倒後不重生（記 `state.bosses`） |
+| `at` | （新）`{x,y}` 固定位置（頭目、精英）。有 `at` 時 `area` 不用 |
+| `respawn` | （新）`leave`（預設：離開地圖再進來就重生；迷宮休息點也會重生）／`never`。`boss`、`elite` 一律 `never` |
+
+### 8.10 寶箱 `chests[]`（擴充）
+
+| 欄位 | 說明 |
+|---|---|
+| `kind` | `normal` 一般（答一題，舊行為）／`hidden` 隱藏（隱藏區打開後才出現，答一題）／`prank` 惡作劇（直接開、不出題，給冷笑話卡）／`puzzle` 機關（機關解開後才出現、不出題）。沒寫＝`normal` |
+| `hidden` | `kind:"hidden"`：所屬 `hidden[].id` |
+| `joke` | `kind:"prank"`：冷笑話卡 id（`JOKE_C01_1`） |
+| `puzzle` | `kind:"puzzle"`：所屬 `puzzles[].id` |
+| `subject`, `level`, `reward` | 舊欄位；`prank`／`puzzle` 的 `subject` 可以是 `null` |
+
+### 8.11 委託 `window.QUESTS`（擴充）
+
+| 欄位 | 說明 |
+|---|---|
+| `kind` | 舊的 `help`／`hunt`／`boss`，新增 `talk`（說完話就完成）、`deduce`（推理）、`maze`（迷宮） |
+| `auto`, `auto_accept`, `giver:"agu"` | **v0.6 起不再自動開始**：一律要玩家去找 `giver` 說話才接。只有 `kind:"boss"` 且寫 `auto_boss:true` 的頭目委託照劇本自動開始 |
+| `dialog_locked` | 前置未完成時跟委託人說話（舊欄位） |
+| `clues` | `[旗標…]`：要收集的線索旗標（例 `["clue_appraiser_1","clue_appraiser_2","clue_appraiser_3"]`）。說過就記，接委託以前先聽到也算 |
+| `deduce` | `kind:"deduce"`：`{ prompt: "怪盜扮成了誰？", options: [4 個身分], answer: "古董鑑定師", dialog_wrong: "D_C01_M4_WRONG" }`。`clues` 全部成立才能選（不齊時播 `dialog_need`，沒寫用內建句）；選錯播 `dialog_wrong` 可以再選，不扣分；選對＝完成 |
+| `maze` | `kind:"maze"`：`{ maps: ["TD1","TD2"], done: cond }`（例 `{flag:"PZ_C01_LAMPS"}`）。`done` 成立＝完成（不用回去找委託人；播 `dialog_end`） |
+| `steps` | 多步驟：`[{ id, goal, done: cond, hint }]`。偵探筆記顯示「目前這一步」的 `goal`；第一個 `done` 不成立的步驟就是目前這一步 |
+| `hint` | 阿咕提示組代號（例 `"M5L"` → `D_C01_HINT_M5L_1`／`_2`）。`steps[].hint` 優先；前綴由 `hint_prefix`（沒寫＝`D_C01_HINT_`）決定 |
+| `follower` | （新）完成時加入跟隨的夥伴 id（例 `"classmate"`，阿哲）。跟隨不參戰，排在阿咕後面 |
+
+### 8.12 對話觸發旗標 `window.DIALOG_FLAGS`（新，選填）
+
+`{ "D_C01_NPM_VOL_CLUE": "clue_appraiser_1", … }`：播完這段對話就立旗標。前端C 放在 `quests.js` 檔尾。
+
+### 8.13 阿咕提示
+
+- 對話 ID：`<hint_prefix><組>_1`（第 1 層）、`_2`（第 2 層）。組代號的找法：目前地圖有未解機關且機關有 `hint` → 用機關的；否則取「進行中委託」目前步驟的 `hint` → 委託的 `hint` → 支線（不是 `Q4_C01_M*`）用 `SIDE` → 都沒有就說內建通用句。
+- 第 1 次按＝第 1 層，再按＝第 2 層，之後重複第 2 層；換了組就重新從第 1 層開始（記在旗標 `_hint:<組>`）。
+
+### 8.14 偵探筆記 `window.NOTEBOOK_PAGES`、冷笑話卡 `window.JOKE_CARDS`（新）
+
+前端C 放在 `quests.js` 檔尾（不另開資料檔）。
+
+```js
+window.NOTEBOOK_PAGES = [
+  { id: "NB_C01_CASE", title: "案件", text: "翠玉白菜在故宮展場被借走……", when: { flag: "_dlg:D_C01_THEFT" } },
+  { id: "NB_C01_CLUE1", title: "線索 1", who: "故宮的展場志工姊姊", text: "那個人戴單片眼鏡……", when: { flag: "clue_appraiser_1" } },
+  { id: "NB_C01_CARD", title: "預告卡", text: "（謎題全文）", when: "Q4_C01_M6", kind: "card" }
+];
+window.JOKE_CARDS = {
+  JOKE_C01_1: { q: "翠玉白菜為什麼從來不會被罵「白目」？", a: "因為它一半是綠的呀！", note: "我覺得很好笑，阿咕說不好笑。" }
+};
+```
+
+- `when` 是 cond。前端每段對話播完後立旗標 `_dlg:<對話ID>`，所以「某段對話播過」寫 `{flag:"_dlg:D_…"}`。
+- 偵探筆記另外自動列出「進行中委託」目前的 `goal`／步驟 `goal`（雙保險）。
+
+### 8.15 測試地圖
+
+`tests/fixtures/map_v06_fixture.js`：用到本節全部欄位的小地圖（城鎮 `ZT01`、`ZT02`＋迷宮 `ZD1`、`ZD2`＋假委託、假對話、假筆記、假冷笑話卡），給 `tests/map_v06.test.js` 與 `tests/smoke_map_v06.py` 用；正式遊戲不會載入它。

@@ -163,8 +163,69 @@ window.PLAYER_BASE = { hp: 30, mp: 10, atk: 6, def: 0 };
         S('me_rain', 28, "金幣雨", "hit", { p: 3 }, 15, "金幣嘩啦啦砸下去。", "coin", "#FFC800", 1200)
       ],
       desc: "戰鬥拿到的金幣 ×1.25。拿手科目是數學。"
+    }),
+    // BQ2 v0.6（03b R15）：盜賊。台北章轉不到（見習 Lv10、轉職地點在第 3 章），open_jobs 不放。
+    // mods（舊 4 項）是給現有畫面的換算【推論】：hp←體、mp←智、atk←力、def←體；新引擎讀 mods6。
+    thief: J('thief', {
+      name: "盜賊", tier: "basic", mods: { hp: 0.90, mp: 0.85, atk: 1.00, def: 0.90 }, fav: "社會", bonus: 1.5,
+      trait: { first: true, steal: 0.08 }, wf: ["knife"], af: ["light"],
+      skills: [
+        S('th_quick', 7, "快手飛刀", "hit", { p: 1.5 }, 3, "答對一題，飛刀咻一下射出去。", "slash", "#C0E0FF", 400),
+        S('th_pick', 14, "神奇口袋", "steal", { p: 1.0 }, 4, "打一下，一定拿到一樣怪物身上的東西（沒有就拿不到）。", "coin", "#FFD34D", 700),
+        S('th_shadow', 21, "影子雙刀", "multi", { n: 2, p: 1.3 }, 9, "影子也一起出手，連打兩下。", "smoke", "#8080A0", 700),
+        S('th_star', 28, "流星飛刀雨", "hit", { p: 3.2 }, 15, "一大把飛刀像流星一樣落下。", "star", "#E0E8FF", 1100)
+      ],
+      desc: "動作最快：每回合一定先出手；答對打中時，有時會順手拿到怪物身上的東西。拿手科目是社會。"
     })
   };
+
+  // BQ2 v0.6（03b R3、R16）：六項能力倍率 mods6（力 STR／體 VIT／速 AGI／智 INT／精神 SPI／幸運 LUK）。框架第 7 節。
+  var M6 = {
+    novice: [1.00, 1.00, 1.00, 1.00, 1.00, 1.00], swordsman: [1.40, 1.15, 0.90, 0.60, 0.85, 0.90], fighter: [1.25, 1.00, 1.20, 0.60, 0.75, 1.00],
+    mage: [0.80, 0.90, 0.95, 1.60, 1.25, 0.95], priest: [0.90, 1.00, 0.90, 1.30, 1.35, 1.00], dancer: [1.00, 0.90, 1.25, 1.10, 1.00, 1.05],
+    archer: [1.00, 0.95, 1.20, 0.90, 0.90, 1.10], bard: [0.90, 0.90, 1.05, 1.30, 1.10, 1.05], sailor: [1.10, 1.15, 0.95, 0.60, 0.85, 1.00],
+    shepherd: [1.00, 1.00, 1.00, 1.00, 1.00, 1.00], jester: [0.90, 0.95, 1.00, 1.00, 0.95, 1.25], tamer: [0.95, 1.00, 1.00, 1.10, 1.00, 1.05],
+    merchant: [0.95, 1.00, 0.95, 0.80, 0.90, 1.30], thief: [1.00, 0.90, 1.30, 0.85, 0.85, 1.25]
+  };
+  function six(a) { return { STR: a[0], VIT: a[1], AGI: a[2], INT: a[3], SPI: a[4], LUK: a[5] }; }
+  Object.keys(M6).forEach(function (id) { window.JOBS[id].mods6 = six(M6[id]); });
+
+  /*
+   * 中級、高級職業（03b R16；框架第 7 節）：資料先放，台北章轉不到（中級第 11 章、高級破關後開放，D10-B）。
+   * 放在 JOBS_LATER，不放進 JOBS：還沒有技能表（第 11 章細規格再寫）、走路圖，放進 JOBS 會出現在職業選單與驗證裡。
+   * 欄位：recipe 配方（要出師哪些職業）、favs 拿手科目（多科；fav＝第一科，給舊程式）、mods6、trait（新特性代碼見 README_資料格式.md）
+   */
+  function L(id, name, tier, recipe, m, favs, trait, desc) {
+    return J(id, { name: name, tier: tier, recipe: recipe, mods6: six(m), fav: favs[0], favs: favs, bonus: 1.5, trait: trait, wf: [], af: [], skills: [], desc: desc });
+  }
+  var ALL5 = ["社會", "自然", "國語", "數學", "英語"];
+  window.JOBS_LATER = {
+    battlemaster: L('battlemaster', "戰鬥大師", "inter", ["swordsman", "fighter"], [1.40, 1.35, 1.10, 0.75, 1.00, 1.00], ["數學", "英語"], { critMult: 1.7 }, "爆擊傷害 ×1.7。"),
+    magicknight: L('magicknight', "魔法戰士", "inter", ["swordsman", "mage"], [1.10, 1.25, 0.95, 1.20, 1.20, 0.95], ["數學", "自然"], { skillPow: 1.1, dmgTaken: 0.9 }, "技能 +10%，被打少一成。"),
+    sage: L('sage', "賢者", "inter", ["priest", "mage"], [0.85, 1.10, 0.95, 1.60, 1.45, 1.00], ["社會", "自然"], { skillPow: 1.15, healPow: 1.15 }, "回復與攻擊技能 +15%。"),
+    paladin: L('paladin', "聖騎士", "inter", ["priest", "fighter"], [1.15, 1.10, 1.10, 1.10, 1.20, 1.05], ["社會", "英語"], { dmgTaken: 0.8 }, "被打少兩成。"),
+    superstar: L('superstar', "超級巨星", "inter", ["dancer", "bard", "jester"], [1.00, 1.00, 1.15, 1.20, 1.05, 1.15], ["國語", "數學"], { evade: 0.15, mpRegen: 0.05 }, "答錯 15% 閃避；勝利回 5% 魔力。"),
+    hunter: L('hunter', "魔物獵人", "inter", ["shepherd", "archer"], [1.15, 1.25, 1.15, 1.05, 1.10, 1.10], ["自然", "英語"], { bossDmg: 1.3 }, "打頭目傷害 +30%。"),
+    pirate: L('pirate', "海盜", "inter", ["thief", "sailor"], [1.20, 1.35, 1.20, 0.95, 1.05, 1.20], ["社會", "英語"], { gold: 1.15, fleeSure: true, dmgTaken: 0.9 }, "金幣 ×1.15、逃跑一定成功、被打少一成。"),
+    ranger: L('ranger', "遊俠", "inter", ["archer", "tamer", "merchant"], [1.10, 1.20, 1.10, 1.00, 1.05, 1.20], ["數學", "自然"], { time: 1.2, drop: 1.5, gold: 1.1 }, "時間條 ×1.2、掉寶 ×1.5、金幣 ×1.1。"),
+    rogue: L('rogue', "俠盜", "inter", ["thief", "fighter"], [1.20, 1.05, 1.35, 0.80, 0.85, 1.20], ["社會", "英語"], { first: true, critFrac: 0.4, steal: 0.10 }, "一定先出手；爆擊區間前 2/5；偷取 10%。"),
+    trickster: L('trickster', "奇術師", "inter", ["thief", "mage", "jester"], [0.95, 1.00, 1.15, 1.25, 1.10, 1.25], ["社會", "自然"], { skillPow: 1.1, mirage: 0.10 }, "技能 +10%；答錯時 10% 用障眼法讓這回合敵人攻擊全部 Miss。"),
+    godhand: L('godhand', "神之手", "adv", ["battlemaster", "paladin"], [1.47, 1.42, 1.16, 1.16, 1.26, 1.10], ["數學", "英語", "社會"], { critMult: 1.7, dmgTaken: 0.8 }, "爆擊 ×1.7、被打少兩成。"),
+    thundersage: L('thundersage', "天地雷鳴士", "adv", ["sage", "superstar"], [1.05, 1.16, 1.21, 1.68, 1.52, 1.21], ["社會", "自然", "國語", "數學"], { skillPow: 1.2, mpRegen: 0.08 }, "技能 +20%、勝利回 8% 魔力。"),
+    hero: L('hero', "勇者", "adv", ["battlemaster", "sage", "ranger", "superstar"], [1.47, 1.42, 1.42, 1.68, 1.52, 1.31], ALL5, { dmgTaken: 0.85 }, "五科都是拿手科目 ×1.5、被打少 15%。"),
+    phantom: L('phantom', "幻影盜", "adv", ["rogue", "trickster", "pirate"], [1.47, 1.42, 1.42, 1.31, 1.16, 1.31], ["社會", "英語", "自然"], { first: true, steal: 0.15, evade: 0.15, chain: 0.40 }, "一定先出手；偷取 15%；答錯 15% 閃避；五行相生連攻 +40%。")
+  };
+  // 03b 第 2 版 R16「可用裝備類別」定案：一代已有的照一代 wf／af；新職業用配方職業的聯集（暫用建議）
+  var GEAR = {
+    battlemaster: [['sword', 'axe', 'fist'], ['heavy', 'light']], magicknight: [['sword', 'axe', 'staff'], ['heavy', 'robe']],
+    sage: [['staff'], ['robe']], paladin: [['staff', 'fist'], ['robe', 'light']], superstar: [['dagger', 'perform'], ['light', 'robe']],
+    hunter: [['whip', 'dagger'], ['light']], pirate: [['dagger', 'axe', 'knife'], ['light', 'heavy']], ranger: [['dagger', 'whip'], ['light']],
+    rogue: [['knife', 'fist'], ['light']], trickster: [['knife', 'staff', 'perform'], ['light', 'robe']],
+    godhand: [['sword', 'axe', 'fist', 'staff'], ['heavy', 'light', 'robe']], thundersage: [['staff', 'dagger', 'perform'], ['robe', 'light']],
+    hero: [['sword', 'axe', 'fist', 'staff', 'dagger', 'whip', 'perform'], ['heavy', 'light', 'robe']],
+    phantom: [['knife', 'fist', 'staff', 'perform', 'dagger', 'axe'], ['light', 'robe', 'heavy']]
+  };
+  Object.keys(GEAR).forEach(function (id) { window.JOBS_LATER[id].wf = GEAR[id][0]; window.JOBS_LATER[id].af = GEAR[id][1]; });
 })();
 
 window.JOB_RULES = {
@@ -175,8 +236,8 @@ window.JOB_RULES = {
   places: [],
   growth: { hp: 8, mp: 2, atk: 2, def: 0.5 },   // 48 號 2.1：所有職業一樣（GDD 4.1 沿用）
   floor_ratio: 0.5, transfer_step: 0.2,
-  master_level: { novice: 10, basic: 30 },        // 出師等級；見習出師才能考 1 轉
-  tier_mult: { novice: 0.9, basic: 1.0 },          // 26 號 5.2：技能職階係數
+  master_level: { novice: 10, basic: 30, inter: 50, adv: 60 },   // 出師等級；見習出師才能考 1 轉（BQ2 v0.6 R16：加中級 50；高級 60 照一代）
+  tier_mult: { novice: 0.9, basic: 1.0, inter: 1.25, adv: 1.5 },  // 26 號 5.2：技能職階係數（中級、高級照一代）
   skill_slots: 4,
   // 立志小考只出四年級題目（GDD 7.2 B11；之後改成從 Curriculum 取已開放節點）
   trial: { pass: 16, per_subject: { 1: 2, 2: 2 }, time_ratio: 0.75, term: null, min_minutes_left: 15 },   // 勇者大冒險II：出題範圍由 Curriculum（走到最遠那張地圖已開放的節點）決定，不再寫死學期（GDD 7.2 B11）

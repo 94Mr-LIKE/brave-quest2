@@ -244,15 +244,16 @@
    * v0.9.6 多個選項（47 號 B02：有委託的旅店、商店老闆可以選「住宿／買東西」或「委託」）。
    * options = [{ value, text, primary }]；回傳 Promise<value>，按 Esc 或關閉回傳 null（什麼都不做）
    */
+  /** opts.cancel === false：不加「等一下」（整合4 D-13，選項自己有取消鍵時） */
   function choose(message, options) {
+    var opts = arguments[2];   // 第三個參數選填（舊呼叫照舊）
     return new Promise(function (resolve) {
       var done = false, handle, first = null;
-      var btns = options.map(function (o) {
-        var b = h('button' + (o.primary ? '.primary' : ''), { onclick: function () { done = true; handle.close(); resolve(o.value); } }, [o.text]);
+      var btns = window.JQ.DialogText.chooseOptions(options, opts).map(function (o) {
+        var b = h('button' + (o.primary ? '.primary' : o.ghost ? '.ghost' : ''), { onclick: function () { done = true; handle.close(); resolve(o.value); } }, [o.text]);
         if (o.primary && !first) first = b;
         return b;
       });
-      btns.push(h('button.ghost', { onclick: function () { done = true; handle.close(); resolve(null); } }, ['等一下']));
       var box = h('div.win.panel.narrow.choose-box', {}, [h('p', { text: message }), h('div.row.end', {}, btns)]);
       handle = open(box, { label: message, onClose: function () { if (!done) resolve(null); }, focus: first || btns[0] });
     });

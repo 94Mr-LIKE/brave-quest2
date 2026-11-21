@@ -109,9 +109,11 @@
     var src = raw || {};
     Object.keys(src).forEach(function (id) {
       var m = src[id] || {};
-      out[id] = {
+      // 整合3（測試缺陷 D-19）：BQ2 v0.6 的欄位（kind、elem、stars、six、skill、next_stage、escort、cat…）原本在這裡被丟掉，
+      // 造成正常遇敵時頭目沒有第二段、精英不帶隨從、屬性與星數失效 → 先複製原資料，下面列出的舊欄位照舊正規化
+      out[id] = Object.assign({}, m, {
         id: id, name: m.name || id, short_name: m.short_name || null, sprite: m.sprite || ('mon_' + id), level: Number(m.level || 1),
-        hp: Math.max(1, Number(m.hp || 10)), atk: Number(m.atk || 2), subject: m.subject || '數學',
+        hp: Math.max(1, Number(m.hp || 10)), atk: Number(m.atk || 2), subject: m.subject || null,   // 整合6（審查第 2 輪）：沒寫科目＝不綁科目，照地圖開放節點輪流出題（03b R9「不綁屬性、不綁怪物」）；以前硬補數學
         exp: Number(m.exp || 5), gold: Number(m.gold || 3), drops: Array.isArray(m.drops) ? m.drops : [],
         boss: !!m.boss, final: !!m.final, battle_bg: m.battle_bg || null,
         subjects: Array.isArray(m.subjects) && m.subjects.length ? m.subjects : null,
@@ -121,7 +123,7 @@
         // 勇者大冒險II 第三批：第一次遇到的阿咕提醒、頭目換階段、輸了再來的台詞（劇本 dialogs_taipei.js）
         dialog_first: m.dialog_first || null, dialog_phase: m.dialog_phase || null, dialog_again: m.dialog_again || null,
         desc: m.desc || '', wake: m.wake || ((m.name || id) + '清醒了，開心地跑走了。')
-      };
+      });
     });
     return out;
   }
@@ -211,6 +213,19 @@
   }
 
   /** 檢查資料彼此有沒有對上。回傳警告字串陣列 */
+  /** 整合4 D-17：條件（字串＝委託、{quest}、{active}、{all}、{any}、{not}；{flag}、{boss} 不是委託）裡提到的委託 id */
+  function condQuestIds(c, out) {
+    out = out || [];
+    if (!c) return out;
+    if (typeof c === 'string') { if (out.indexOf(c) < 0) out.push(c); return out; }
+    if (Array.isArray(c)) { c.forEach(function (x) { condQuestIds(x, out); }); return out; }
+    if (typeof c !== 'object') return out;
+    ['quest', 'active'].forEach(function (k) { if (typeof c[k] === 'string' && out.indexOf(c[k]) < 0) out.push(c[k]); });
+    ['all', 'any'].forEach(function (k) { if (c[k]) condQuestIds(c[k], out); });
+    if (c.not !== undefined) condQuestIds(c.not, out);
+    return out;
+  }
+
   function validate(data) {
     var warn = [];
     var maps = data.maps;
@@ -229,7 +244,7 @@
         if (n.dialog && !data.dialogs[n.dialog]) warn.push(id + '：NPC ' + n.id + ' 的對話 ' + n.dialog + ' 不存在');
       });
       (m.spawns || []).forEach(function (s) { if (!data.monsters[s.monster]) warn.push(id + '：怪物 ' + s.monster + ' 不存在'); });
-      (m.exits || []).forEach(function (e) { if (e.requires && !data.quests[e.requires]) warn.push(id + '：出口需要的委託 ' + e.requires + ' 不存在'); if (e.locked_dialog && !data.dialogs[e.locked_dialog]) warn.push(id + '：出口的對話 ' + e.locked_dialog + ' 不存在'); });
+      (m.exits || []).forEach(function (e) { condQuestIds(e.requires).forEach(function (q) { if (!data.quests[q]) warn.push(id + '：出口需要的委託 ' + q + ' 不存在'); }); if (e.locked_dialog && !data.dialogs[e.locked_dialog]) warn.push(id + '：出口的對話 ' + e.locked_dialog + ' 不存在'); });
       (m.gates || []).concat(m.notes || []).forEach(function (g) { if (g.dialog && !data.dialogs[g.dialog]) warn.push(id + '：柵門／告示牌的對話 ' + g.dialog + ' 不存在'); });
     });
     Object.keys(data.quests).forEach(function (qid) {

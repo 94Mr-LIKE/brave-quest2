@@ -56,6 +56,7 @@
         var it = D.items[id] || { name: id, type: 'material', desc: '' };
         var btns = [];
         if ((it.type === 'consumable') && (it.heal > 0 || it.mp > 0)) btns.push(h('button', { onclick: function () { use(id); } }, ['使用']));
+        else if (J.SpecialItems && G.useSpecial && J.SpecialItems.kindOf(J.SpecialItems.effectOf(window.ITEMS || {}, id))) btns.push(h('button', { onclick: function () { useSpecial(id); } }, ['使用']));   // 整合2：車票、糕餅（煙霧彈按了提示戰鬥時用）
           if (it.type === 'weapon' || it.type === 'armor') {
           var slot = it.type === 'weapon' ? 'weapon' : 'armor';
           if (st.equipment[slot] === id) btns.push(h('button.selected', { onclick: function () { J.Character.unequip(st, slot, D); G.save(); render(); } }, ['已裝備（卸下）']));
@@ -99,6 +100,14 @@
       var r = J.Character.useItem(st, id, D);
       if (!r.ok) { J.UI.toast(r.reason === 'full' ? '體力已經是滿的了！' : '現在不能用。'); return; }
       J.Audio.play('correct'); J.UI.toast('體力回復了 ' + r.healed + ' 點！'); G.save(); render();
+    }
+    function useSpecial(id) {
+      var r = G.useSpecial(id);
+      J.UI.toast(r.text);
+      if (!r.ok) return;
+      J.Audio.play('correct');
+      if (r.close) { handle.close(); return; }
+      render();
     }
     function equip(id) {
       var r = J.Character.equip(st, id, D);

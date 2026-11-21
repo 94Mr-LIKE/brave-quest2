@@ -169,7 +169,11 @@
     }
     else if (who === 'pet') raw = V.pet || { age: 'child', gender: 'n', persona: 'cute' };
     else if (who === 'narrator') raw = (V.speakers && V.speakers.narrator) || { age: 'adult', gender: 'n', persona: 'calm' };
-    else if (V.speakers && V.speakers[who]) raw = V.speakers[who];
+    else if (V.speakers && V.speakers[who]) {
+      raw = V.speakers[who];
+      // 整合5：variants＝依顯示名稱換聲音（c01_family：對話框名字是玩家選的稱呼 媽媽／爸爸／阿嬤／阿公／家人）
+      if (raw.variants && ctx.name && Object.prototype.hasOwnProperty.call(raw.variants, ctx.name)) raw = Object.assign({}, raw, raw.variants[ctx.name]);
+    }
     else raw = inferProfile(who, ctx.name);
     // VOICES 寫了 pitch／rate 的角色：數值是劇情設計師依性別年齡調好的「絕對值」，直接用（不再疊加年齡、性別、個性與雜湊差異）
     var abs = typeof raw.pitch === 'number' || typeof raw.rate === 'number';

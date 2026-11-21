@@ -157,8 +157,39 @@
     s.trialLog = Array.isArray(s.trialLog) ? s.trialLog.filter(isObj) : [];
   }
 
+  /** v0.6 台北章主線有沒有開始（看過任何 D_C01_ 對話，或有任何 Q4_C01_ 委託紀錄） */
+  function hasV06Progress(s) {
+    var f = isObj(s.flags) ? s.flags : {}, q = isObj(s.quests) ? s.quests : {};
+    return Object.keys(f).some(function (k) { return /^_dlg:D_C01_/.test(k); }) || Object.keys(q).some(function (k) { return /^Q4_C01_/.test(k); });
+  }
+  /**
+   * 整合3（審查 M-1）：v1（v0.5 切片：T01–T03 北投篇）→ v2（v0.6 台北章）。
+   * 還沒有任何 v0.6 主線進度的存檔：位置、旅店改回 start_map（location、lastInn 設 null，進遊戲時用 start_map）、下次進遊戲播開場；
+   * 切片的委託、頭目、寶箱、劇情旗標、去過的地圖清掉（切片劇情已停用，T01 的寶箱 id 與台北章重複會變成「已打開」）；
+   * 等級、經驗、金幣、背包、裝備、職業、稱號、印章、怪物名冊、題目紀錄、賢者課程、設定都保留；遇過怪物的 met_* 旗標保留。
+   * 已經有 v0.6 進度的存檔（v0.6 版本存的 v1 檔）只升版號。回傳這次清掉的切片委託 id（記在 s.migratedV05）
+   */
+  function migrateV05(s) {
+    if (hasV06Progress(s)) return null;
+    var dropped = Object.keys(isObj(s.quests) ? s.quests : {});
+    var keep = {};
+    Object.keys(isObj(s.flags) ? s.flags : {}).forEach(function (k) { if (/^met_/.test(k)) keep[k] = s.flags[k]; });
+    keep._v06Opening = 1;   // game.js startWorld：播 WORLD.opening（家門口過場 → 故宮）
+    s.flags = keep;
+    s.quests = {}; s.bosses = {}; s.chests = {}; s.visited = {}; s.mapDims = {};
+    s.location = null; s.lastInn = null; s.activeQuest = null; s.ending = false;
+    s.migratedV05 = { quests: dropped };
+    return dropped;
+  }
+
   /** 補預設值與型別修復（四年級版 schema 從 v1 起算，沒有三年級版的舊存檔升級） */
+  /** 整合4 S-5：puzzle.js 在瀏覽器裡比 save.js 晚載入，所以用到時才取 */
+  function pruneDlg(s) {
+    var P = isNode ? require('./puzzle.js') : (window.JQ && window.JQ.Puzzle);
+    if (P && P.pruneDialogFlags && s.flags) P.pruneDialogFlags(s.flags);
+  }
   function migrate(s) {
+    var fromV = typeof s.version === 'number' ? s.version : 1;
     State.migrateAudio(s.settings);   // v0.9.3 語速：舊的預設 1 倍 → 新的預設「稍快」（要在補預設值之前）
     var defaults = State.createNewState(s.player && s.player.name, s.player && s.player.gender, s.createdAt || 0);
     State.fillDefaults(s, defaults);
@@ -167,6 +198,8 @@
     State.trimStart(s);     // v0.9.2 舊存檔沒有 startItems：以建立角色時的初始配置推定，但不超過現在背包裡的數量
     s.player.name = State.cleanName(s.player.name);
     s.player.gender = State.cleanGender(s.player.gender);
+    if (fromV < 2) migrateV05(s);
+    pruneDlg(s);   // 整合4 S-5：讀檔時清掉沒被引用的對話紀錄旗標
     s.version = State.SCHEMA_VERSION;
     return s;
   }
@@ -240,7 +273,7 @@
   }
 
   var Save = { repairJobs: repairJobs, MIGRATE_FAIL: MIGRATE_FAIL, checkRaw: checkRaw, KEY_PREFIX: KEY_PREFIX, MAX_CODE_LEN: MAX_CODE_LEN, repairState: repairState, loadError: loadError, SAVE_KEY: SAVE_KEY,
-    G3_PREFIXES: G3_PREFIXES, G3_CODE_MSG: G3_CODE_MSG, isGrade3Code: isGrade3Code, isOwnKey: isOwnKey, CODE_PREFIX: CODE_PREFIX, fnv1a: fnv1a, utf8ToBase64: utf8ToBase64, base64ToUtf8: base64ToUtf8, validateState: validateState, migrate: migrate, save: save, load: load, hasSave: hasSave, clear: clear, exportCode: exportCode, importCode: importCode };
+    G3_PREFIXES: G3_PREFIXES, G3_CODE_MSG: G3_CODE_MSG, isGrade3Code: isGrade3Code, isOwnKey: isOwnKey, CODE_PREFIX: CODE_PREFIX, fnv1a: fnv1a, utf8ToBase64: utf8ToBase64, base64ToUtf8: base64ToUtf8, validateState: validateState, migrate: migrate, migrateV05: migrateV05, hasV06Progress: hasV06Progress, save: save, load: load, hasSave: hasSave, clear: clear, exportCode: exportCode, importCode: importCode };
   if (typeof window !== 'undefined') { window.JQ = window.JQ || {}; window.JQ.Save = Save; }
   if (typeof module !== 'undefined') module.exports = Save;
 })();

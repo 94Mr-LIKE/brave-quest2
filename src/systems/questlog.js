@@ -7,6 +7,8 @@
   var isNode = typeof module !== 'undefined' && typeof require === 'function';
   var Character = isNode ? require('./character.js') : window.JQ.Character;
   var Exp = isNode ? require('./exp.js') : window.JQ.Exp;
+  // BQ2 v0.6 前端B：推理（deduce）、迷宮（maze）、多步驟（steps[]）的進度在 puzzle.js
+  var Puzzle = isNode ? require('./puzzle.js') : window.JQ.Puzzle;
 
   function rec(state, id) { return state.quests[id] || null; }
 
@@ -17,7 +19,9 @@
     if (!q) return 'locked';
     var ok = (q.requires || []).every(function (req) { var rr = rec(state, req); return rr && rr.status === 'done'; });
     var lightsOk = (q.requires_lights || []).every(function (l) { return state.lights && state.lights[l]; });
-    return ok && lightsOk ? 'available' : 'locked';
+    // BQ2 v0.6 整合：requires_cond（旗標等條件，例 M1 要先看過 D_C01_THEFT、S5 要先聽過老碗阿伯的證詞）
+    var condOk = !q.requires_cond || !Puzzle || !Puzzle.cond || Puzzle.cond(state, quests, q.requires_cond);
+    return ok && lightsOk && condOk ? 'available' : 'locked';
   }
 
   function giverMatches(q, npcId) { return q.giver === npcId; }
@@ -70,6 +74,8 @@
   function progress(state, quests, id, data) {
     var q = quests[id], r = rec(state, id) || { progress: 0 };
     if (!q) return { have: 0, need: 1 };
+    var np = Puzzle && Puzzle.questProgress ? Puzzle.questProgress(state, quests, id) : null;
+    if (np) return np;
     var kind = q.kind || 'help';
     if (kind === 'hunt') {
       var h = huntInfo(q) || { item: '', n: 1 };
@@ -116,7 +122,9 @@
     }
     var rw = q.reward || {};
     var levels = 0;
-    if (rw.exp > 0) levels = Exp.addExp(state.player, rw.exp);
+    // BQ2 v0.6 整合：委託經驗也照 BQ2 經驗表（和戰鬥結算一致）
+    var tier = ((data && data.jobs && data.jobs[state.player.job]) || {}).tier || 'novice';
+    if (rw.exp > 0) levels = Exp.addExpV06 ? Exp.addExpV06(state.player, rw.exp, tier) : Exp.addExp(state.player, rw.exp);
     if (rw.gold > 0) state.player.coins += rw.gold;
     var item = rw.item ? String(rw.item).replace(/^item_/, '') : null;
     if (item) Character.addItem(state, item, rw.item_n || 1);
@@ -172,10 +180,15 @@
    * 勇者大冒險II 第三批（GDD 4.4）：委託素材（monsters.js drops[].quest）只在那個委託進行中、還沒收集夠的時候掉
    * （strap_spring 只在 Q4_TUT_2、clue_piece 只在 Q4_T02_3）。回傳掉落表過濾過的怪物複本（不改原資料）
    */
-  function questDrops(state, quests, mon) {
+  function questDrops(state, quests, mon, ctx) {
     var drops = ((mon && mon.drops) || []).filter(function (d) {
+      // 整合2 通用寫法（第 7 章圖畫卡等）：drops[].maps＝只在這些地圖掉（不知道在哪張圖時不掉）；drops[].cond＝Puzzle 條件成立才掉
+      if (Array.isArray(d.maps) && d.maps.length && !(ctx && ctx.map && d.maps.indexOf(ctx.map) >= 0)) return false;
+      if (d.cond && !(Puzzle && Puzzle.cond(state, quests, d.cond))) return false;
       if (!d.quest) return true;
       if (status(state, quests, d.quest) !== 'active') return false;
+      var item = String(d.item).replace(/^item_/, '');
+      if (d.need > 0 && Character.count(state, item) >= d.need) return false;   // 整合2：drops[].need（還沒收集夠才掉）
       var h = (quests[d.quest] || {}).hunt;
       return !(h && String(h.item).replace(/^item_/, '') === d.item && Character.count(state, d.item) >= h.n);
     });

@@ -54,7 +54,14 @@
     return s;
   }
 
-  var DialogText = { MODES: MODES, view: view, fill: fill, questScene: questScene, QUEST_SPEAKERS: QUEST_SPEAKERS };
+  /** 整合4 D-13：選單按鈕。預設在最後加一個取消鍵「等一下」（value null）；opts.cancel === false 時不加（選項裡已經有自己的取消，例如捷運「先不搭」）。不改原陣列 */
+  function chooseOptions(options, opts) {
+    var out = (options || []).slice();
+    if (!(opts && opts.cancel === false)) out.push({ value: null, text: (opts && opts.cancelText) || '等一下', ghost: true });
+    return out;
+  }
+
+  var DialogText = { chooseOptions: chooseOptions, MODES: MODES, view: view, fill: fill, questScene: questScene, QUEST_SPEAKERS: QUEST_SPEAKERS };
   if (typeof window !== 'undefined') { window.JQ = window.JQ || {}; window.JQ.DialogText = DialogText; }
   if (typeof module !== 'undefined') module.exports = DialogText;
 })();

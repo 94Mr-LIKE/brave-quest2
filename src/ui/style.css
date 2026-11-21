@@ -84,7 +84,7 @@ button[aria-pressed="true"], button.selected { background: #f2c14e; color: #2a1e
 .title-screen.has-art { padding-bottom: 30px; }
 .title-screen h1 { font-size: clamp(36px, 7vw, 64px); margin: 0 0 6px; color: #fffbe8; text-shadow: 0 4px 0 #1d2b5e, 0 0 18px rgba(255, 211, 77, .7); letter-spacing: 4px; }
 .title-screen .sub { font-size: 22px; color: #fff3c8; margin-bottom: 18px; }
-/* 勇者大冒險II（老闆 2026-10-19「標題也不完全」「要滿版」）：主標下面加紅底金框的副標「怪盜與家鄉的印章」；
+/* 勇者大冒險II（老闆 2026-10-19「標題也不完全」「要滿版」）：主標下面加紅底金框的副標「怪盜與消失的文物」（BQ2 v0.6 改名）；
    滿版插畫上方加一層由深到透明的漸層，讓標題在亮的天空上也看得清楚 */
 .title-screen h1 { display: flex; flex-direction: column; align-items: center; line-height: 1.08; }
 .title-screen h1 .title-subtitle { display: block; margin-top: 10px; padding: 4px 22px 6px; font-size: clamp(20px, 3.2vw, 34px); letter-spacing: 6px;
@@ -428,3 +428,151 @@ li.cant-use { opacity: .6; }
 .teach-card .teach-point { border-left: 4px solid var(--accent); }
 .hintbox p.companion { font-weight: bold; }
 .sage-demo .options button[aria-pressed="true"] { outline: 3px solid var(--accent); }
+
+/* BQ2 v0.6 戰鬥 */
+/* 防禦題時間條：剩 3/4、1/2、1/4 各一條虛線（完美防禦／擋住了／擋住一半／被打中的分界） */
+.timer.def-zone { background-image: linear-gradient(90deg, transparent calc(25% - 1px), rgba(255,255,255,.75) calc(25% - 1px), rgba(255,255,255,.75) 25%, transparent 25%, transparent calc(50% - 1px), rgba(255,255,255,.75) calc(50% - 1px), rgba(255,255,255,.75) 50%, transparent 50%, transparent calc(75% - 1px), rgba(255,255,255,.75) calc(75% - 1px), rgba(255,255,255,.75) 75%, transparent 75%); }
+.timer.def-zone > i { mix-blend-mode: normal; opacity: .9; }
+/* 防禦結果：圖示＋大字＋規格用詞；不同程度用不同邊框形狀（不只靠顏色） */
+.bq2-tier { display: block; padding: 4px 8px; border-radius: 8px; border: 3px solid #fff; }
+.bq2-tier > b { font-size: 26px; margin-right: 6px; }
+.bq2-tier .small { font-size: 18px; }
+.bq2-tier.tier-miss { border-style: double; border-width: 5px; border-color: #ffe066; }
+.bq2-tier.tier-graze, .bq2-tier.tier-light { border-style: solid; border-color: #9fd3ff; }
+.bq2-tier.tier-hit { border-style: dashed; border-color: #ffb38a; }
+.bq2-tier.tier-crit { border-style: dotted; border-width: 4px; border-color: #ff6a5a; }
+.bq2-victory { display: block; }
+.bq2-victory > b { font-size: 26px; color: #ffd34d; display: block; }
+.bq2-victory > div { font-size: 19px; line-height: 1.45; }
+.bq2-battle .cmds button { min-height: 52px; }
+@media (max-width: 600px) {
+  .bq2-battle { gap: 6px; }
+  .bq2-battle .status { min-width: 0; flex: 1 1 100%; font-size: 17px; }
+  .bq2-battle .msg { min-width: 0; flex: 1 1 100%; font-size: 18px; min-height: 56px; }
+  .bq2-battle .cmds { min-width: 0; flex: 1 1 100%; }
+  .bq2-tier > b { font-size: 21px; }
+  .bq2-victory > div { font-size: 17px; }
+}
+
+/* BQ2 v0.6 地圖與機關（前端B）：密碼門數字盤（觸控目標 ≥64px）、偵探筆記、冷笑話卡冊、迷宮小地圖關閉 */
+.pz-panel { max-width: min(560px, 94vw); text-align: center; }
+.pz-dials { display: flex; justify-content: center; gap: 14px; margin: 12px 0; flex-wrap: wrap; }
+.pz-dial { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 6px; border-radius: 12px; border: 3px solid transparent; }
+.pz-dial.cur { border-color: #ffd34d; }
+.pz-label { font-size: 22px; font-weight: bold; min-height: 28px; }
+.pz-btn { min-width: 64px; min-height: 64px; font-size: 30px; }
+.pz-num { width: 72px; height: 80px; line-height: 80px; font-size: 48px; font-weight: bold; background: #1d2440; color: #fffbe8; border-radius: 10px; }
+.pz-msg { min-height: 1.6em; font-size: 20px; }
+.pz-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.pz-actions button { min-width: 120px; min-height: 64px; font-size: 22px; }
+.pz-shake { animation: pz-shake 0.35s; }
+@keyframes pz-shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-8px); } 75% { transform: translateX(8px); } }
+.nb-panel, .joke-panel { max-width: min(640px, 94vw); }
+.nb-pages li, .nb-goals li, .joke-list li { text-align: left; line-height: 1.5; }
+.nb-card { background: rgba(255, 211, 77, 0.15); }
+.joke-card.new { outline: 3px solid #ffd34d; }
+.nb-actions { margin-top: 10px; text-align: center; }
+.nb-actions button { min-height: 56px; }
+.minimap[data-off="true"] { cursor: help; opacity: 0.85; }
+
+/* BQ2 v0.6 UI 修正（QA 第 1 輪 D-04、D-07、D-15、D-20） */
+/* D-04：戰鬥時 HUD 收起 → 直放畫布從最上面開始（不再空一塊 HUD 高度） */
+body.portrait:has(#hud[hidden]) #game { padding-top: 0; }
+/* D-07：電腦版戰鬥面板矮一點，敵人那一排有空間（敵人位置由 BattleScene 依面板上緣自動擺） */
+.bq2-battle .msg { min-height: 72px; }
+/* D-20：直放手機的 HUD＝精簡橫條（名字、等級一行；體力、魔力條；金幣）＋五顆按鈕一排，各 ≥44×44 */
+@media (orientation: portrait) and (max-width: 700px) {
+  #hud { flex-direction: column; align-items: stretch; gap: 4px; padding-top: max(4px, env(safe-area-inset-top)); }
+  .hud-card { font-size: 15px; padding: 3px 8px; gap: 0 10px; border-width: 2px; line-height: 1.35; }
+  .hud-card .name { flex: 0 0 auto; }
+  .hud-card > span:nth-child(3) { display: none; }   /* 經驗條：直放時收起（手帳裡看得到） */
+  .hud-card .bar { width: 64px; height: 12px; }
+  .hud-buttons { display: grid; grid-template-columns: repeat(5, minmax(44px, 1fr)); gap: 4px; }
+  .hud-buttons button { min-width: 44px; min-height: 44px; padding: 2px 2px; font-size: 14px; line-height: 1.15; white-space: normal; position: relative; }
+  .hud-buttons .badge { position: absolute; top: -6px; right: -4px; font-size: 13px; line-height: 18px; min-width: 18px; padding: 0 4px; }
+  /* 小地圖放在 HUD 下方右上角、小一點，不擋主角（主角在畫面中間偏上） */
+  #hud .minimap { top: 100%; margin-top: 4px; right: max(6px, env(safe-area-inset-right)); }
+  #hud .minimap canvas { max-height: 84px; width: auto; }
+  #hud .minimap .mm-caption, #hud .minimap .mm-level { font-size: 12px; }
+  .map-banner { font-size: 20px; padding: 6px 14px; }
+  /* 戰鬥：三個框疊成三層、字小一點，面板上緣以上全部留給敵人 */
+  .bq2-battle { gap: 4px; padding-bottom: max(4px, env(safe-area-inset-bottom)); }
+  .bq2-battle .status { padding: 4px 10px; font-size: 15px; line-height: 1.3; }
+  .bq2-battle .status .bar { width: 110px; height: 12px; }
+  .bq2-battle .msg { padding: 6px 10px; font-size: 17px; min-height: 48px; line-height: 1.4; }
+  .bq2-battle .cmds { gap: 6px; padding: 6px; }
+  .bq2-battle .cmds button { min-height: 46px; font-size: 19px; padding: 4px 6px; }
+  .bq2-tier > b { font-size: 19px; }
+  .bq2-tier .small { font-size: 15px; }
+}
+/* 橫放手機（矮）：戰鬥面板更矮；HUD 狀態框收起經驗條、字小一點，少擋地圖 */
+@media (orientation: landscape) and (max-height: 460px) {
+  .hud-card { font-size: 16px; gap: 0 10px; line-height: 1.35; }
+  .hud-card > span:nth-child(3) { display: none; }
+  .hud-buttons button { min-height: 44px; font-size: 17px; padding: 2px 8px; }
+  .bq2-battle .msg { min-height: 52px; font-size: 18px; }
+  .bq2-battle .status { font-size: 16px; }
+  .bq2-battle .cmds button { min-height: 44px; font-size: 18px; padding: 2px 8px; }
+}
+/* D-15：標題選單按鈕往上讓出「聯絡作者」一行；聯絡作者加深色底，不和按鈕疊在一起 */
+.title-screen.has-art { padding-bottom: 58px; }
+.title-screen.has-art .title-author { z-index: 2; padding: 2px 0; line-height: 1.5; background: rgba(11, 18, 54, .6); }
+
+/* BQ2 v0.6 UI 修正 第 2 輪（QA D-23、D-24、D-25、D-26） */
+/* D-25：直放 HUD 五顆等寬，字不折行（字級 14px、字距略縮） */
+@media (orientation: portrait) and (max-width: 700px) {
+  .hud-buttons button { white-space: nowrap; padding: 2px 1px; font-size: 14px; letter-spacing: -0.04em; overflow: hidden; }
+}
+/* D-23：密碼門數字盤百、十、個永遠一排（窄螢幕縮小間距與數字框；＋／－ 仍 ≥44px） */
+.pz-dials { flex-wrap: nowrap; }
+@media (max-width: 520px) {
+  .pz-dials { gap: 6px; }
+  .pz-dial { padding: 4px 2px; flex: 0 1 auto; min-width: 0; }
+  .pz-btn { min-width: 56px; min-height: 52px; font-size: 26px; padding: 0; }
+  .pz-num { width: 60px; height: 68px; line-height: 68px; font-size: 40px; }
+  .pz-label { font-size: 18px; }
+}
+/* D-24、D-26：答題視窗的按鈕列（sticky）不可以蓋住內容——
+   版面變矮（題型提示收起、選項與按鈕變矮），並在內容最後留出按鈕列的高度，捲到底時最後一個選項／提示框完整露出 */
+.quiz { scroll-padding-bottom: 140px; }
+.quiz .hintbox:last-of-type { margin-bottom: 10px; }
+@media (max-height: 620px), (orientation: portrait) and (max-width: 700px) {
+  .quiz { padding: 8px 10px 0; }
+  .quiz-head { margin-bottom: 2px; gap: 4px 10px; }
+  .quiz .timer { margin: 2px 0 4px; }
+  .quiz .stem { font-size: 21px; margin: 4px 0; }
+  .quiz p.small { display: none; }   /* 「選一個答案，再按確定」：按鈕上已經寫了 */
+  .quiz .hintbox { padding: 4px 8px; margin: 4px 0; font-size: 17px; }
+  .quiz .options { gap: 6px; margin: 4px 0; }
+  .quiz .options button { min-height: 46px; font-size: 19px; padding: 6px 10px; }
+  .quiz-foot { padding: 2px 0 6px; }
+  .quiz-foot .row { gap: 6px; }
+  .quiz-foot button { min-height: 46px; font-size: 17px; padding: 4px 8px; white-space: nowrap; }
+  .quiz-foot .feedback { font-size: 19px; }
+}
+@media (orientation: portrait) and (max-width: 700px) {
+  .quiz .options { grid-template-columns: 1fr; }
+  .quiz > .row:not(.quiz-foot) .small { font-size: 14px; line-height: 1.3; }
+}
+/* 阿咕提示框最高佔畫面 22%（多的在框裡捲動），不會把內容推到按鈕列底下 */
+.quiz .hintbox { max-height: 22vh; overflow-y: auto; }
+/* 矮的橫放（手機橫拿）：每一列再矮一點，四個選項放得下 */
+@media (max-height: 460px) {
+  .quiz { max-height: 98vh; padding-top: 4px; }
+  .quiz-head { font-size: 16px; }
+  .quiz-head .chip { padding: 0 8px; }
+  .quiz > .row:not(.quiz-foot) button { min-height: 44px; padding: 2px 10px; font-size: 16px; }
+  .quiz > .row:not(.quiz-foot) .small { font-size: 14px; line-height: 1.25; }
+  .quiz .stem { font-size: 19px; margin: 2px 0; }
+  .quiz .options { gap: 4px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .quiz .options button { min-height: 44px; font-size: 18px; padding: 4px 10px; }
+  .quiz .scene { font-size: 16px; padding: 4px 10px; margin: 2px 0; }
+  .quiz-foot button { min-height: 44px; font-size: 16px; }
+  .quiz .hintbox { max-height: 18vh; font-size: 15px; }
+}
+/* 選做：敵方回合「敵人行動中…」佔滿指令框兩欄、置中、和兩排指令按鈕同高（框不會忽大忽小） */
+.battle-ui .cmds .cmd-wait { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; min-height: calc(52px * 2 + 8px); font-size: 20px; color: #cfd8f0; }
+@media (orientation: portrait) and (max-width: 700px) { .battle-ui .cmds .cmd-wait { min-height: calc(46px * 2 + 6px); font-size: 18px; } }
+@media (orientation: landscape) and (max-height: 460px) { .battle-ui .cmds .cmd-wait { min-height: calc(44px * 2 + 8px); font-size: 17px; } }
+/* 整合9（QA D-36）：形近字題（四個選項都只有 1–2 個字）在小字級難分辨 → 選項字至少 28px（比 .quiz .options button 的各尺寸規則都優先） */
+.options.opt-short button, .quiz .options.opt-short button { font-size: 30px; line-height: 1.2; }

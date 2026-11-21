@@ -32,7 +32,7 @@
 
     function frame(children) {
       clearScreen();
-      // 老闆 2026-10-19「標題也不完全」：主標＋副標「怪盜與家鄉的印章」都要出現；年級說明縮小放在下面
+      // 老闆 2026-10-19「標題也不完全」：主標＋副標「怪盜與消失的文物」都要出現；年級說明縮小放在下面
       screen.appendChild(h('h1', { 'aria-label': J.CONFIG.GAME_TITLE + '：' + J.CONFIG.GAME_SUBTITLE }, [J.CONFIG.GAME_TITLE, h('span.title-subtitle', { text: J.CONFIG.GAME_SUBTITLE })]));
       screen.appendChild(h('div.sub', { text: '國小四年級・學習冒險' }));
       if (o.counterEl) screen.appendChild(o.counterEl);   // v1.0.1「已有 N 位冒險者加入」（game.js 讀到數字才顯示；在副標題下面的天空，不擋角色和按鈕）

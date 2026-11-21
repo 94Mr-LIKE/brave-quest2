@@ -80,6 +80,8 @@
     var s = JSON.parse(JSON.stringify(state));
     var d = State.createNewState(s.player.name, s.player.gender, s.createdAt || 0);
     delete s.qhist; delete s.recentQ;
+    var P = isNode ? require('./puzzle.js') : (window.JQ && window.JQ.Puzzle);
+    if (P && P.pruneDialogFlags && s.flags) P.pruneDialogFlags(s.flags);   // 整合4 S-5：QR 碼不帶沒被引用的對話紀錄
     var key = function (k) { return k in D.ui ? D.ui[k] : k; };
     // 適性難度：只留和起始難度不同、或偏好較低難度的單元（連對連錯次數不帶）
     var au = (s.adaptive && s.adaptive.units) || {}, a = [];

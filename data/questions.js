@@ -81,9 +81,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-102",
@@ -129,9 +129,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-103",
@@ -177,9 +177,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-104",
@@ -225,9 +225,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-105",
@@ -273,9 +273,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-106",
@@ -321,9 +321,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-107",
@@ -369,9 +369,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-108",
@@ -417,9 +417,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-109",
@@ -465,9 +465,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-110",
@@ -513,9 +513,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-111",
@@ -561,9 +561,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-112",
@@ -609,9 +609,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-113",
@@ -657,9 +657,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-114",
@@ -705,9 +705,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-115",
@@ -753,9 +753,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-116",
@@ -801,9 +801,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-117",
@@ -849,9 +849,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-118",
@@ -897,9 +897,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-119",
@@ -945,9 +945,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-120",
@@ -993,9 +993,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-121",
@@ -1041,9 +1041,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-201",
@@ -1089,9 +1089,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-202",
@@ -1123,7 +1123,7 @@ window.QUESTIONS_G4_MATH_U01 = [
     ],
     "option_why": [
       "7 在千萬位，要看它在哪一位才知道代表多少。",
-      "7035萬 的 7 是 7 個千萬，別漏了「萬」。",
+      "70358000 的 7 是 7 個千萬，不是 7 個千。",
       "八位數最左邊是千萬位，7 代表 7 個千萬。",
       ""
     ],
@@ -1137,9 +1137,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-203",
@@ -1185,9 +1185,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-204",
@@ -1233,9 +1233,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-205",
@@ -1281,9 +1281,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-206",
@@ -1329,9 +1329,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-207",
@@ -1377,9 +1377,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-208",
@@ -1425,9 +1425,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-209",
@@ -1473,9 +1473,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-210",
@@ -1521,9 +1521,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-211",
@@ -1538,7 +1538,7 @@ window.QUESTIONS_G4_MATH_U01 = [
     "source_ref": "翰林 四上 數學 第1單元〈一億以內的數〉1-2 一億以內的數（同主題原創題，非課本題）",
     "level": 3,
     "type": "choice",
-    "scene": "阿咕：「怪盜說寶箱裡有 1 億元，都是一疊一疊的千元鈔！」",
+    "scene": "阿咕：「怪盜說寶箱裡有 1 億元，都是一疊一疊的千元鈔！」（10 個千萬是 1 億）",
     "stem": "千元鈔 100 張一疊，幾疊合起來是 1 億元？",
     "options": [
       "1000 疊",
@@ -1569,9 +1569,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-212",
@@ -1617,9 +1617,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-213",
@@ -1665,9 +1665,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-214",
@@ -1713,9 +1713,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-215",
@@ -1761,9 +1761,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-216",
@@ -1809,9 +1809,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-217",
@@ -1857,9 +1857,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-218",
@@ -1905,9 +1905,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-219",
@@ -1953,9 +1953,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-220",
@@ -2001,9 +2001,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-221",
@@ -2018,7 +2018,7 @@ window.QUESTIONS_G4_MATH_U01 = [
     "source_ref": "翰林 四上 數學 第1單元〈一億以內的數〉1-2 一億以內的數（同主題原創題，非課本題）",
     "level": 4,
     "type": "choice",
-    "scene": "博覽會網站的點閱數，每天大約多一些。（虛構數字）",
+    "scene": "博覽會網站的點閱數一天比一天多。（虛構數字；10 個千萬是 1 億）",
     "stem": "現在 9600 萬，每天多 100 萬，再過幾天滿 1 億？",
     "options": [
       "40 天",
@@ -2049,9 +2049,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-301",
@@ -2097,9 +2097,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-302",
@@ -2145,9 +2145,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-303",
@@ -2193,9 +2193,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-304",
@@ -2241,9 +2241,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-305",
@@ -2289,9 +2289,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-306",
@@ -2337,9 +2337,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-307",
@@ -2385,9 +2385,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-308",
@@ -2433,9 +2433,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-309",
@@ -2481,9 +2481,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-310",
@@ -2522,16 +2522,16 @@ window.QUESTIONS_G4_MATH_U01 = [
     "hints": [
       "第1層：原來的數加 285 萬是 1000 萬，要用什麼方法找回原來的數？",
       "第2層：算 1000－285，答案再加上「萬」。",
-      "第3層：千位借給百位，百位再借給十位，借出去的 0 會變成 9。"
+      "第3層：個位不夠減，要一路往前借：千位借給百位、百位借給十位、十位再借給個位，中間的 0 借完會變成 9。"
     ],
     "explanation": "1000 萬－285 萬＝715 萬。驗算：715 萬＋285 萬＝1000 萬。",
     "variant_group": "MA4-01-addsub-word",
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-311",
@@ -2577,9 +2577,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-312",
@@ -2625,9 +2625,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-313",
@@ -2673,9 +2673,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-314",
@@ -2721,9 +2721,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-315",
@@ -2769,9 +2769,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-316",
@@ -2817,9 +2817,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-317",
@@ -2865,9 +2865,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-318",
@@ -2913,9 +2913,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-319",
@@ -2961,9 +2961,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-320",
@@ -3009,9 +3009,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-321",
@@ -3057,9 +3057,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-322",
@@ -3105,9 +3105,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-323",
@@ -3153,9 +3153,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 10,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-324",
@@ -3201,9 +3201,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-325",
@@ -3249,9 +3249,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-326",
@@ -3297,9 +3297,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 50,
     "tts_lang": "zh-TW",
     "fictional_numbers": true,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "MA-4A-01-901",
@@ -3347,9 +3347,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_MA_YI"
   },
   {
@@ -3398,9 +3398,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_MA_YI"
   },
   {
@@ -3414,7 +3414,7 @@ window.QUESTIONS_G4_MATH_U01 = [
     "curriculum_code": "數學:N-4-4",
     "concept": "MA4-beyond-round",
     "beyond_curriculum": true,
-    "beyond_note": "跨單元：取概數是課綱 N-4-4（四年級，但不在本單元 N-4-1）；翰林版放在哪一冊哪一單元待查證。賢者先教「看下一位：0～4 捨去，5～9 進 1」再測。",
+    "beyond_note": "跨單元：取概數是課綱 N-4-4；BQ2 節點表排在數學-2010（四下第1單元 概數，1-4 四捨五入法；這個對應是推論，還沒讀課本確認）。賢者先教「看下一位：0～4 捨去，5～9 進 1」再測。",
     "source_ref": "課綱 N-4-4 解題：對大數取概數（延伸原創題，非課本題）",
     "level": 2,
     "type": "choice",
@@ -3449,9 +3449,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 20,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_MA_ROUND"
   },
   {
@@ -3465,7 +3465,7 @@ window.QUESTIONS_G4_MATH_U01 = [
     "curriculum_code": "數學:N-4-4",
     "concept": "MA4-beyond-round",
     "beyond_curriculum": true,
-    "beyond_note": "跨單元：無條件進入法是課綱 N-4-4（四年級，但不在本單元 N-4-1）；翰林版位置待查證。賢者先教「不夠就要多拿一疊」再測。",
+    "beyond_note": "跨單元：無條件進入法是課綱 N-4-4；BQ2 節點表排在數學-2010（四下第1單元 概數，1-3 無條件進入法；這個對應是推論，還沒讀課本確認）。賢者先教「不夠就要多拿一疊」再測。",
     "source_ref": "課綱 N-4-4 解題：對大數取概數（延伸原創題，非課本題）",
     "level": 3,
     "type": "choice",
@@ -3500,9 +3500,9 @@ window.QUESTIONS_G4_MATH_U01 = [
     "exp": 35,
     "tts_lang": "zh-TW",
     "fictional_numbers": false,
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_MA_ROUND"
   }
 ];
@@ -3606,9 +3606,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-002",
@@ -3660,9 +3660,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-003",
@@ -3714,9 +3714,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-004",
@@ -3768,9 +3768,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-005",
@@ -3822,9 +3822,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-006",
@@ -3879,9 +3879,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-007",
@@ -3933,9 +3933,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-008",
@@ -3960,7 +3960,7 @@ window.QUESTIONS_G4_SCI_U01 = [
     "options": [
       "往下沉回東方的地面下",
       "還停在原來的位置",
-      "比較高，而且往西邊移過去",
+      "比較高，也往西邊移了一些",
       "跑到北方的低空"
     ],
     "answer": 2,
@@ -3981,15 +3981,15 @@ window.QUESTIONS_G4_SCI_U01 = [
       "第2層：剛從東方升起的天體，接下來會越來越高，還是越來越低？",
       "第3層：東升西落：升起後會變高，再慢慢往西邊移。"
     ],
-    "explanation": "星星和太陽、月亮一樣東升西落。東方低空的星星，幾小時後會升高，並往西邊移。",
+    "explanation": "星星和太陽、月亮一樣東升西落。東方低空的星星，幾小時後會升高，位置也慢慢往西邊移。",
     "image_prompt": null,
     "variant_group": "SC4-star-eastwest",
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-009",
@@ -4011,7 +4011,7 @@ window.QUESTIONS_G4_SCI_U01 = [
     "concept": "SC4-sun-rise-set",
     "level": 2,
     "type": "choice",
-    "scene": "小安在家裡的頂樓說：「每天早上，太陽都從對面那棟大樓後面升起。」",
+    "scene": "小安在家裡的頂樓說：「今天早上，太陽從對面那棟大樓後面升起。」",
     "stem": "太陽早上從大樓後面升起，大樓在小安家的哪個方位？",
     "options": [
       "西方",
@@ -4043,9 +4043,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-010",
@@ -4102,9 +4102,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SC_FACE"
   },
   {
@@ -4162,9 +4162,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SC_FACE"
   },
   {
@@ -4221,9 +4221,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-013",
@@ -4268,9 +4268,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-014",
@@ -4322,9 +4322,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-015",
@@ -4376,9 +4376,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-016",
@@ -4430,9 +4430,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-017",
@@ -4484,9 +4484,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-018",
@@ -4538,9 +4538,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-019",
@@ -4585,9 +4585,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-020",
@@ -4639,9 +4639,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-021",
@@ -4688,7 +4688,7 @@ window.QUESTIONS_G4_SCI_U01 = [
     "hints": [
       "第1層：天體是太空中的東西，不是人做的。",
       "第2層：想想看，下午有沒有可能看到月亮？",
-      "第3層：風箏是人做的；彩虹一下就消失，也不是天體。"
+      "第3層：風箏是人做的；彩虹是陽光照到空中的小水滴形成的，不在太空中，也不是天體。"
     ],
     "explanation": "白天看得到太陽，有時候也看得到月亮。風箏是人做的，彩虹也不是天體。",
     "image_prompt": null,
@@ -4696,9 +4696,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-022",
@@ -4750,9 +4750,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-023",
@@ -4804,9 +4804,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-024",
@@ -4860,9 +4860,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-101",
@@ -4914,9 +4914,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-102",
@@ -4968,9 +4968,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-103",
@@ -5024,9 +5024,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-104",
@@ -5080,9 +5080,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-105",
@@ -5136,9 +5136,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-106",
@@ -5192,9 +5192,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-107",
@@ -5238,9 +5238,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-108",
@@ -5292,9 +5292,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-109",
@@ -5348,9 +5348,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-110",
@@ -5409,9 +5409,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-111",
@@ -5431,10 +5431,10 @@ window.QUESTIONS_G4_SCI_U01 = [
     "explain_source": "",
     "beyond_curriculum": false,
     "concept": "SC4-read-position",
-    "level": 2,
+    "level": 1,
     "type": "choice",
-    "scene": "阿咕畫了一張觀察圖，請你幫忙看看。",
-    "stem": "看圖：月亮在哪一個方位？大約幾個拳頭高？",
+    "scene": "阿咕畫了一張觀察圖：地平線中間寫著「東」，月亮在「東」字的上方，從地平線往上疊到第 3 個拳頭，剛好碰到月亮。",
+    "stem": "照阿咕的圖，月亮在哪一個方位？大約幾個拳頭高？",
     "options": [
       "西方，3個拳頭高",
       "東方，3個拳頭高",
@@ -5463,11 +5463,11 @@ window.QUESTIONS_G4_SCI_U01 = [
     "image_prompt": "【需要圖片】白底、黑色清楚線條，月亮淡黃色。畫一個小孩的背影站在地面上，面向前方。前方遠處一條水平的地平線，線上有幾棟簡單的矮房子剪影。地平線正中間下方的地面上標一個大字「東」；畫面最左邊邊緣標小字「北」，最右邊邊緣標小字「南」（小孩面向東方，所以左手邊是北、右手邊是南）。小孩的右手臂往前伸直握拳；從地平線開始往上，用細虛線畫三個一樣大的拳頭輪廓，一個疊一個，依序標 1、2、3；第 3 個拳頭的上緣剛好碰到圓形的月亮。不要畫任何測量工具、格線或其他數字記號，不要寫「3個拳頭」或任何答案文字。",
     "variant_group": "SC4-record-position",
     "uses": [],
-    "exp": 20,
+    "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-112",
@@ -5524,9 +5524,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SC_FACE"
   },
   {
@@ -5581,9 +5581,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-114",
@@ -5635,9 +5635,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-115",
@@ -5664,7 +5664,7 @@ window.QUESTIONS_G4_SCI_U01 = [
     "stem": "哪些紀錄符合月亮東升西落？（可以選不只一個）",
     "options": [
       "7點東方1個拳頭高；9點東方3個拳頭高",
-      "8點西方2個拳頭高；10點西方1個拳頭高",
+      "8點西方3個拳頭高；9點西方2個拳頭高",
       "7點西方1個拳頭高；9點西方3個拳頭高",
       "9點東方3個拳頭高；11點東方1個拳頭高"
     ],
@@ -5695,9 +5695,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-116",
@@ -5749,9 +5749,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-117",
@@ -5805,9 +5805,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-118",
@@ -5859,9 +5859,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-119",
@@ -5915,9 +5915,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-120",
@@ -5974,9 +5974,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-121",
@@ -6030,9 +6030,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-122",
@@ -6086,9 +6086,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-123",
@@ -6142,9 +6142,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SC-4A-01-901",
@@ -6199,9 +6199,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SC_SKY"
   },
   {
@@ -6257,9 +6257,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SC_SKY"
   },
   {
@@ -6315,9 +6315,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SC_SKY"
   },
   {
@@ -6373,9 +6373,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SC_SKY"
   },
   {
@@ -6431,9 +6431,9 @@ window.QUESTIONS_G4_SCI_U01 = [
     "uses": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SC_SKY"
   }
 ];
@@ -6570,9 +6570,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-002",
@@ -6625,9 +6625,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-003",
@@ -6680,9 +6680,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-004",
@@ -6708,7 +6708,7 @@ window.QUESTIONS_G4_SOC_U01 = [
     "stem": "哪一種地圖最能告訴你「我現在在哪裡」？",
     "options": [
       "一張沒有路名的手繪圖",
-      "能顯示目前位置的電子地圖",
+      "手機上的電子地圖",
       "課本裡的臺灣行政區圖",
       "去年活動的宣傳海報"
     ],
@@ -6735,9 +6735,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-005",
@@ -6792,9 +6792,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SO_MAP4"
   },
   {
@@ -6850,9 +6850,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SO_MAP4"
   },
   {
@@ -6908,9 +6908,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SO_MAP4"
   },
   {
@@ -6966,9 +6966,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SO_MAP4"
   },
   {
@@ -7024,9 +7024,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SO_8DIR"
   },
   {
@@ -7082,9 +7082,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SO_8DIR"
   },
   {
@@ -7140,9 +7140,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SO_8DIR"
   },
   {
@@ -7198,9 +7198,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SO_8DIR"
   },
   {
@@ -7256,9 +7256,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SO_MAP4"
   },
   {
@@ -7316,9 +7316,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SO_MAP4"
   },
   {
@@ -7373,9 +7373,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-016",
@@ -7429,9 +7429,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-001",
@@ -7454,7 +7454,7 @@ window.QUESTIONS_G4_SOC_U01 = [
     "variant_group": "SO4-route-transfer",
     "level": 1,
     "type": "choice",
-    "scene": "捷運路線圖（遊戲自製）：紅線和藍線在「中央站」交會。",
+    "scene": "捷運路線圖：紅線和藍線在「中央站」交會。",
     "stem": "兩條路線交會的中央站，可以讓乘客做什麼？",
     "options": [
       "換搭另一條路線",
@@ -7487,9 +7487,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-002",
@@ -7545,9 +7545,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-003",
@@ -7601,9 +7601,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-004",
@@ -7656,9 +7656,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-005",
@@ -7711,9 +7711,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-006",
@@ -7767,9 +7767,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-007",
@@ -7826,9 +7826,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SO_8DIR"
   },
   {
@@ -7857,7 +7857,7 @@ window.QUESTIONS_G4_SOC_U01 = [
     "options": [
       "先數地圖上有幾種顏色",
       "直接出發，邊走邊問",
-      "先把地圖折得小小的",
+      "先把地圖摺得小小的",
       "在地圖上找出起點和終點"
     ],
     "answer": 3,
@@ -7870,7 +7870,7 @@ window.QUESTIONS_G4_SOC_U01 = [
     "option_why": [
       "顏色多少幫不了規畫，要先找起點終點。",
       "先在地圖上規畫好，出發才不容易迷路。",
-      "折起來看不清楚，要先找起點和終點。",
+      "摺起來看不清楚，要先找起點和終點。",
       ""
     ],
     "hints": [
@@ -7883,9 +7883,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-009",
@@ -7939,9 +7939,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-010",
@@ -7996,9 +7996,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SO_8DIR"
   },
   {
@@ -8052,9 +8052,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-012",
@@ -8109,9 +8109,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "beyond_topic": "SAGE_SO_MAP4"
   },
   {
@@ -8165,9 +8165,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-018",
@@ -8220,9 +8220,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-019",
@@ -8276,9 +8276,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-020",
@@ -8332,9 +8332,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-021",
@@ -8387,9 +8387,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-022",
@@ -8417,7 +8417,7 @@ window.QUESTIONS_G4_SOC_U01 = [
     "options": [
       "沒有電也能看",
       "不怕摔壞",
-      "可以搜尋地點、放大縮小",
+      "能搜尋、能放大縮小",
       "可以摺起來放口袋"
     ],
     "answer": 2,
@@ -8443,9 +8443,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-023",
@@ -8499,9 +8499,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-024",
@@ -8523,7 +8523,7 @@ window.QUESTIONS_G4_SOC_U01 = [
     "variant_group": "SO4-maptype-choose",
     "level": 3,
     "type": "choice",
-    "scene": "全家第一次去一座森林遊樂區，想知道步道、廁所和觀景台在哪裡。",
+    "scene": "全家第一次去一座森林遊樂區，想知道步道、廁所和觀景臺在哪裡。",
     "stem": "最適合看下面哪一種地圖？",
     "options": [
       "臺灣行政區圖",
@@ -8554,9 +8554,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-025",
@@ -8610,9 +8610,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-026",
@@ -8666,9 +8666,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-027",
@@ -8722,9 +8722,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-028",
@@ -8777,9 +8777,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-029",
@@ -8833,9 +8833,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1011-030",
@@ -8864,7 +8864,7 @@ window.QUESTIONS_G4_SOC_U01 = [
       "隨便選第一個就出發",
       "放棄，不去了",
       "把地圖放到最大再看",
-      "加上更多字，例如城市名或店名"
+      "加上城市名再搜尋"
     ],
     "answer": 3,
     "option_tags": [
@@ -8889,9 +8889,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-013",
@@ -8945,9 +8945,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-014",
@@ -9001,9 +9001,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-015",
@@ -9057,9 +9057,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-016",
@@ -9112,9 +9112,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-017",
@@ -9168,9 +9168,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-018",
@@ -9224,9 +9224,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-019",
@@ -9280,9 +9280,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-020",
@@ -9305,11 +9305,11 @@ window.QUESTIONS_G4_SOC_U01 = [
     "variant_group": "SO4-guide-help",
     "level": 3,
     "type": "choice",
-    "scene": "公園導覽圖上：遊樂場旁邊有飲水機，涼亭旁邊有廁所，大門口有服務台。",
+    "scene": "公園導覽圖上：遊樂場旁邊有飲水機，涼亭旁邊有廁所，大門口有服務臺。",
     "stem": "和家人走散了，要去導覽圖上的哪裡找人幫忙？",
     "options": [
       "涼亭",
-      "服務台",
+      "服務臺",
       "飲水機",
       "遊樂場"
     ],
@@ -9331,14 +9331,14 @@ window.QUESTIONS_G4_SOC_U01 = [
       "第2層：要找公園的工作人員。",
       "第3層：哪個地方有工作人員可以幫忙？"
     ],
-    "explanation": "走散時可以到服務台請工作人員幫忙；先想需要，再到導覽圖上找地點。",
+    "explanation": "走散時可以到服務臺請工作人員幫忙；先想需要，再到導覽圖上找地點。",
     "read_aloud": "full",
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-021",
@@ -9367,7 +9367,7 @@ window.QUESTIONS_G4_SOC_U01 = [
       "C→B→A",
       "B→C→A",
       "A→B→C",
-      "B→A→C"
+      "A→C→B"
     ],
     "answer": 2,
     "option_tags": [
@@ -9380,7 +9380,7 @@ window.QUESTIONS_G4_SOC_U01 = [
       "夜市晚上才開，不能排在最前面。",
       "魚市場只有早上開，不能排最後。",
       "",
-      "魚市場只開早上，要第一個去。"
+      "夜市晚上才開；逛完夜市，博物館早就關門了。"
     ],
     "hints": [
       "第1層：哪一個地方最早關門？",
@@ -9392,9 +9392,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-022",
@@ -9417,12 +9417,12 @@ window.QUESTIONS_G4_SOC_U01 = [
     "variant_group": "SO4-route-disruption",
     "level": 4,
     "type": "choice",
-    "scene": "紅線：河岸站—中央站—學府站；藍線：山腳站—中央站—海港站。廣播說：紅線暫停行駛。",
+    "scene": "紅線：河岸站—中央站—學府站；藍線：山腳站—中央站—海港站。廣播說：紅線暫停行駛，請改搭接駁公車。",
     "stem": "阿咕在河岸站，要去海港站，怎麼做最合適？",
     "options": [
-      "在河岸站改搭藍線",
-      "照原本的計畫搭紅線",
-      "搭藍線到山腳站",
+      "在河岸站等藍線來，再搭去海港站",
+      "照原本的計畫，在河岸站搭紅線",
+      "先搭藍線到山腳站，再走去海港站",
       "改搭公車到中央站，再換藍線"
     ],
     "answer": 3,
@@ -9433,9 +9433,9 @@ window.QUESTIONS_G4_SOC_U01 = [
       "ok"
     ],
     "option_why": [
-      "河岸站只有紅線，沒有藍線。",
+      "河岸站只有紅線，等不到藍線。",
       "紅線暫停，照原計畫搭不到車。",
-      "山腳站在另一頭，離海港站更遠。",
+      "河岸站沒有藍線，山腳站也在另一頭。",
       ""
     ],
     "hints": [
@@ -9448,9 +9448,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "SO4-1012-023",
@@ -9477,7 +9477,7 @@ window.QUESTIONS_G4_SOC_U01 = [
     "options": [
       "甲區",
       "不用經過別的區",
-      "乙區旁邊就是丙區",
+      "不一定，要看走哪條路",
       "地圖上看不出來"
     ],
     "answer": 0,
@@ -9490,7 +9490,7 @@ window.QUESTIONS_G4_SOC_U01 = [
     "option_why": [
       "",
       "乙區和丙區不相鄰，中間要經過別區。",
-      "題目說乙區和丙區不相鄰。",
+      "只有這三區時，乙區到丙區一定要經過甲區。",
       "哪些區相鄰，從圖上看得出來。"
     ],
     "hints": [
@@ -9503,9 +9503,9 @@ window.QUESTIONS_G4_SOC_U01 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   }
 ];
 
@@ -9630,9 +9630,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-002",
@@ -9685,9 +9685,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-003",
@@ -9740,9 +9740,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-004",
@@ -9764,7 +9764,7 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "variant_group": "CH4-word-meaning-L01",
     "level": 2,
     "type": "choice",
-    "scene": "放學後，一群鴿子成群結隊的飛過校園上空。",
+    "scene": "放學後，鴿子成群結隊的飛過校園上空。",
     "stem": "「成群結隊」的意思最接近哪一個？",
     "options": [
       "只有一隻，單獨行動",
@@ -9795,9 +9795,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-005",
@@ -9850,9 +9850,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-006",
@@ -9905,9 +9905,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-007",
@@ -9960,9 +9960,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-008",
@@ -9985,7 +9985,7 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "variant_group": "CH4-sound-L01",
     "level": 3,
     "type": "choice",
-    "scene": "醫生說，吃飯要細嚼慢嚥，讓唾液幫忙消化。",
+    "scene": "醫生說，吃飯要多咬幾下，讓唾液幫忙消化。",
     "stem": "「唾液」的「唾」，注音是哪一個？",
     "options": [
       "ㄔㄨㄟˊ",
@@ -10016,9 +10016,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-009",
@@ -10071,9 +10071,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-010",
@@ -10126,9 +10126,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-011",
@@ -10181,9 +10181,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-012",
@@ -10236,9 +10236,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-013",
@@ -10291,9 +10291,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-014",
@@ -10346,9 +10346,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-015",
@@ -10401,9 +10401,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-016",
@@ -10425,8 +10425,8 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "variant_group": "CH4-word-build-L01",
     "level": 3,
     "type": "choice",
-    "scene": "學期結束了，冬天要放一段長長的假。",
-    "stem": "「寒＿」是冬天放的長假，空格要填哪個字？",
+    "scene": "學期結束了，冬天有好幾個星期不用上學。",
+    "stem": "冬天學校放的長長休息時間叫「寒＿」，空格要填哪個字？",
     "options": [
       "冷",
       "假",
@@ -10448,17 +10448,17 @@ window.QUESTIONS_G4_CH_L01_03 = [
     ],
     "hints": [
       "第1層：「寒」在這裡是冬天、寒冷的意思。",
-      "第2層：題目說的是一段「假期」。",
-      "第3層：冬天的假期叫「寒」什麼？"
+      "第2層：題目說的是一段不用上學、可以休息的日子。",
+      "第3層：夏天放的叫「暑＿」，冬天放的叫「寒＿」，兩個空格是同一個字。"
     ],
     "explanation": "「寒假」是冬天放的長假；「寒」和不同的字組合，會變成不同的詞語。",
     "read_aloud": "full",
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-017",
@@ -10480,10 +10480,10 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "variant_group": "CH4-word-build-L01",
     "level": 3,
     "type": "choice",
-    "scene": "「排隊」「隊伍」「球隊」這三個詞語都有「隊」。",
+    "scene": "「球隊」「樂隊」「隊員」這三個詞語都有「隊」。",
     "stem": "這三個「隊」，共同的意思最接近哪一個？",
     "options": [
-      "一群人排成或組成的團體",
+      "一群人組成的團體",
       "一個人單獨走路",
       "速度非常快",
       "一種好吃的水果"
@@ -10502,18 +10502,18 @@ window.QUESTIONS_G4_CH_L01_03 = [
       "「隊」不是水果的名字。"
     ],
     "hints": [
-      "第1層：排隊的時候，有幾個人？",
-      "第2層：球隊裡也有很多球員。",
-      "第3層：「隊」是很多人排在一起或組在一起。"
+      "第1層：一支球隊裡，有幾個人？",
+      "第2層：樂隊裡也有很多人一起演奏。",
+      "第3層：「隊」是很多人組在一起的團體。"
     ],
-    "explanation": "「隊」是一群人排成的行列或組成的團體，所以有排隊、隊伍、球隊。",
+    "explanation": "「隊」可以指很多人組成的團體，所以有球隊、樂隊、隊員；「排隊」的「隊」則是排成的行列。",
     "read_aloud": "full",
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-018",
@@ -10566,9 +10566,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-019",
@@ -10621,9 +10621,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1011-020",
@@ -10676,9 +10676,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-001",
@@ -10732,9 +10732,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-002",
@@ -10778,7 +10778,7 @@ window.QUESTIONS_G4_CH_L01_03 = [
       "「全」是全部的全，和水沒有關係。"
     ],
     "hints": [
-      "第1層：溫泉是從哪裡冒出來的？",
+      "第1層：泡在暖暖的水裡，這種水是從哪裡來的？",
       "第2層：是從地底下冒出來的水。",
       "第3層：找下面有「水」的那個字。"
     ],
@@ -10787,9 +10787,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-003",
@@ -10842,9 +10842,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-004",
@@ -10897,9 +10897,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-005",
@@ -10952,9 +10952,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-006",
@@ -11007,9 +11007,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-007",
@@ -11063,9 +11063,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-008",
@@ -11118,9 +11118,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-009",
@@ -11173,9 +11173,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-010",
@@ -11228,9 +11228,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-011",
@@ -11283,9 +11283,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-012",
@@ -11338,9 +11338,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-013",
@@ -11393,9 +11393,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-014",
@@ -11448,9 +11448,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-015",
@@ -11494,8 +11494,8 @@ window.QUESTIONS_G4_CH_L01_03 = [
       "「企」是企鵝的企。"
     ],
     "hints": [
-      "第1層：四個字念法都一樣。",
-      "第2層：汽水是一種喝的飲料，和水有關。",
+      "第1層：四個字念法都一樣，要看意思。",
+      "第2層：這是一種會冒泡泡的飲料，和水有關。",
       "第3層：找有三點水的那一個字。"
     ],
     "explanation": "「汽水」的「汽」有三點水；「氣、器、企」念法相同，意思不同。",
@@ -11503,9 +11503,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-016",
@@ -11558,9 +11558,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-017",
@@ -11614,9 +11614,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-018",
@@ -11669,9 +11669,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-019",
@@ -11724,9 +11724,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1012-020",
@@ -11779,9 +11779,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-001",
@@ -11835,9 +11835,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-002",
@@ -11890,9 +11890,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-003",
@@ -11936,8 +11936,8 @@ window.QUESTIONS_G4_CH_L01_03 = [
       ""
     ],
     "hints": [
-      "第1層：眼鏡是用什麼材料做的？",
-      "第2層：古時候的鏡子是用銅做的。",
+      "第1層：古時候的鏡子是用什麼材料做的？",
+      "第2層：古時候的鏡子是用銅磨亮做成的，銅是一種金屬。",
       "第3層：找有「金」字旁的那個字。"
     ],
     "explanation": "「眼鏡」的「鏡」是金字旁，古代的鏡子用銅等金屬做成。",
@@ -11945,9 +11945,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-004",
@@ -12000,9 +12000,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-005",
@@ -12047,17 +12047,17 @@ window.QUESTIONS_G4_CH_L01_03 = [
     ],
     "hints": [
       "第1層：四個選項的聲母、韻母都一樣，只差聲調。",
-      "第2層：「耘」右邊的「云」念ㄩㄣˊ。",
-      "第3層：「耘」和「云」同音，第二聲。"
+      "第2層：「耘」和右邊的「云」念法一樣。",
+      "第3層：「云」念第二聲，「耘」也是第二聲。"
     ],
     "explanation": "「耘」念ㄩㄣˊ，第二聲，和右邊的「云」同音。",
     "read_aloud": "none",
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-006",
@@ -12102,7 +12102,7 @@ window.QUESTIONS_G4_CH_L01_03 = [
     ],
     "hints": [
       "第1層：四個字右邊都一樣，要看左邊。",
-      "第2層：「記錄」是把事情寫下來、留下來。",
+      "第2層：空格的詞語，是把事情寫下來、留下來的意思。",
       "第3層：「抄錄」「記錄」的「錄」是金字旁。"
     ],
     "explanation": "「記錄」是把事情寫下來，用金字旁的「錄」；右邊相同的字要看左邊分辨。",
@@ -12110,9 +12110,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-007",
@@ -12165,9 +12165,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-008",
@@ -12220,9 +12220,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-009",
@@ -12244,7 +12244,7 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "variant_group": "CH4-polysemy",
     "level": 4,
     "type": "choice",
-    "scene": "學校海報寫著：「歡迎全校同學參與淨灘活動。」",
+    "scene": "「與」這個字，可以當「和」，也可以當「參加」。",
     "stem": "下面哪一句的「與」，是「參加」的意思？",
     "options": [
       "他參與了班上的話劇表演。",
@@ -12266,8 +12266,8 @@ window.QUESTIONS_G4_CH_L01_03 = [
       "這裡的「與」是「和」的意思。"
     ],
     "hints": [
-      "第1層：「與」有兩個常見的意思：「和」、「參加」。",
-      "第2層：把「與」換成「和」，念得通的就不是答案。",
+      "第1層：把句子裡的「與」換成「和」，念念看。",
+      "第2層：換成「和」念得通的，就不是答案。",
       "第3層：「參與」就是參加。"
     ],
     "explanation": "「與」可以當「和」，也可以當「參加」；「參與表演」就是參加表演。",
@@ -12275,9 +12275,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-010",
@@ -12331,9 +12331,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-011",
@@ -12386,9 +12386,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-012",
@@ -12441,9 +12441,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-013",
@@ -12496,9 +12496,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-014",
@@ -12551,9 +12551,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-015",
@@ -12575,13 +12575,13 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "variant_group": "CH4-word-meaning-L03",
     "level": 2,
     "type": "choice",
-    "scene": "攝影師把鏡頭對準舞台上的演員。",
+    "scene": "攝影師把鏡頭對準舞臺上的演員。",
     "stem": "句子裡的「鏡頭」是指什麼？",
     "options": [
-      "鏡子的上面",
-      "舞台上的燈",
-      "相機上拍攝影像的部分",
-      "攝影師的頭"
+      "鏡子最上面的邊",
+      "舞臺上照明的燈",
+      "相機拍攝影像的部分",
+      "攝影師的頭和臉"
     ],
     "answer": 2,
     "option_tags": [
@@ -12591,8 +12591,8 @@ window.QUESTIONS_G4_CH_L01_03 = [
       "literal-split"
     ],
     "option_why": [
-      "「鏡頭」不是鏡子的上面。",
-      "燈是照亮舞台的，不是拍攝用的。",
+      "「鏡頭」不是鏡子的邊。",
+      "燈是照亮舞臺的，不是拍攝用的。",
       "",
       "「頭」在這裡不是人的頭。"
     ],
@@ -12606,9 +12606,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-016",
@@ -12653,7 +12653,7 @@ window.QUESTIONS_G4_CH_L01_03 = [
     ],
     "hints": [
       "第1層：說的是電腦、手機上的什麼？",
-      "第2層：就是「上網」的那個字。",
+      "第2層：用電腦、手機查資料時，要先連上它。",
       "第3層：「網」是糸字旁，像一張網子。"
     ],
     "explanation": "「網路」的「網」是糸字旁；「往、忘」念法相近，意思不同。",
@@ -12661,9 +12661,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-017",
@@ -12716,9 +12716,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-018",
@@ -12744,7 +12744,7 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "stem": "這三個「錄」，共同的意思最接近哪一個？",
     "options": [
       "很綠的顏色",
-      "把事情、聲音或影像留存下來",
+      "記下來、留下來",
       "非常忙碌",
       "把東西丟掉"
     ],
@@ -12771,9 +12771,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-019",
@@ -12800,7 +12800,7 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "options": [
       "樂隊在操場上打鼓。",
       "大家熱烈的鼓掌。",
-      "老師鼓勵我上台表演。",
+      "老師鼓勵我上臺表演。",
       "他敲著小鼓唱歌。"
     ],
     "answer": 2,
@@ -12826,9 +12826,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "CH4-1013-020",
@@ -12881,9 +12881,9 @@ window.QUESTIONS_G4_CH_L01_03 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "zh-TW",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   }
 ];
 
@@ -13001,9 +13001,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-002",
@@ -13057,9 +13057,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-003",
@@ -13113,9 +13113,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-004",
@@ -13169,9 +13169,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-005",
@@ -13224,9 +13224,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-006",
@@ -13279,9 +13279,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-007",
@@ -13330,14 +13330,14 @@ window.QUESTIONS_G4_EN_U01 = [
       "第2層：天氣的英文是 weather。",
       "第3層：找有 weather 的那一句。"
     ],
-    "explanation": "問天氣要說 How's the weather?，weather 是天氣。",
+    "explanation": "問天氣要說 How's the weather? 其中 weather 是「天氣」。",
     "read_aloud": "full",
     "uses_math": [],
     "exp": 20,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-008",
@@ -13391,9 +13391,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-009",
@@ -13446,9 +13446,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-010",
@@ -13501,9 +13501,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-011",
@@ -13556,9 +13556,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-012",
@@ -13580,8 +13580,8 @@ window.QUESTIONS_G4_EN_U01 = [
     "variant_group": "EN4-spelling-missing",
     "level": 3,
     "type": "choice",
-    "scene": "天氣好冷，阿咕想寫 cold，卻寫成 c _ l d。",
-    "stem": "空格要填哪一個字母，才是 cold？",
+    "scene": "天氣好冷，阿咕想寫「冷」的英文，卻寫成 c _ l d。",
+    "stem": "空格要填哪一個字母？",
     "options": [
       "o",
       "e",
@@ -13602,8 +13602,8 @@ window.QUESTIONS_G4_EN_U01 = [
       "culd 不是正確拼法，cold 第二個字母是 o。"
     ],
     "hints": [
-      "第1層：慢慢念 cold，聽中間的母音。",
-      "第2層：cold 和 hot 裡面有同一個母音字母。",
+      "第1層：慢慢念這個字，聽中間的母音。",
+      "第2層：「熱」的英文 hot，裡面也有同一個母音字母。",
       "第3層：hot 中間的字母是 o。"
     ],
     "explanation": "cold 的拼法是 c-o-l-d，第二個字母是 o。",
@@ -13611,9 +13611,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-013",
@@ -13666,9 +13666,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-014",
@@ -13694,7 +13694,7 @@ window.QUESTIONS_G4_EN_U01 = [
     "stem": "sunny 是什麼意思？",
     "options": [
       "下雨",
-      "晴天、出太陽",
+      "出太陽",
       "多雲",
       "風很大"
     ],
@@ -13721,9 +13721,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-015",
@@ -13777,9 +13777,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-016",
@@ -13833,9 +13833,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-017",
@@ -13888,9 +13888,9 @@ window.QUESTIONS_G4_EN_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-018",
@@ -13939,7 +13939,7 @@ window.QUESTIONS_G4_EN_U01 = [
       "第2層：在下雨（rainy），而且很冷（cold）。",
       "第3層：用 and 把兩個字連起來。"
     ],
-    "explanation": "下雨又很冷，可以說 It's rainy and cold.，用 and 連接兩種天氣。",
+    "explanation": "下雨又很冷，可以說 It's rainy and cold. 用 and 把兩種天氣連起來。",
     "read_aloud": "full",
     "uses_math": [],
     "exp": 50,
@@ -13990,18 +13990,18 @@ window.QUESTIONS_G4_EN_U01 = [
       ""
     ],
     "hints": [
-      "第1層：cloudy 是 cloud 加上 y。",
-      "第2層：先想 cloud（雲）怎麼拼。",
-      "第3層：c-l-o-u-d，再加 y。"
+      "第1層：「多雲」的英文，是「雲」的英文再加一個字母。",
+      "第2層：「雲」的英文中間是 o-u。",
+      "第3層：c-l-o-u-d，最後再加 y。"
     ],
     "explanation": "cloudy 是 cloud（雲）加上 y：c-l-o-u-d-y。",
     "read_aloud": "stem_only",
     "uses_math": [],
     "exp": 50,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": ""
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20"
   },
   {
     "id": "EN4-1010-020",
@@ -14151,7 +14151,7 @@ window.QUESTIONS_G4_EN_SF_U01 = [
     ],
     "hints": [
       "第1層：爸爸是男生還是女生？",
-      "第2層：father 和 mother 是一對。",
+      "第2層：媽媽是 mother，爸爸的英文只有第一個字母不一樣。",
       "第3層：爸爸是 father，媽媽是 mother。"
     ],
     "explanation": "father 是爸爸，mother 是媽媽。",
@@ -14159,9 +14159,9 @@ window.QUESTIONS_G4_EN_SF_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   },
   {
@@ -14216,9 +14216,9 @@ window.QUESTIONS_G4_EN_SF_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   },
   {
@@ -14272,9 +14272,9 @@ window.QUESTIONS_G4_EN_SF_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   },
   {
@@ -14328,9 +14328,9 @@ window.QUESTIONS_G4_EN_SF_U01 = [
     "uses_math": [],
     "exp": 10,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   },
   {
@@ -14380,14 +14380,14 @@ window.QUESTIONS_G4_EN_SF_U01 = [
       "第2層：照片裡是女生。",
       "第3層：女生用 she：Who's she?"
     ],
-    "explanation": "問女生是誰說 Who's she?；問男生是誰說 Who's he?",
+    "explanation": "問女生是誰，說 Who's she? 問男生是誰，說 Who's he?",
     "read_aloud": "full",
     "uses_math": [],
     "exp": 20,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   },
   {
@@ -14437,14 +14437,14 @@ window.QUESTIONS_G4_EN_SF_U01 = [
       "第2層：爺爺的英文是 grandfather。",
       "第3層：He's my grandfather."
     ],
-    "explanation": "回答 Who's he? 要說 He's my ___.；爺爺是 grandfather。",
+    "explanation": "回答 Who's he? 要說 He's my ___. 爺爺是 grandfather。",
     "read_aloud": "full",
     "uses_math": [],
     "exp": 20,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   },
   {
@@ -14499,9 +14499,9 @@ window.QUESTIONS_G4_EN_SF_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   },
   {
@@ -14556,9 +14556,9 @@ window.QUESTIONS_G4_EN_SF_U01 = [
     "uses_math": [],
     "exp": 20,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   },
   {
@@ -14608,14 +14608,14 @@ window.QUESTIONS_G4_EN_SF_U01 = [
       "第2層：用 Who 開頭。",
       "第3層：男生用 he：Who's he?"
     ],
-    "explanation": "問男生是誰用 Who's he?，問女生是誰用 Who's she?",
+    "explanation": "問男生是誰用 Who's he? 問女生是誰用 Who's she?",
     "read_aloud": "full",
     "uses_math": [],
     "exp": 20,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   },
   {
@@ -14639,7 +14639,7 @@ window.QUESTIONS_G4_EN_SF_U01 = [
     "level": 3,
     "type": "choice",
     "scene": "阿咕在卡片上寫「媽媽」，寫成 m _ t h e r。",
-    "stem": "空格要填哪一個字母，才是 mother？",
+    "stem": "空格要填哪一個字母？",
     "options": [
       "a",
       "u",
@@ -14660,18 +14660,18 @@ window.QUESTIONS_G4_EN_SF_U01 = [
       ""
     ],
     "hints": [
-      "第1層：mother 和 brother 的拼法很像。",
+      "第1層：「媽媽」和「哥哥或弟弟」的英文，後面幾個字母一樣。",
       "第2層：brother 是 b-r-o-t-h-e-r。",
-      "第3層：mother 第二個字母也是 o。"
+      "第3層：「媽媽」的英文，第二個字母也是 o。"
     ],
     "explanation": "mother 的拼法是 m-o-t-h-e-r；brother 也有 o-t-h-e-r。",
     "read_aloud": "stem_only",
     "uses_math": [],
     "exp": 35,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   },
   {
@@ -14726,9 +14726,9 @@ window.QUESTIONS_G4_EN_SF_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   },
   {
@@ -14783,9 +14783,9 @@ window.QUESTIONS_G4_EN_SF_U01 = [
     "uses_math": [],
     "exp": 35,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   },
   {
@@ -14809,7 +14809,7 @@ window.QUESTIONS_G4_EN_SF_U01 = [
     "variant_group": "EN4SF-relation",
     "level": 4,
     "type": "choice",
-    "scene": "照片裡有爸爸，和爸爸的爸爸。朋友指著「爸爸的爸爸」問：Who's he?",
+    "scene": "照片裡有爸爸和爸爸的爸爸。朋友指著「爸爸的爸爸」問：Who's he?",
     "stem": "你要怎麼回答？",
     "options": [
       "He's my father.",
@@ -14840,9 +14840,9 @@ window.QUESTIONS_G4_EN_SF_U01 = [
     "uses_math": [],
     "exp": 50,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   },
   {
@@ -14887,18 +14887,18 @@ window.QUESTIONS_G4_EN_SF_U01 = [
       "第一個字母是 s，不是 c。"
     ],
     "hints": [
-      "第1層：sister 第一個字母是 s。",
-      "第2層：s-i-s，再接 t。",
-      "第3層：最後是 er：s-i-s-t-e-r。"
+      "第1層：「姊姊」的英文，第一個字母和 she 一樣。",
+      "第2層：前三個字母是 s-i-s。",
+      "第3層：最後兩個字母和 brother 一樣，是 e-r。"
     ],
     "explanation": "sister 的拼法是 s-i-s-t-e-r；最後兩個字母 e-r 和 brother 一樣。",
     "read_aloud": "stem_only",
     "uses_math": [],
     "exp": 50,
     "tts_lang": "en-US",
-    "reviewed": false,
-    "reviewer": "",
-    "reviewed_at": "",
+    "reviewed": true,
+    "reviewer": "BQ2長單C題庫審題",
+    "reviewed_at": "2026-11-20",
     "alt_publisher": true
   }
 ];

@@ -24,7 +24,9 @@
 
   /** 減少動態效果：家長設定 settings.reduceMotion（'on'／'off'／'auto'，auto＝跟系統） */
   function reduced() {
-    var st = J.Game && J.Game.state, v = st && st.settings && st.settings.reduceMotion;
+    var st = J.Game && J.Game.state, BF = J.BattleFlow;
+    if (BF && BF.reduceMotion) return BF.reduceMotion(st && st.settings, BF.systemReducedMotion());   // 和戰鬥畫面共用同一個判斷
+    var v = st && st.settings && st.settings.reduceMotion;
     if (v === 'on') return true;
     if (v === 'off') return false;
     try { return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); } catch (e) { return false; }

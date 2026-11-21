@@ -67,7 +67,7 @@
     return (list || []).indexOf(fam) >= 0;
   }
   /** 裝備類別的名字（48 號 F2；說明卡、商店用） */
-  var FAM_NAME = { gen: '通用', sword: '劍', axe: '斧・錨', fist: '拳套', staff: '法杖', dagger: '短刀・弓', perform: '表演道具', whip: '鞭', heavy: '重甲', light: '輕甲', robe: '法袍' };
+  var FAM_NAME = { gen: '通用', sword: '劍', axe: '斧・錨', fist: '拳套', staff: '法杖', dagger: '短刀・弓', perform: '表演道具', whip: '鞭', heavy: '重甲', light: '輕甲', robe: '法袍', knife: '飛刀・手套' };   // knife：BQ2 D8-B 新類別（盜賊系）
   function famNames(list) { return (list || []).map(function (f) { return FAM_NAME[f] || f; }).join('、'); }
   /**
    * 這個職業「現在實際裝得上」的裝備類別（說明卡用；CTO 2026-10-12）：從 items.js 現有的武器／防具推算，
@@ -197,6 +197,26 @@
     return { ok: true, slot: slot };
   }
 
+  /**
+   * 整合6 D-27（03_數值 第 1 節表、第 207 行；03b R3-1）：出門時家人給的起始裝備（練習木棒 +1、布衣 +1），開場就裝上。
+   * 只在兩格都沒有裝備、而且還沒給過（旗標 _starterGear）時給；記進 startItems（一開始給的不能賣）。回傳裝上的 id 陣列
+   */
+  var STARTER_GEAR = ['starter_stick', 'cloth'];
+  function giveStarterGear(state, data) {
+    if (!state.flags || typeof state.flags !== 'object') state.flags = {};
+    if (state.flags._starterGear) return [];
+    state.flags._starterGear = 1;
+    if (!state.equipment) state.equipment = { weapon: null, armor: null };
+    if (state.equipment.weapon || state.equipment.armor) return [];
+    var out = [];
+    STARTER_GEAR.forEach(function (id) {
+      if (!data.items[id]) return;
+      if (count(state, id) < 1) { addItem(state, id, 1); if (!state.startItems || typeof state.startItems !== 'object') state.startItems = {}; state.startItems[id] = Math.max(1, state.startItems[id] || 0); }
+      if (equip(state, id, data).ok) out.push(id);
+    });
+    return out;
+  }
+
   function unequip(state, slot, data) {
     state.equipment[slot] = null;
     clampVitals(state, data);
@@ -291,6 +311,31 @@
     return to;
   }
 
+  /**
+   * 整合3（審查 S-6）：共用的「位置有效」檢查。location、lastInn 的地圖不存在、座標不是數字或不可走 → 設成 null
+   * （進遊戲時 null＝start_map；累倒時 null＝退回 start_map）。walk(map, x, y)＝這格能不能走。回傳改掉的欄位名稱
+   */
+  function validPlace(loc, maps, walk) {
+    if (!loc || typeof loc !== 'object' || typeof loc.map !== 'string') return false;
+    var m = maps && Object.prototype.hasOwnProperty.call(maps, loc.map) ? maps[loc.map] : null;
+    if (!m) return false;
+    if (loc.x === undefined || loc.x === null) return loc.y === undefined || loc.y === null;   // 沒有座標＝用地圖的起點
+    if (typeof loc.x !== 'number' || typeof loc.y !== 'number' || !isFinite(loc.x) || !isFinite(loc.y) || loc.x % 1 || loc.y % 1) return false;
+    return !walk || !!walk(m, loc.x, loc.y);
+  }
+  function fixPlaces(state, maps, walk) {
+    var fixed = [];
+    ['location', 'lastInn'].forEach(function (k) { if (state[k] && !validPlace(state[k], maps, walk)) { state[k] = null; fixed.push(k); } });
+    return fixed;
+  }
+  /** 整合3（審查 S-7）：讀到體力 0（累倒對話期間關分頁存下的）→ 先照累倒處理（補滿、回最近的旅店）；回傳有沒有處理 */
+  function reviveIfDown(state, data, fallback) {
+    if (state.player.hp !== 0) return false;
+    knockout(state, data, fallback);
+    state.stats.battles.ko = Math.max(0, (state.stats.battles.ko || 0) - 1);   // 上次已經算過一次累倒
+    return true;
+  }
+
   /** 升級時補滿 體力／魔力（給孩子正向回饋） */
   function onLevelUp(state, data) { return restoreFull(state, data); }
 
@@ -314,7 +359,27 @@
       better: gearValue(it) > (cur ? gearValue(data.items[cur]) : 0) };
   }
 
-  var Character = { FAM_NAME: FAM_NAME, famNames: famNames, equipFams: equipFams, GROWTH: GROWTH, baseStats: baseStats, ensureJobs: ensureJobs, jobLevel: jobLevel, mastered: mastered, usable: usable, usableJobs: usableJobs, isOpen: isOpen, gearValue: gearValue, autoEquip: autoEquip, learnedSkills: learnedSkills, slotSkills: slotSkills, setSkillSlots: setSkillSlots, compareEquip: compareEquip, BASE: BASE, PER_LEVEL: PER_LEVEL, JOB_LEVEL: JOB_LEVEL, stats: stats, clampVitals: clampVitals, restoreFull: restoreFull, count: count, addItem: addItem, removeItem: removeItem, useItem: useItem, equip: equip, unequip: unequip, canChangeJob: canChangeJob, changeJob: changeJob, setInn: setInn, rest: rest, knockout: knockout, onLevelUp: onLevelUp };
+  /**
+   * BQ2 v0.6（03b R3）：六項能力＋衍生值。規則在 battle_v06.js（BattleV06.stats6／derived），這裡只負責從存檔、職業、裝備取輸入。
+   *   職業倍率讀 jobs.js 的 mods6；保底讀 player.floor6（六項；舊的 player.floor 是 4 項，給舊 stats 用）；
+   *   裝備：武器 atk→攻擊、mp→魔攻（暫用：武器魔力加在魔攻，規格 R3「魔攻＝智＋武器魔力」）；防具 def→物防、mdef→魔防。
+   * 回傳 { six, HP, MP, ATK, MATK, PDEF, MDEF, AGI, CRIT, EL, n, elem（武器屬性） }。舊的 stats() 不變（現有畫面還在用）。
+   */
+  function battleV06() {
+    if (typeof window !== 'undefined' && window.JQ && window.JQ.BattleV06) return window.JQ.BattleV06;
+    return typeof require === 'function' ? require('./battle_v06.js') : null;
+  }
+  function stats6(state, data) {
+    var BV = battleV06(), p = state.player, job = (data && data.jobs && data.jobs[p.job]) || {}, n = mastered(state, data);
+    var items = (data && data.items) || {}, eq = state.equipment || {};
+    var w = eq.weapon && items[eq.weapon], a = eq.armor && items[eq.armor];
+    var six = BV.stats6(p.level, job.mods6 || {}, n, p.floor6 || {});
+    var d = BV.derived(six, p.level, { atk: (w && w.atk) || 0, matk: (w && (w.matk || w.mp)) || 0, pdef: (a && a.def) || 0, mdef: (a && a.mdef) || 0 });
+    d.six = six; d.n = n; d.EL = BV.effectiveLevel(p.level, n); d.elem = (w && w.elem) || null;
+    return d;
+  }
+
+  var Character = { stats6: stats6, FAM_NAME: FAM_NAME, famNames: famNames, equipFams: equipFams, GROWTH: GROWTH, baseStats: baseStats, ensureJobs: ensureJobs, jobLevel: jobLevel, mastered: mastered, usable: usable, usableJobs: usableJobs, isOpen: isOpen, gearValue: gearValue, autoEquip: autoEquip, learnedSkills: learnedSkills, slotSkills: slotSkills, setSkillSlots: setSkillSlots, compareEquip: compareEquip, BASE: BASE, PER_LEVEL: PER_LEVEL, JOB_LEVEL: JOB_LEVEL, stats: stats, clampVitals: clampVitals, restoreFull: restoreFull, count: count, addItem: addItem, removeItem: removeItem, useItem: useItem, equip: equip, giveStarterGear: giveStarterGear, STARTER_GEAR: STARTER_GEAR, unequip: unequip, canChangeJob: canChangeJob, changeJob: changeJob, setInn: setInn, rest: rest, knockout: knockout, onLevelUp: onLevelUp, validPlace: validPlace, fixPlaces: fixPlaces, reviveIfDown: reviveIfDown };
   if (typeof window !== 'undefined') { window.JQ = window.JQ || {}; window.JQ.Character = Character; }
   if (typeof module !== 'undefined') module.exports = Character;
 })();

@@ -190,8 +190,19 @@
       caption = h('span.mm-caption');
       levelCap = h('span.mm-level');   // v0.9.3 建議等級「Lv1–4」
       // v0.9.6（47 號 B03）放大地圖已經開著時再點小地圖＝關掉（不再疊出第二張）
-      box = h('button.minimap', { onclick: function () { if (bigHandle) { bigHandle.close(); return; } if (!G.blocked()) openBig(G); }, 'aria-label': '小地圖（點一下放大）' }, [levelCap, canvas, caption]);
+      box = h('button.minimap', { onclick: function () { if (bigHandle) { bigHandle.close(); return; } if (box.dataset.off === 'true') { J.UI.toast('這裡是迷宮，看不到地圖喔。看看牆上和地上的記號吧！', 3500); Minimap.offTaps = (Minimap.offTaps || 0) + 1; return; } if (!G.blocked()) openBig(G); }, 'aria-label': '小地圖（點一下放大）' }, [levelCap, canvas, caption]);
       hud.appendChild(box);
+    }
+    // BQ2 v0.6 前端B：no_minimap（迷宮）——小地圖與放大地圖都不能開，按了說一句
+    var off = !!(J.Puzzle && J.Puzzle.noMinimap(scene.map));
+    box.dataset.off = String(off);
+    canvas.hidden = off;
+    clearInterval(timer);
+    if (off) {
+      if (bigHandle) bigHandle.close();
+      caption.textContent = '🚫 迷宮裡看不到地圖'; caption.hidden = false; levelCap.hidden = true;
+      box.setAttribute('aria-label', '迷宮裡看不到地圖');
+      return;
     }
     var info = scene.minimapInfo();
     var v0 = viewFor(info, true);
@@ -215,6 +226,7 @@
   function openBig(G) {
     var sc = G.mapScene;
     if (!sc) return null;
+    if (J.Puzzle && J.Puzzle.noMinimap(sc.map)) { J.UI.toast('這裡是迷宮，看不到地圖喔。看看牆上和地上的記號吧！', 3500); Minimap.offTaps = (Minimap.offTaps || 0) + 1; return null; }
     var info = sc.minimapInfo(), D = G.data, st = G.state;
     if (bigHandle && document.body.contains(bigHandle.node)) return bigHandle;   // v0.9.6 B03 已經開著就不再開
     var mx = bigMax(window.innerWidth, window.innerHeight), sz = size(info, mx.w, mx.h);

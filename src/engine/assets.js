@@ -95,10 +95,29 @@
     if (!key) return;
     requested[key] = { kind: (info(key) || {}).type || kindFor(key), label: label || '' };
     if (scene.textures.exists(texKey(key)) || failed[key]) return;
+    if (inflight[texKey(key)]) return;   // 整合7：另一個場景的載入器正在載同一張圖 → 不重複載（兩個載入器都載會「Texture key already in use」）
     var inf = info(key);
     var url = inf ? resolveUrl(inf.file) : null;
     if (!url) return;
+    track(scene, texKey(key));
     scene.load.image(texKey(key), url);
+  }
+  /**
+   * 整合7：載入中的圖（跨場景共用）。地圖與戰鬥兩個場景的載入器重疊時（例如剛換地圖就開戰），
+   * 後到的場景不重複載入；它在 create 時做的佔位圖，等真的圖載完前改名讓位（renameTexture），真的圖照樣放進同一個鍵，
+   * 已經畫出來的佔位圖物件不受影響，下次建立就用真的圖。
+   */
+  var inflight = {};
+  function track(scene, tk) {
+    if (!scene.load || typeof scene.load.once !== 'function') return;   // 沒有事件可以解除「載入中」的載入器（測試替身）就不記
+    inflight[tk] = scene;
+    var done = function () { if (inflight[tk] === scene) delete inflight[tk]; };
+    scene.load.once('filecomplete-image-' + tk, done);
+    scene.load.once('filecomplete-spritesheet-' + tk, done);
+    scene.load.once('complete', done);
+    // 整合9（審查補審）：場景載圖途中被停掉（換圖、開戰）時載入器不會再發 complete → 場景 shutdown／destroy 時也清掉，避免「載入中」記號殘留
+    var ev = scene.events;
+    if (ev && typeof ev.once === 'function') { ev.once('shutdown', done); ev.once('destroy', done); }
   }
 
   function queueTileset(scene, set) {
@@ -129,12 +148,41 @@
     if (url) scene.load.image(k, url);
   }
 
+  /**
+   * BQ2 v0.6 整合2：怪物的地圖走路圖（sprites.js 的 map_sheet，4 方向×4 格；systems/mapsheet.js）。
+   * 有 map_sheet 時多載入一張 spritesheet，貼圖名 msheet:<key>；沒有或載入失敗時 MapScene 照舊用單張圖。
+   */
+  function mapSheetKey(key) { return 'msheet:' + key; }
+  function queueMapSheet(scene, key) {
+    var MS = window.JQ && window.JQ.MapSheet;
+    var e = (window.SPRITES || {})[key];
+    var sh = MS && MS.sheetOf(e);
+    if (!sh) return false;
+    var k = mapSheetKey(key);
+    if (scene.textures.exists(k) || failed[k]) return true;
+    var file = sh.file.indexOf('/') < 0 ? folderFor(key) + sh.file : sh.file;
+    var url = resolveUrl(file);
+    if (!url) return false;
+    if (inflight[k]) return true;   // 整合7：別的場景正在載
+    track(scene, k);
+    scene.load.spritesheet(k, url, { frameWidth: sh.frameW, frameHeight: sh.frameH });
+    return true;
+  }
+
   /** 註冊載入失敗的處理（scene.preload 開頭呼叫一次） */
+  var phSeq = 0;
   function watch(scene) {
+    // 整合7：真的圖載完、還沒放進材質庫之前，同名的佔位圖（別的場景 create 時做的）先改名讓位，不會「Texture key already in use」
+    scene.load.on('load', function (file) {
+      var k = file && file.key, tm = scene.textures;
+      if (k && tm.exists(k) && tm.get(k).__placeholder && tm.renameTexture) tm.renameTexture(k, k + '#ph' + (++phSeq));
+    });
     scene.load.on('loaderror', function (file) {
       var k = String(file.key || '');
+      delete inflight[k];
       if (k.indexOf('spr:') === 0) failed[k.slice(4)] = true;
       if (k.indexOf('map:') === 0) failed[k] = true;
+      if (k.indexOf('msheet:') === 0) failed[k] = true;   // 整合2：走路圖載入失敗 → 照舊用單張圖
       if (window.console) console.warn('[素材] 載入失敗，改用佔位圖：' + (file.src || file.key));
     });
   }
@@ -266,6 +314,7 @@
   window.JQ.Assets = {
     FILE_MODE: FILE_MODE, resolveUrl: resolveUrl, versioned: versioned, info: info, has: has, heroKey: heroKey, texKey: texKey,
     dirRow: dirRow, rowOrder: rowOrder, art: art, queue: queue, queueTileset: queueTileset, queueBattleBg: queueBattleBg, queueMapImage: queueMapImage, mapImagePath: mapImagePath, watch: watch, finalize: finalize,
+    queueMapSheet: queueMapSheet, mapSheetKey: mapSheetKey,
     isPlaceholder: isPlaceholder, domIcon: domIcon, esc: esc, preparePack: preparePack, failed: failed
   };
 })();

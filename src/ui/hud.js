@@ -28,9 +28,11 @@
       h('span', {}, ['體力 ', refs.hp.el, ' ', refs.hpText]), h('span', {}, ['魔力 ', refs.mp.el, ' ', refs.mpText]), refs.coins
     ]);
     refs.questCount = h('span.badge', { 'aria-hidden': 'true' });
-    refs.questBtn = h('button', { onclick: handlers.quests, 'aria-label': '任務列表' }, ['📜 任務', refs.questCount]);
+    // BQ2 v0.6 前端B（v2 第五節）：任務列表改成「偵探筆記」；加「問阿咕」（第 1 次第 1 層提示、再按第 2 層）
+    refs.questBtn = h('button.hud-notebook', { onclick: handlers.quests, 'aria-label': '筆記（偵探筆記）' }, ['📒 筆記', refs.questCount]);
+    refs.aguBtn = h('button.hud-agu', { onclick: handlers.askAgu || function () {}, 'aria-label': '問阿咕（提示）' }, ['🦉 問阿咕']);
     var btns = h('div.hud-buttons', {}, [
-      refs.questBtn,
+      refs.questBtn, refs.aguBtn,
       h('button', { onclick: handlers.journal, 'aria-label': '冒險手帳' }, ['📔 手帳']),
       h('button', { onclick: handlers.bag, 'aria-label': '背包與裝備' }, ['🎒 背包']),
       h('button', { onclick: handlers.settings, 'aria-label': '家長設定' }, ['⚙️ 設定'])
@@ -153,10 +155,13 @@
     var n = (J.Game && J.Game.data) ? J.QuestLog.journal(state, J.Game.data.quests, J.Game.data).active.length : 0;
     refs.questCount.textContent = n ? String(n) : '';
     refs.questCount.hidden = !n;
-    refs.questBtn.setAttribute('aria-label', '任務列表（進行中 ' + n + ' 個）');
+    refs.questBtn.setAttribute('aria-label', '筆記（偵探筆記，進行中的委託 ' + n + ' 個）');   // L-8：和畫面上的字「筆記」一致
     refs.level.textContent = '等級 ' + p.level + '・' + (s.jobName || '');
-    setBar(refs.exp, p.exp, J.Exp.expToNext(p.level));
-    refs.exp.el.title = p.exp + ' / ' + J.Exp.expToNext(p.level);
+    // BQ2 v0.6 整合：經驗條改用 BQ2 經驗表（和戰鬥結算 addExpV06 一致；職階讀 jobs.js tier）
+    var jobT = ((J.Game && J.Game.data && J.Game.data.jobs) || window.JOBS || {})[p.job] || {};
+    var need = J.Exp.expToNextV06 ? J.Exp.expToNextV06(p.level, jobT.tier || 'novice') : J.Exp.expToNext(p.level);
+    setBar(refs.exp, p.exp, need);
+    refs.exp.el.title = p.exp + ' / ' + need;
     setBar(refs.hp, p.hp, s.maxHp);
     refs.hpText.textContent = p.hp + '/' + s.maxHp;
     setBar(refs.mp, p.mp, s.maxMp);

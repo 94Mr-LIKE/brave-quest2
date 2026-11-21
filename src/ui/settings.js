@@ -52,27 +52,29 @@
 
   /**
    * 家長確認：兩位數 × 兩位數。回傳 Promise<boolean>
-   * 資安審查 F-04：原本「兩位數 × 一位數」正好是三年級數學課的內容，孩子自己就能通過；改成四年級才學的兩位數 × 兩位數。
+   * 資安審查 F-04：原本「兩位數 × 一位數」正好是三年級數學課的內容，孩子自己就能通過；改成四年級才學的兩位數 × 兩位數。整合6（QA D-21）：兩位數 × 兩位數是四上範圍，再改成三位數 × 兩位數（ParentGate.makeQuestion）。
    */
   function gate() {
     return new Promise(function (resolve) {
-      var a = 13 + Math.floor(Math.random() * 27), b = 13 + Math.floor(Math.random() * 17);
+      var qz = J.ParentGate.makeQuestion();   // 整合6 D-21：三位數 × 兩位數；答錯換一題、不計時
       var tries = 0, ok = false;
-      var input = h('input', { type: 'text', inputmode: 'numeric', autocomplete: 'off', 'aria-label': '答案', maxlength: '4' });
+      var qText = h('p', { style: { fontSize: '30px' }, text: qz.text });
+      var input = h('input', { type: 'text', inputmode: 'numeric', autocomplete: 'off', 'aria-label': '答案', maxlength: '6' });
       var msg = h('p.small', { 'aria-live': 'polite' });
       var handle;
       function check() {
-        if (Number(input.value) === a * b) { ok = true; handle.close(); resolve(true); return; }
+        if (Number(input.value) === qz.answer) { ok = true; handle.close(); resolve(true); return; }
         tries++;
-        msg.textContent = tries >= 3 ? '答錯太多次了，請家長再試一次。' : '不對喔，請再算一次。';
+        msg.textContent = tries >= 3 ? '答錯太多次了，請家長再試一次。' : '不對喔，換一題再算一次。';
         if (tries >= 3) { setTimeout(function () { handle.close(); }, 900); }
         input.value = '';
+        if (tries < 3) { qz = J.ParentGate.makeQuestion(); qText.textContent = qz.text; }   // 答錯換一題
       }
       input.addEventListener('keydown', function (e) { if (e.key === 'Enter') check(); });
       var panel = h('form.win.panel.narrow', { onsubmit: function (e) { e.preventDefault(); check(); } }, [
         h('h2', { text: '⚙️ 家長確認' }),
         h('p', { text: '這裡是家長設定。請家長算出答案：' }),
-        h('p', { style: { fontSize: '30px' }, text: a + ' × ' + b + ' = ?' }),
+        qText,
         h('div.field', {}, [input]), msg,
         h('div.row.end', {}, [h('button', { type: 'button', onclick: function () { handle.close(); } }, ['取消']), h('button.primary', { type: 'submit' }, ['確定'])])
       ]);
@@ -94,6 +96,30 @@
       J.ParentGate.endAsk(pass);
       if (ok) { J.ParentGate.grant(pass, Date.now()); panel(G); }
       return ok;
+    });
+  }
+
+  /**
+   * 整合4 S-4（03b R10）：孩子連續 3 題來不及作答 → 先過家長確認（同一個 gate），通過才顯示家長畫面「改成寬鬆」「先不要」。
+   * 回傳 Promise：false＝沒通過或取消（呼叫端照舊播阿咕那一句）、'relaxed'＝改了、'no'＝家長選先不要
+   */
+  function suggestRelaxed(G) {
+    return gate().then(function (ok) {
+      if (!ok) return false;
+      return new Promise(function (resolve) {
+        var handle, picked = null;
+        function pick(v) { picked = v; handle.close(); }
+        var box = h('div.win.panel.narrow.choose-box', {}, [
+          h('h2', { text: '⚙️ 給家長' }),
+          h('p', { text: '孩子連續 3 題來不及作答，可以把答題時間改成寬鬆（時間 1.5 倍）。' }),
+          h('div.row.end', {}, [h('button.ghost', { onclick: function () { pick('no'); } }, ['先不要']), h('button.primary', { onclick: function () { pick('relaxed'); } }, ['改成寬鬆'])])
+        ]);
+        handle = J.UI.open(box, { label: '答題時間建議', onClose: function () {
+          if (picked === 'relaxed') { G.state.settings = J.ParentGate.relaxedSettings(G.state.settings); G.save(); J.UI.toast('答題時間改成「寬鬆」了。之後也可以在家長設定裡改回來。', 4000); }
+          G.relaxedLog = (G.relaxedLog || []).concat([picked || 'no']);   // 測試用
+          resolve(picked || 'no');
+        } });
+      });
     });
   }
 
@@ -342,5 +368,5 @@
   }
 
   window.JQ = window.JQ || {};
-  window.JQ.Settings = { feedback: feedback, deviceInfo: deviceInfo, gate: gate, open: open, restReminder: restReminder, limitScreen: limitScreen };
+  window.JQ.Settings = { suggestRelaxed: suggestRelaxed, feedback: feedback, deviceInfo: deviceInfo, gate: gate, open: open, restReminder: restReminder, limitScreen: limitScreen };
 })();

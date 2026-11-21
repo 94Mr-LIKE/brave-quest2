@@ -243,7 +243,7 @@
       sess.forgoneExp += reward.exp;
       sess.forgoneCoins += reward.coins;
     } else {
-      levels = J.Exp.addExp(st.player, reward.exp);
+      levels = addExpBQ2(st.player, reward.exp);   // 整合3（審查 S-1）：非戰鬥答題也用 BQ2 經驗表
       st.player.coins += reward.coins;
     }
     st.answered[q.id] = true;
@@ -326,8 +326,15 @@
     var exp = Number(p.pendingExp) || 0, daily = Number(p.pendingDaily) || 0;
     p.pendingExp = 0; p.pendingDaily = 0;
     if (daily > 0) p.coins += daily;
-    return exp > 0 ? J.Exp.addExp(p, exp) : 0;
+    return exp > 0 ? addExpBQ2(p, exp) : 0;
   }
+  /** 整合3（審查 S-1）：BQ2 經驗表（和戰鬥、委託、HUD 一致）；職階看 JOBS[職業].tier，沒有資料時見習＝novice、其他＝basic */
+  function tierOf(p) {
+    var jobs = typeof window !== 'undefined' && window && window.JOBS;
+    var j = jobs && p && jobs[p.job];
+    return (j && j.tier) || (!p || !p.job || p.job === 'novice' ? 'novice' : 'basic');
+  }
+  function addExpBQ2(p, amount) { return J.Exp.addExpV06 ? J.Exp.addExpV06(p, amount, tierOf(p)) : J.Exp.addExp(p, amount); }
 
   var Session = { settleExp: settleExp, settleBattle: settleBattle, settlePlayerExp: settlePlayerExp, create: create, next: next, markShown: markShown, abandon: abandon, submit: submit, openHint: openHint, openCompanionHint: openCompanionHint, useEraser: useEraser, candidates: candidates };
   if (typeof window !== 'undefined') { window.JQ = window.JQ || {}; window.JQ.Session = Session; }

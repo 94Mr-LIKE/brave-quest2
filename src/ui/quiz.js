@@ -15,7 +15,8 @@
   function stars(level) { var s = ''; for (var i = 1; i <= 4; i++) s += i <= level ? '★' : '☆'; return s; }
 
   /**
-   * o = { session, mode, title, subtitle, timerMs, state, onDone(result), onRewards(res) }
+   * o = { session, mode, title, subtitle, timerMs, state, onDone(result), onRewards(res),
+   *       defense（BQ2 v0.6 敵方回合的防禦題：時間條畫 1/4 分段、答錯文字不同）, hintText（題目上方的小字） }
    * 題目要先用 Session.next 準備好（session.q）
    */
   function ask(o) {
@@ -39,7 +40,7 @@
     if (battle && timer.limit > 0) {
       timerFill = h('i');
       timerLabel = h('span.label');
-      timerBar = h('div.timer.crit-zone', { role: 'progressbar', 'aria-label': '答題時間', 'aria-valuemin': '0', 'aria-valuemax': '100' }, [timerFill, timerLabel]);
+      timerBar = h(o.defense ? 'div.timer.def-zone' : 'div.timer.crit-zone', { role: 'progressbar', 'aria-label': '答題時間', 'aria-valuemin': '0', 'aria-valuemax': '100' }, [timerFill, timerLabel]);
     }
     var speakBtn = h('button', { onclick: speak, 'aria-label': '朗讀題目' }, ['🔊 朗讀']);
     var sceneText = q.scene ? (o.speaker ? J.DialogText.questScene(q.scene, o.speaker) : q.scene) : '';
@@ -62,7 +63,7 @@
     var actions = h('div.row', {}, [hintBtn, cardBtn, eraserBtn, clearBtn, h('span.grow'), leaveBtn, submitBtn]);
     var payRow = h('div.row', { hidden: true });
     var footer = h('div.quiz-foot', {}, [feedback, actions]);
-    var panel = h('div.win.quiz', {}, [head, timerBar, h('div.row', {}, [speakBtn, h('span.small.grow', { text: battle ? '答得越快傷害越高；在虛線前答對是會心一擊！' : '' })]),
+    var panel = h('div.win.quiz', {}, [head, timerBar, h('div.row', {}, [speakBtn, h('span.small.grow', { text: o.hintText || (battle ? '答得越快傷害越高；在虛線前答對是會心一擊！' : '') })]),
       sceneEl, stemEl, tipEl, answerArea, hintBox, payRow, footer]);
     var handle = J.UI.open(panel, { label: '題目：' + q.stem, escClose: false });
 
@@ -94,7 +95,9 @@
     function buildAnswer() {
       answerArea.innerHTML = '';
       if (q.type === 'choice' || q.type === 'multi') {
-        var box = h('div.options', { role: q.type === 'choice' ? 'radiogroup' : 'group', 'aria-label': '選項' });
+        // 整合9（QA D-36）：四個選項都只有 1–2 個字（形近字題）→ 選項字放大（style.css .options.opt-short，至少 28px）
+        var allShort = q.options.length > 0 && q.options.every(function (o) { return String(o).replace(/\s+/g, '').length <= 2; });
+        var box = h('div.options' + (allShort ? '.opt-short' : ''), { role: q.type === 'choice' ? 'radiogroup' : 'group', 'aria-label': '選項' });
         q.options.forEach(function (opt, i) {
           var erased = sess.erased.indexOf(i) >= 0;
           var b = h('button', {
@@ -234,7 +237,7 @@
       if (res.status === 'locked') { lockFor(res.remainingMs); return; }
       if (res.status === 'wrong') {
         J.Audio.play('wrong');
-        if (battle) { end({ correct: false, res: res }, '沒打中……再加油！', 'bad', sess.companion && J.Curriculum.companionAfter ? J.Curriculum.companionAfter(false, dlg).map(function (t) { return '🦉 阿咕：' + t; }) : null); return; }
+        if (battle) { end({ correct: false, res: res }, o.defense ? '沒擋住……再加油！' : '沒打中……再加油！', 'bad', sess.companion && J.Curriculum.companionAfter ? J.Curriculum.companionAfter(false, dlg).map(function (t) { return '🦉 阿咕：' + t; }) : null); return; }
         feedback.textContent = '再想想看！可以按「需要幫忙」。';
         feedback.className = 'feedback bad';
         answer = { choice: null, multi: [], number: '', order: [] };

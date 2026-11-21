@@ -6,7 +6,7 @@
   var Daily = isNode ? require('./daily.js') : window.JQ.Daily;
   var Playtime = isNode ? require('./playtime.js') : window.JQ.Playtime;
 
-  var SCHEMA_VERSION = 1;   // 勇者大冒險II：四年級版存檔 schema 從 v1 起算（GDD 7.2 B7；欄位沿用三年級版 v3 的結構）
+  var SCHEMA_VERSION = 2;   // 勇者大冒險II：四年級版存檔 schema 從 v1 起算（GDD 7.2 B7；欄位沿用三年級版 v3 的結構）；v2＝BQ2 v0.6 台北章（整合3，審查 M-1：v0.5 切片存檔搬移見 save.js migrateV05）
   var SUBJECTS = ['國語', '英語', '數學', '自然', '社會'];
   var NAME_MAX = 8;
   var ANSWER_TIME_MODES = ['relaxed', 'standard', 'off'];
