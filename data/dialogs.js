@@ -2939,6 +2939,13 @@ window.DIALOGS = {
    "text": "一片葉子都沒破！還有一張卡片。"
   }
  ],
+ "D_C01_T05_HD_BEFORE": [
+  {
+   "who": "agu",
+   "emotion": "平靜",
+   "text": "木箱後面好像有風……先看看那塊刻字的紅磚吧。"
+  }
+ ],
  "D_C01_AUTO_NOTE_T01_8_18": [
   {
    "who": "narrator",

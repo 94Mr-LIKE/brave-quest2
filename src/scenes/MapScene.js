@@ -28,7 +28,9 @@
   var LABEL_DEPTH = 45000;     // v0.9.6 站名小牌：一定在上層格之上（不然會被背景蓋掉一部分字）；在前景大圖（50000）、剪影（60000）之下
   // 整合5：機關物件、門、寶箱、光圈的正式圖鍵名（美術\物件\ 交件；48×72 物件底部中央對齊格子底部，門與寶箱 48×48）
   var OBJ_ART = ['obj_rest_lamp_bench', 'obj_lamp_base_off', 'obj_lamp_base_on', 'obj_lamp_base_empty', 'obj_lever_up', 'obj_lever_down', 'obj_crack_wall', 'obj_crack_bush',
-    'fx_warp_ring_0', 'fx_warp_ring_1', 'fx_warp_ring_2', 'fx_warp_ring_3'];
+    'fx_warp_ring_0', 'fx_warp_ring_1', 'fx_warp_ring_2', 'fx_warp_ring_3',
+    // B4 整合2：隱藏區障礙（美術\物件_v2隱藏區障礙\，48×72）
+    'obj_hd_bush', 'obj_hd_crates', 'obj_hd_rocks', 'obj_hd_panel', 'obj_hd_curtain', 'obj_hd_blind', 'obj_hd_cloth', 'obj_hd_screen'];
   ['code', 'iron', 'fence', 'bars'].forEach(function (g) { OBJ_ART.push('gate_' + g + '_closed', 'gate_' + g + '_open'); });
   ['normal', 'hidden', 'prank', 'puzzle'].forEach(function (c) { OBJ_ART.push('chest_' + c + '_closed', 'chest_' + c + '_open'); });
   var GLOW_DEPTH = 1;       // 燈光光暈：背景（0）與傳送光圈（0.5）之上、所有角色（深度＝腳底 y ≥ 32）之下
@@ -84,7 +86,10 @@
       // 寶箱與招牌（GPT 圖，sprites.js；沒有圖時用程式畫的暫代圖）
       if ((map.chests || []).length) { if (A.has('chest_closed')) A.queue(this, 'chest_closed'); if (A.has('chest_open')) A.queue(this, 'chest_open'); }
       // 整合5：台北章機關物件、門、寶箱、光圈的正式圖（sprites.js 有才載入；沒有時照舊用程式畫的 ui:*48 佔位）
-      if (map.kind) OBJ_ART.forEach(function (k) { if (A.has(k)) A.queue(self, k); });
+      // B4 整合3：隱藏區障礙圖只載這張地圖用得到的（以前 8 張每張地圖都排進下載佇列，換地圖時同時請求太多）
+      var hdArt = {};
+      (map.hidden || []).forEach(function (hd) { hdArt[J.Puzzle.hiddenObstacle(map, hd)] = true; });
+      if (map.kind) OBJ_ART.forEach(function (k) { if (A.has(k) && (k.indexOf('obj_hd_') !== 0 || hdArt[k])) A.queue(self, k); });
       J.MapInfo.signSpots(map).forEach(function (sg) { if (A.has('sign_' + sg.kind)) A.queue(self, 'sign_' + sg.kind); });
       this.heroKey = A.heroKey(g.state.player.gender, g.state.player.job);
       A.queue(this, this.heroKey, g.state.player.name);
@@ -197,6 +202,9 @@
       this.buildSigns();
       this.buildLights();
       this.buildForeground();
+      // B4 整合2：隱藏區障礙落在前景格（例：T04 (63,4) 樹冠）時畫在前景大圖之上、剪影之下，不然障礙被樹冠蓋住看不見
+      var fgS = this.fgSet || {};
+      (this.v06Objs || []).forEach(function (o) { if (o.kind === 'hidden' && fgS[o.data.x + ',' + o.data.y]) o.img.setDepth(50001 + o.data.y); });
       this.applyMapLight();   // 整合4 D-11：依 maps.js light 套全圖色調
       if (g.DEBUG) this.buildDebugOverlay();
 
@@ -616,7 +624,8 @@
       var on = function (o) { if (o) b[o.x + ',' + o.y] = true; };
       (map.rests || []).forEach(on);
       (map.puzzles || []).forEach(function (pz) { (pz.lamps || []).forEach(on); (pz.bases || []).forEach(on); on(pz.reset); if (pz.type === 'lever') on(pz); });
-      (map.hidden || []).forEach(function (hd) { on(hd.at); });
+      // B4 整合2：調查點只在沒打開時擋（新規則 at 在封鎖格裡，打開後一起解除；以前打開了 at 還是擋 → T04／TD2 隱藏寶箱拿不到）
+      (map.hidden || []).forEach(function (hd) { if (!J.Puzzle.hiddenOpen(st, hd)) on(hd.at); });
       (map.notes || []).forEach(function (n) { if (n.block === false) delete b[n.x + ',' + n.y]; });
       this.hiddenCells = J.Puzzle.hiddenBlocked(map, st);
       Object.keys(this.hiddenCells).forEach(function (k) { b[k] = true; });
@@ -655,8 +664,20 @@
         if (pz.type === 'lever') add(pz, self.artOr('obj_lever_up', 'ui:lever_up48'), { kind: 'lever', pz: pz });
       });
       // 可疑的地方（O-1 照 B）：坑道用裂縫牆、戶外與室內用可疑樹叢
+      // B4 整合2（隱藏區障礙設計 5-2）：每一格封鎖格都畫障礙（obstacle 圖；沒圖退回裂縫圖，寧可醜不要隱形），點任一格都能調查
       var crack = J.Puzzle.mapKind(map) === 'dungeon' ? 'obj_crack_wall' : 'obj_crack_bush';
-      (map.hidden || []).forEach(function (hd) { if (hd.at) add(hd.at, self.artOr(crack, 'ui:crack48'), { kind: 'hidden', hidden: hd }); });
+      (map.hidden || []).forEach(function (hd) {
+        var cells = J.Puzzle.hiddenCells(hd);
+        if (hd.at && !cells.some(function (c) { return c.x === hd.at.x && c.y === hd.at.y; })) {
+          console.warn('隱藏區 ' + hd.id + ' 的調查點 (' + hd.at.x + ',' + hd.at.y + ') 不在封鎖格裡：打開後調查點會一直擋路');
+          cells = cells.concat([hd.at]);
+        }
+        var key = self.artOr(J.Puzzle.hiddenObstacle(map, hd), self.artOr(crack, 'ui:crack48'));
+        cells.forEach(function (c, i) {
+          var r = add(c, key, { kind: 'hidden', hidden: hd });
+          if (i % 2 === 1 && cells.length > 1) r.img.setFlipX(true);   // 並排兩格（T07 巷口）第二張水平翻轉
+        });
+      });
       var ringArt = this.hasArt('fx_warp_ring_0') && this.map.kind;
       (map.events || []).forEach(function (ev) {
         if ((ev.type || 'warp') !== 'warp') return;
@@ -684,7 +705,7 @@
         }
         if (o.kind === 'reset') o.img.setTexture(J.Puzzle.solved(st, o.pz.id) ? self.artOr('obj_lever_down', 'ui:lever_down48') : self.artOr('obj_lever_up', 'ui:lever_up48'));
         if (o.kind === 'lever') o.img.setTexture(J.Puzzle.solved(st, o.pz.id) ? self.artOr('obj_lever_down', 'ui:lever_down48') : self.artOr('obj_lever_up', 'ui:lever_up48'));
-        if (o.kind === 'hidden') o.img.setVisible(!J.Puzzle.hiddenOpen(st, o.hidden));
+        if (o.kind === 'hidden' && !o.fading) o.img.setVisible(!J.Puzzle.hiddenOpen(st, o.hidden)).setAlpha(1);
         if (o.kind === 'warp') o.img.setVisible(J.Puzzle.cond(st, g.data.quests, o.data.requires));
       });
       // 隱藏區打開後 U 格可以走
@@ -700,6 +721,28 @@
         if (vis) self.blocked[c.data.x + ',' + c.data.y] = true; else delete self.blocked[c.data.x + ',' + c.data.y];
       });
       if (this.areaCache) this.areaCache.clear();
+    }
+
+    /**
+     * B4 整合2：隱藏區打開的演出（最小版）：障礙左右抖 3 下（每下 80ms、±3px）再淡出 400ms，共約 0.7 秒；
+     * 「減少動態效果」開著時只淡出。回傳 Promise（演出完才解除封鎖、播對話）。之後再分 shake_fade／slide／crumble／fold。
+     */
+    openHiddenFx(hd, reduce) {
+      var self = this;
+      var objs = (this.v06Objs || []).filter(function (o) { return o.kind === 'hidden' && o.hidden === hd && o.img.visible; });
+      this.hiddenFxLog = (this.hiddenFxLog || []).concat([{ id: hd.id, n: objs.length, reduce: !!reduce }]);   // 測試用
+      if (!objs.length) return Promise.resolve();
+      return new Promise(function (done) {
+        var left = objs.length;
+        var fin = function (o) { o.fading = false; o.img.setVisible(false).setAlpha(1).setX(o.x0); if (--left === 0) done(); };
+        objs.forEach(function (o) {
+          o.fading = true; o.x0 = o.img.x;
+          var fade = function () { self.tweens.add({ targets: o.img, alpha: 0, duration: 400, ease: 'Sine.in', onComplete: function () { fin(o); } }); };
+          if (reduce) { fade(); return; }
+          self.tweens.add({ targets: o.img, x: o.x0 + 3, duration: 40, yoyo: true, repeat: 2, ease: 'Sine.inOut',
+            onRepeat: function () { o.img.x = o.x0 - 3; }, onComplete: function () { o.img.setX(o.x0); fade(); } });
+        });
+      });
     }
 
     /** 點錯燈座或拉重來拉桿：亮著的燈慢慢熄掉（約 1.2 秒）回到全暗 */
@@ -724,7 +767,8 @@
       if (o.kind === 'lamp') return { kind: 'pzlamp', pz: o.pz, lamp: o.data };
       if (o.kind === 'reset') return { kind: 'pzreset', pz: o.pz };
       if (o.kind === 'lever') return { kind: 'pzlever', pz: o.pz };
-      if (o.kind === 'hidden' && (!J.Puzzle.hiddenOpen(st, o.hidden) || o.hidden.dialog_again)) return { kind: 'hidden', hidden: o.hidden };   // 整合：打開後再調查播 dialog_again
+      // B4 整合3（審查 S-1）：隱藏區打開後障礙格就是一般可走格，不再攔截成「再調查」（以前點那格會播 dialog_again、走不過去）
+      if (o.kind === 'hidden' && !J.Puzzle.hiddenOpen(st, o.hidden)) return { kind: 'hidden', hidden: o.hidden };
       if (o.kind === 'base' && o.data.dialog) return { kind: 'note', note: { x: o.data.x, y: o.data.y, label: '燈座的底座', dialog: o.data.dialog } };   // 01b：空燈座
       return null;
     }
@@ -785,12 +829,27 @@
     faceNpc(npcData) {
       var n = (this.npcs || []).filter(function (o) { return o.data === npcData; })[0];
       if (!n || !this.p || npcData.virtual) return null;
-      var dir = J.Move8.dirOf(Math.sign(this.p.tx - npcData.x), Math.sign(this.p.ty - npcData.y));
+      var dir = J.Move8.npcTalkFacing(npcData, this.p);
       var key = npcData.sprite || 'npc_unknown', tk = J.Assets.texKey(key);
       if (!dir || !this.textures.exists(tk) || !this.textures.get(tk).has(this.idleFrame(key, dir))) return null;
+      // 同一輪互動重複轉向也保留第一次的站姿圖格（缺方向圖格時用）。
+      if (!n.talkRest) n.talkRest = { facing: J.Move8.npcRestFacing(npcData, true), frame: n.img.frame.name };
       n.img.setFrame(this.idleFrame(key, dir));
       n.facing = dir;
       return dir;
+    }
+
+    /** 等 UI、busy、戰鬥都解除；只回復 faceNpc 標記的 NPC，不碰移動狀態。 */
+    restoreNpcFacing() {
+      var self = this;
+      (this.npcs || []).forEach(function (n) {
+        if (!n.talkRest) return;
+        var rest = n.talkRest, key = n.data.sprite || 'npc_unknown';
+        var tk = J.Assets.texKey(key), frame = self.idleFrame(key, rest.facing);
+        n.img.setFrame(self.textures.exists(tk) && self.textures.get(tk).has(frame) ? frame : rest.frame);
+        n.facing = rest.facing;
+        delete n.talkRest;
+      });
     }
 
     /** 第三批：阿咕站的格子（跟在主角後面；和主角同一格時也算） */
@@ -1031,6 +1090,8 @@
       // 整合10：外景背景（T07 黃昏、T08 夜晚碼頭）畫的是白天的亮度 → 外景照舊用原本的強度；只有坑道、室內（背景本身已壓暗／暖光）減弱
       if (this.hasBg && this.map.kind !== 'town' && this.map.kind !== 'field') LIGHT = { v3: { color: 0x0a1a50, alpha: 0.35 }, v2: { color: 0xff8a30, alpha: 0.10 } };
       if (this.lightLayer) { this.lightLayer.destroy(); this.lightLayer = null; }
+      // B4 整合2：maps.js 標 light_baked（背景本身已畫成黃昏／夜晚，例：T07 v2）而且背景圖真的有載入 → 不蓋色調層；沒載入（格子備援）照舊蓋
+      if (this.hasBg && this.map && this.map.light_baked) { this.lightInfo = { light: this.map.light, baked: true }; return null; }
       var L = LIGHT[this.map && this.map.light];
       this.lightInfo = L ? { light: this.map.light, color: L.color, alpha: L.alpha } : null;   // 測試用
       if (!L) return null;
@@ -1049,8 +1110,19 @@
     buildForeground() {
       var self = this, W = this.size.w * T, H = this.size.h * T;
       var up = J.MapInfo.upperCells(this.map, G().data.tilesets);
+      // B4 整合3（QA D-44）：隱藏區封鎖格在格子裡寫 'U' 只是記號（擋路由隱藏區自己處理、障礙另外畫），不當上層格：
+      // 以前會把那格背景（例：T07 巷口石板）切下來蓋在主角頭上、並讓站在南邊一格的主角一直亮剪影
+      var hidSet = {};
+      (this.map.hidden || []).forEach(function (hd) { (hd.cells || []).forEach(function (c) { hidSet[c[0] + ',' + c[1]] = true; }); });
+      up = { cells: up.cells.filter(function (c) { return !hidSet[c.x + ',' + c.y]; }), set: {} };
+      up.cells.forEach(function (c) { up.set[c.x + ',' + c.y] = true; });
       this.fgSet = {};
       Object.keys(up.set).forEach(function (k) { self.fgSet[k] = true; });
+      // 剪影判定用的低解析遮罩（每格 8×8 取樣）：上層格整格算有蓋；fg 圖在 maskFromFg 填
+      var MK = J.MapInfo.FG_MASK_K;
+      this.fgMask = { w: this.size.w * MK, h: this.size.h * MK, k: MK, data: new Uint8Array(this.size.w * MK * this.size.h * MK) };
+      var fm = this.fgMask;
+      up.cells.forEach(function (c) { for (var yy = 0; yy < MK; yy++) for (var xx = 0; xx < MK; xx++) fm.data[(c.y * MK + yy) * fm.w + c.x * MK + xx] = 1; });
       var chunks = this.hasBg ? this.bgChunks : null;
       // v0.8：前景格依 BUCKET×BUCKET 分區，鏡頭外的分區隱藏（大地圖的上層格有好幾百格）
       this.fgBuckets = {};
@@ -1089,9 +1161,12 @@
         var g = c.getContext('2d');
         g.drawImage(src, 0, 0, c.width, c.height);
         var data = g.getImageData(0, 0, c.width, c.height).data;
+        var fm = this.fgMask;
         for (var y = 0; y < H; y++) for (var x = 0; x < W; x++) {
           var n = 0;
-          for (var yy = 0; yy < 8; yy++) for (var xx = 0; xx < 8; xx++) if (data[((y * 8 + yy) * c.width + x * 8 + xx) * 4 + 3] > 40) n++;
+          for (var yy = 0; yy < 8; yy++) for (var xx = 0; xx < 8; xx++) {
+            if (data[((y * 8 + yy) * c.width + x * 8 + xx) * 4 + 3] > 40) { n++; if (fm) fm.data[(y * 8 + yy) * fm.w + x * 8 + xx] = 1; }
+          }
           if (n >= 12) this.fgSet[x + ',' + y] = true;
         }
       } catch (e) { /* 讀不到像素就不顯示剪影 */ }
@@ -1100,7 +1175,13 @@
     updateGhost() {
       if (!this.ghost) return;
       var pl = this.player;
-      var hit = this.hasFg && J.MapInfo.rectHitsCells({ x: pl.x - pl.displayWidth / 2 + 4, y: pl.y - pl.displayHeight + 4, w: pl.displayWidth - 8, h: pl.displayHeight - 6 }, this.fgSet, T);
+      // B4 整合1：橫向只算主角身體（寬 ≤ 40，不超出自己那一欄）。原本用整個圖格寬（64−8＝56 > 格寬 48），左右各伸進鄰欄 4px，
+      // 主角只是走在樹、屋簷「旁邊」也會出剪影（士林 v2 前景實測 342 格會出剪影，其中約 100 格主角身上其實沒被蓋到）
+      var bw = Math.min(pl.displayWidth - 8, T - 8);
+      var body = { x: pl.x - bw / 2, y: pl.y - pl.displayHeight + 4, w: bw, h: pl.displayHeight - 6 };
+      // B4 整合3（QA D-44）：以「前景實際蓋到身體框的比例」為準（低解析遮罩，每格 8×8），≥ GHOST_MIN_COVER 才出剪影；
+      // 以前只要身體框碰到「有前景的格子」就亮，前景殘塊或格子另一角的樹冠也會讓站在空地的主角一直是剪影
+      var hit = this.hasFg && (this.fgMask ? J.MapInfo.ghostHit(this.fgMask, body, T) : J.MapInfo.rectHitsCells(body, this.fgSet, T));
       this.ghost.setVisible(!!hit);
       if (hit) { this.ghost.setPosition(pl.x, pl.y); if (this.ghost.texture.key !== pl.texture.key) this.ghost.setTexture(pl.texture.key); this.ghost.setFrame(pl.frame.name); }
     }
@@ -1173,6 +1254,14 @@
     buildCharacters() {
       var self = this, g = G();
       var sx = this.startX, sy = this.startY;
+      // B4 整合3（審查 S-2）：舊存檔站在現在擋路的格子上（例：格子修正後變牆）→ 同一張地圖上最近的可站格（不是出口、不在沒打開的隱藏區裡），不要送回地圖起點
+      if (sx !== undefined && !this.walkable(sx, sy)) {
+        var st0 = g.state, map0 = this.map;
+        var spot = J.MapInfo.nearestStandable(function (x, y) {
+          return self.walkable(x, y) && !J.World.exitAt(map0, x, y) && !J.MapInfo.inClosedHidden(map0, x, y, function (h) { return J.Puzzle.hiddenOpen(st0, h); });
+        }, this.size.w, this.size.h, sx, sy);
+        if (spot) { this.startFixLog = { from: { x: sx, y: sy }, to: spot }; sx = spot.x; sy = spot.y; }   // 測試用
+      }
       if (sx === undefined || !this.walkable(sx, sy)) {
         var s = this.map.start || { x: 1, y: 1 };
         var near = J.Pathfind.nearestWalkable(function (x, y) { return self.walkable(x, y); }, this.size.w, this.size.h, { x: s.x, y: s.y, c: s.x, r: s.y }) || { c: s.x, r: s.y };
@@ -1783,6 +1872,9 @@
       var g = G(), p = this.p;
       if (!p || this.transitioning) return;
       var blocked = J.UI.blocksMove() || g.busy;   // v0.9.3 放大地圖開著時也能走（passMove 視窗不擋）
+      // talkTo 的服務／答題分支不一定回傳完整 Promise；以實際恢復操作為準。
+      // 場景暫停時保留標記，回到地圖的第一個可操作畫格再回復，換圖則隨 npcs 重建。
+      if (!blocked && !g.blocked()) this.restoreNpcFacing();
       if (p.moving) {
         p.t += delta;
         var k = Math.min(1, p.t / (p.stepMs || STEP_MS));

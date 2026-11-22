@@ -12,6 +12,7 @@ window.WORLD = {
  "regions": [],
  "dialog_flags": [
   "_dlg:D_BOSS_C01_BENGBENG_B",
+  "_dlg:D_C01_AUTO_NOTE_T05_5_33",
   "_dlg:D_C01_CLOTH_CLUE",
   "_dlg:D_C01_NPM_ARRIVE",
   "_dlg:D_C01_SHOW",

@@ -366,8 +366,26 @@ if (typeof window.SPRITES === "undefined") window.SPRITES = {
   "frameW": 192,
   "frameH": 640
  },
+ "npc_c01_ddc_inn": {
+  "file": "assets/npcs/npc_c01_ddc_inn.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_c01_grocer": {
+  "file": "assets/npcs/npc_c01_grocer.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
  "npc_c01_guild": {
   "file": "assets/npcs/npc_c01_guild.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_c01_herb_aunt": {
+  "file": "assets/npcs/npc_c01_herb_aunt.png",
   "type": "single",
   "frameW": 192,
   "frameH": 640
@@ -378,8 +396,50 @@ if (typeof window.SPRITES === "undefined") window.SPRITES = {
   "frameW": 192,
   "frameH": 640
  },
+ "npc_c01_mob_t04a": {
+  "file": "assets/npcs/npc_c01_mob_t04a.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_c01_mob_t04b": {
+  "file": "assets/npcs/npc_c01_mob_t04b.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_c01_mob_t04c": {
+  "file": "assets/npcs/npc_c01_mob_t04c.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_c01_mob_t04d": {
+  "file": "assets/npcs/npc_c01_mob_t04d.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_c01_mob_t05a": {
+  "file": "assets/npcs/npc_c01_mob_t05a.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_c01_mob_t05b": {
+  "file": "assets/npcs/npc_c01_mob_t05b.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
  "npc_c01_npm_volunteer": {
   "file": "assets/npcs/npc_c01_npm_volunteer.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_c01_old_kid": {
+  "file": "assets/npcs/npc_c01_old_kid.png",
   "type": "single",
   "frameW": 192,
   "frameH": 640
@@ -392,6 +452,30 @@ if (typeof window.SPRITES === "undefined") window.SPRITES = {
  },
  "npc_c01_porter": {
   "file": "assets/npcs/npc_c01_porter.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_c01_runner": {
+  "file": "assets/npcs/npc_c01_runner.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_c01_smith": {
+  "file": "assets/npcs/npc_c01_smith.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_c01_snack": {
+  "file": "assets/npcs/npc_c01_snack.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_c01_star_kid": {
+  "file": "assets/npcs/npc_c01_star_kid.png",
   "type": "single",
   "frameW": 192,
   "frameH": 640
@@ -420,6 +504,12 @@ if (typeof window.SPRITES === "undefined") window.SPRITES = {
   "frameW": 192,
   "frameH": 640
  },
+ "npc_desk_c01": {
+  "file": "assets/npcs/npc_desk_c01.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
  "npc_director": {
   "file": "assets/npcs/npc_director.png",
   "type": "single",
@@ -438,6 +528,12 @@ if (typeof window.SPRITES === "undefined") window.SPRITES = {
   "frameW": 192,
   "frameH": 640
  },
+ "npc_grandpa_c01": {
+  "file": "assets/npcs/npc_grandpa_c01.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
  "npc_guide": {
   "file": "assets/npcs/npc_guide.png",
   "type": "single",
@@ -446,6 +542,12 @@ if (typeof window.SPRITES === "undefined") window.SPRITES = {
  },
  "npc_inn": {
   "file": "assets/npcs/npc_inn.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_inn_c01": {
+  "file": "assets/npcs/npc_inn_c01.png",
   "type": "single",
   "frameW": 192,
   "frameH": 640
@@ -486,6 +588,12 @@ if (typeof window.SPRITES === "undefined") window.SPRITES = {
   "frameW": 192,
   "frameH": 640
  },
+ "npc_mrt_staff_c01": {
+  "file": "assets/npcs/npc_mrt_staff_c01.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
  "npc_ranger": {
   "file": "assets/npcs/npc_ranger.png",
   "type": "single",
@@ -498,8 +606,20 @@ if (typeof window.SPRITES === "undefined") window.SPRITES = {
   "frameW": 192,
   "frameH": 640
  },
+ "npc_sage_c01": {
+  "file": "assets/npcs/npc_sage_c01.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
  "npc_shop": {
   "file": "assets/npcs/npc_shop.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_shop_c01": {
+  "file": "assets/npcs/npc_shop_c01.png",
   "type": "single",
   "frameW": 192,
   "frameH": 640
@@ -512,6 +632,12 @@ if (typeof window.SPRITES === "undefined") window.SPRITES = {
  },
  "npc_traveler": {
   "file": "assets/npcs/npc_traveler.png",
+  "type": "single",
+  "frameW": 192,
+  "frameH": 640
+ },
+ "npc_traveler_c01": {
+  "file": "assets/npcs/npc_traveler_c01.png",
   "type": "single",
   "frameW": 192,
   "frameH": 640

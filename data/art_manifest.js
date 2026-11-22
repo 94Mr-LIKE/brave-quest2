@@ -11,16 +11,19 @@ window.ART = {
    "bg": "bg_T03.webp"
   },
   "T04": {
-   "bg": "bg_T04.webp"
+   "bg": "bg_T04.webp",
+   "fg": "fg_T04.webp"
   },
   "T05": {
-   "bg": "bg_T05.webp"
+   "bg": "bg_T05.webp",
+   "fg": "fg_T05.webp"
   },
   "T06": {
    "bg": "bg_T06.webp"
   },
   "T07": {
-   "bg": "bg_T07.webp"
+   "bg": "bg_T07.webp",
+   "fg": "fg_T07.webp"
   },
   "T08": {
    "bg": "bg_T08.webp"
@@ -91,6 +94,13 @@ window.ART = {
   "light_glow": "assets/ui/light_glow.png",
   "obj_crack_bush": "assets/ui/obj_crack_bush.png",
   "obj_crack_wall": "assets/ui/obj_crack_wall.png",
+  "obj_hd_blind": "assets/ui/obj_hd_blind.png",
+  "obj_hd_bush": "assets/ui/obj_hd_bush.png",
+  "obj_hd_cloth": "assets/ui/obj_hd_cloth.png",
+  "obj_hd_crates": "assets/ui/obj_hd_crates.png",
+  "obj_hd_curtain": "assets/ui/obj_hd_curtain.png",
+  "obj_hd_panel": "assets/ui/obj_hd_panel.png",
+  "obj_hd_rocks": "assets/ui/obj_hd_rocks.png",
   "obj_lamp_base_empty": "assets/ui/obj_lamp_base_empty.png",
   "obj_lamp_base_off": "assets/ui/obj_lamp_base_off.png",
   "obj_lamp_base_on": "assets/ui/obj_lamp_base_on.png",

@@ -19,7 +19,7 @@ window.MAPS = {
   "art_note": "沿用切片 bg_T01。新增：①東西大道東端延伸 2 格接河濱步道（往圓山・劍潭山）②東北角後山小徑木柵門（捷徑，平常鎖著）③東邊空地圓山遺址貝塚：矮圍欄圍住一小丘貝殼土，旁邊解說牌（不畫人骨）④東北角樹叢裡藏一個小空地（隱藏寶箱）⑤西側休息站東北邊加「冒險者公會攤位」（虛構的布棚攤位＋公會旗，3 格寬櫃台，轉職所）⑥中央廣場東南邊加一塊「圓山天文臺舊址」解說牌（天文館前身，1963 年在圓山啟用，官網歷史沿革）⑦北美館只在東北角邊緣露出白色井字形量體一角（遠景，壓縮：北美館在中山美術公園，與圓山園區相鄰但隔中山北路）。",
   "grid": [
    "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-   "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT..UTT",
+   "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT...TT",
    "TT............................====...........................UTT",
    "TT....RRRRRRRRR...RRRRRRRRR...====...RRRRRRRRR...RRRRRRRRR....TT",
    "TT....RRRRRRRRR...RRRRRRRRR...====...RRRRRRRRR...RRRRRRRRR....TT",
@@ -372,10 +372,6 @@ window.MAPS = {
     "cells": [
      [
       61,
-      1
-     ],
-     [
-      61,
       2
      ]
     ],
@@ -386,6 +382,7 @@ window.MAPS = {
      2
     ],
     "trigger": "調查 (61,2) 的樹叢（樹冠下 U 格可走）",
+    "obstacle": "obj_hd_bush",
     "chests": [
      "C_T01_H"
     ]
@@ -482,23 +479,23 @@ window.MAPS = {
   "grid": [
    "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
    "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
-   "TT..............................===.................~~~~.......TTTTTTTTT",
-   "TT......RRRRRRRRRRRRRRRRRRRRRRR.===.................~~~~.......TTT...TTT",
-   "TT......RRRRRRRRRRRRRRRRRRRRRRRT===T................~~~~.......UUU...TTT",
-   "TT......RRRRRRRRRRRRRRRRRRRRRRR.===.................~~~~...T...TTTTTTTTT",
-   "TT......HHHHHHHHHHHHHHHHHHHHHHH.===.................~~~~.......TTTTTTTTT",
-   "TT......HHHHHHHHHHHHHHHHHHHHHHH.===.................~~~~.......TTTTTTTTT",
-   "TT......HHHHHHHHHHH==HHHHHHHHHH.====================BBBB===...........TT",
-   "TT..........==SSSSSSSSSSSS==....====================BBBB===...........TT",
-   "TT..........==SSSSSSSSSSSS==....===.................~~~~..............TT",
-   "TT..........================....===.................~~~~.........T....TT",
-   "TTFFFFFFFFFF=======================.................~~~~..T...........TT",
-   "TTF,,,,,,,,F=======================.................~~~~..............TT",
-   "TTF,,,,,,K,F================....===.................~~~~.....T........TT",
-   "TTF,~~~~~,,F================....===.................~~~~...........T..TT",
-   "TTF,~~~~~,,F...................T===T................~~~~..............TT",
-   "TTF,~~~~~,,F....................===.................~~~~..............TT",
-   "TTF,~~~~~,,=....................===.................~~~~~~~~~~~~~~~~~~TT",
+   "TT..............................===.................~~~........TTTTTTTTT",
+   "TT......RRRRRRRRRRRRRRRRRRRRRR..===.................~~~........TTT...TTT",
+   "TT......RRRRRRRRRRRRRRRRRRRRRR.T===T................~~~........U.....TTT",
+   "TT......RRRRRRRRRRRRRRRRRRRRRR..===.................~~~........TTTTTTTTT",
+   "TT......HHHHHHHHHHHHHHHHHHHHHH..===.................~~~...T....TTTTTTTTT",
+   "TT......HHHHHHHHHHHHHHHHHHHHHH..===.................~~~........TTTTTTTTT",
+   "TT......HHHHHHHHHH===HHHHHHHHH..====================BBBB===...........TT",
+   "TT..........=FFFSSSSSSSFFF==....====================BBBB===...........TT",
+   "TT..........=FFFSSSSSSSFFF==....===.................~~~...............TT",
+   "TT..........===F=======F====....===.................~~~...............TT",
+   "TTFFFFFFFFFF=======================.................~~~.........T.....TT",
+   "TTF,,,,,,,,F=======================.................~~~..T............TT",
+   "TTF,,,,,,K,F================....===.................~~~...............TT",
+   "TTF,~~~~,,,F================....===.................~~~.....T.........TT",
+   "TTF,~~~~,,,F...................T===T................~~~............T..TT",
+   "TTF,~~~~,,,F....................===.................~~~...............TT",
+   "TTF,~~~~,,,=....................===.................~~~~~~~~~~~~~~~~~~TT",
    "TTF,,,B,,,,=....................===.................~~~~~~~~~~~~~~~~~~TT",
    "TTF,,,.,,,,F...................T===T................~~~~~~~~~~~~~~~~~~TT",
    "TTF,,,,,,,,F....................===...................................TT",
@@ -518,7 +515,7 @@ window.MAPS = {
    "TT..............RRRRRRRR........===...............RRRRRRRRRRRRRRR.....TT",
    "TT..............HHHHHHHH.......T===T..............HHHHHHHHHHHHHHH.....TT",
    "TT.RRRRRRRRRR...HHHDHHHH........===...............HHHHHHHHHHHHHHH.....TT",
-   "TT.RRRRRRRRRR...========........===...............HHHHHHH==HHHHHH.....TT",
+   "TT.RRRRRRRRRR...==K=====........===...............HHHHHHH==HHHHHH.....TT",
    "TT.HHHHHHHHHH...................===.............===================...TT",
    "TT.HHHHHHHHHH..................T===T............===================...TT",
    "TT.HHHHDHHHHH...................===.............===================...TT",
@@ -630,6 +627,14 @@ window.MAPS = {
     "tx": 16,
     "ty": 18,
     "label": "天文館"
+   },
+   {
+    "x": 18,
+    "y": 8,
+    "to": "TI1",
+    "tx": 15,
+    "ty": 18,
+    "label": "故宮正館"
    }
   ],
   "npcs": [
@@ -676,7 +681,7 @@ window.MAPS = {
     "id": "c01_star_kid",
     "x": 54,
     "y": 43,
-    "sprite": "npc_classmate",
+    "sprite": "npc_c01_star_kid",
     "dialog": "D_C01_STARKID_IDLE",
     "quest": "Q4_C01_S2",
     "quests": [
@@ -691,7 +696,7 @@ window.MAPS = {
     "id": "c01_smith",
     "x": 21,
     "y": 38,
-    "sprite": "npc_desk",
+    "sprite": "npc_c01_smith",
     "dialog": "D_C01_SMITH_IDLE",
     "quest": null,
     "quests": []
@@ -700,7 +705,7 @@ window.MAPS = {
     "id": "c01_mob_t04a",
     "x": 26,
     "y": 13,
-    "sprite": "npc_classmate",
+    "sprite": "npc_c01_mob_t04a",
     "dialog": "D_C01_MOB_T04A",
     "quest": null,
     "quests": [],
@@ -713,7 +718,7 @@ window.MAPS = {
     "id": "c01_mob_t04b",
     "x": 40,
     "y": 31,
-    "sprite": "npc_desk",
+    "sprite": "npc_c01_mob_t04b",
     "dialog": "D_C01_MOB_T04B",
     "quest": null,
     "quests": [],
@@ -726,7 +731,7 @@ window.MAPS = {
     "id": "c01_mob_t04c",
     "x": 62,
     "y": 41,
-    "sprite": "npc_desk",
+    "sprite": "npc_c01_mob_t04c",
     "dialog": "D_C01_MOB_T04C",
     "quest": null,
     "quests": [],
@@ -739,7 +744,7 @@ window.MAPS = {
     "id": "c01_mob_t04d",
     "x": 8,
     "y": 22,
-    "sprite": "npc_desk",
+    "sprite": "npc_c01_mob_t04d",
     "dialog": "D_C01_MOB_T04D",
     "quest": null,
     "quests": [],
@@ -788,20 +793,12 @@ window.MAPS = {
     "id": "HD_C01_T04_1",
     "name": "外雙溪東岸樹林小空地",
     "at": {
-     "x": 62,
+     "x": 63,
      "y": 4
     },
     "cells": [
      [
       63,
-      4
-     ],
-     [
-      64,
-      4
-     ],
-     [
-      65,
       4
      ]
     ],
@@ -812,6 +809,7 @@ window.MAPS = {
      2
     ],
     "trigger": "調查 (62,4) 的樹叢（U 格 63–65,4）",
+    "obstacle": "obj_hd_bush",
     "chests": [
      "C_T04_H"
     ]
@@ -973,20 +971,20 @@ window.MAPS = {
    "TT============================================================TT",
    "TT============================================================TT",
    "TT............................................==..............TT",
-   "TT..RRRRRRRRHHRRRRRRRR........................==..HH..==..HHH.TT",
-   "TT..RRRRRRRRHHRRRRRRRR...T...T...T...T...T....==..HHK.==.KHHH.TT",
-   "TT..HHHHHHHHHHHHHHHHHH........................==..HH..==..HHH.TT",
-   "TT..HHHHHHHHHHHHHHHHHH........................==..HHK.==.KHHH.TT",
-   "TT..HHDHHDHHHHHHHDHHHH........................==..HH..==..HHH.TT",
-   "TT.====================........,,,,...........==..HHK.==.KHHH.TT",
-   "TT.====================....K...,,,,....K......==..HH..==..HHH.TT",
-   "TT..RRRRRRRRRRRRRRRRRR........................==..HHK.==.KHHH.TT",
-   "TT..RRRRRRRRRRRRRRRRRR........................==..HH..==..HHH.TT",
-   "TT..HHHHHHHHHHHHHHHHHH........................==..HHK.==.KHHH.TT",
-   "TT..HHHHHHHHHHHHHHHHHH...T...............T....==..HH..==..HHH.TT",
-   "TT..HHHDHHHH==HHHDHHHH........................==..HHK.==.KHHH.TT",
-   "TT.====================.......RRRRRRRRRR......==..HH..==..HHH.TT",
-   "TT.====================.......RRRRRRRRRR......==..HH..==..HHH.TT",
+   "TT..RRRRRRRRHHRRRRRRRR........................==.HHHK.==KKHHH.TT",
+   "TT..RRRRRRRRHHRRRRRRRR...T...T...T...T...T....==.HHHK.==KKHHH.TT",
+   "TT..HHHHHHHHHHHHHHHHHH........................==.HHH..==..HHH.TT",
+   "TT..HHHHHHHHHHHHHHHHHH........................==.HHHK.==KKHHH.TT",
+   "TT..HHDHHDHHHHHHHDHHHH........................==.HHH..==..HHH.TT",
+   "TT.====================........,,,,...........==.HHHK.==KKHHH.TT",
+   "TT.====================....K...,,,,....K......==.HHH..==..HHH.TT",
+   "TT..RRRRRRRRRRRRRRRRRR........................==.HHHK.==KKHHH.TT",
+   "TT..RRRRRRRRRRRRRRRRRR........................==.HHHK.==KKHHH.TT",
+   "TT..HHHHHHHHHHHHHHHHHH........................==.HHH..==..HHH.TT",
+   "TT..HHHHHHHHHHHHHHHHHH...T...............T....==.HHHK.==KKHHH.TT",
+   "TT..HHHDHHHH==HHHDHHHH........................==.HHH..==..HHH.TT",
+   "TT.====================.......RRRRRRRRRR......==.HHH..==..HHH.TT",
+   "TT.====================.......RRRRRRRRRR......==.HHH..==..HHH.TT",
    "TTHHHHH.......................HHHHHHHHHH......==..............TT",
    "TH....U.......................HHHHHDHHHH......==..............TT",
    "TH....H.....................==============....==..............TT",
@@ -1101,7 +1099,7 @@ window.MAPS = {
     "id": "c01_herb_aunt",
     "x": 55,
     "y": 26,
-    "sprite": "npc_desk",
+    "sprite": "npc_c01_herb_aunt",
     "dialog": "D_C01_HERB_IDLE",
     "quest": "Q4_C01_S3",
     "quests": [
@@ -1116,7 +1114,7 @@ window.MAPS = {
     "id": "c01_snack",
     "x": 52,
     "y": 19,
-    "sprite": "npc_stall",
+    "sprite": "npc_c01_snack",
     "dialog": "D_C01_SNACK_IDLE",
     "quest": null,
     "quests": []
@@ -1149,7 +1147,7 @@ window.MAPS = {
     "id": "c01_mob_t05a",
     "x": 10,
     "y": 25,
-    "sprite": "npc_classmate",
+    "sprite": "npc_c01_mob_t05a",
     "dialog": "D_C01_MOB_T05A",
     "quest": null,
     "quests": [],
@@ -1162,7 +1160,7 @@ window.MAPS = {
     "id": "c01_mob_t05b",
     "x": 36,
     "y": 14,
-    "sprite": "npc_desk",
+    "sprite": "npc_c01_mob_t05b",
     "dialog": "D_C01_MOB_T05B",
     "quest": null,
     "quests": [],
@@ -1245,8 +1243,8 @@ window.MAPS = {
     "id": "HD_C01_T05_1",
     "name": "剝皮寮磚牆後小天井",
     "at": {
-     "x": 5,
-     "y": 33
+     "x": 6,
+     "y": 35
     },
     "cells": [
      [
@@ -1261,6 +1259,11 @@ window.MAPS = {
      3
     ],
     "trigger": "調查 TR 紅磚 (5,33) 後，(6,35) 的牆縫可以鑽進去",
+    "obstacle": "obj_hd_crates",
+    "requires": {
+     "flag": "_dlg:D_C01_AUTO_NOTE_T05_5_33"
+    },
+    "dialog_before": "D_C01_T05_HD_BEFORE",
     "chests": [
      "C_T05_H"
     ]
@@ -1385,8 +1388,8 @@ window.MAPS = {
    "TT.T....RRRRRRRRRRRRR.T...T......T.........###########TT",
    "TT......RRRRRRRRRRRRR.T...T..T.............###########TT",
    "TT......RRRRRRRRRRRRRTTTUTT................###########TT",
-   "TT...........==T..T.T...U..............T...###########TT",
-   "TT...........==......T..U..................#####====##TT",
+   "TT...........==T..T.T..................T...###########TT",
+   "TT...........==......T.....................#####====##TT",
    "TT.T..T.T....==................T...T...T.T.T...====...TT",
    "TT......T....==.........==....===================..====T",
    "TT.T.........==.........==....================.=========",
@@ -1552,7 +1555,7 @@ window.MAPS = {
     "id": "c01_runner",
     "x": 30,
     "y": 30,
-    "sprite": "npc_desk",
+    "sprite": "npc_c01_runner",
     "dialog": "D_C01_RUNNER_IDLE",
     "quest": null,
     "quests": [],
@@ -1651,20 +1654,12 @@ window.MAPS = {
     "name": "劍潭山北坡樹林小空地",
     "at": {
      "x": 24,
-     "y": 7
+     "y": 4
     },
     "cells": [
      [
       24,
       4
-     ],
-     [
-      24,
-      5
-     ],
-     [
-      24,
-      6
      ]
     ],
     "area": [
@@ -1674,6 +1669,7 @@ window.MAPS = {
      2
     ],
     "trigger": "調查 (24,7) 樹叢（U 格 24,4–6）",
+    "obstacle": "obj_hd_bush",
     "chests": [
      "C_T06_H"
     ]
@@ -1761,24 +1757,25 @@ window.MAPS = {
   "light": "v2",
   "view": "正面街屋立面",
   "ground": "石板／泥土路面與空地（不是草地）",
+  "light_baked": true,
   "real_ref": "臺北霞海城隍廟（內政部臺灣宗教文化地圖）https://taiwangods.moi.gov.tw/html/cultural/3_0011.aspx?i=58 ；永樂町市場（國家文化記憶庫，臺北市立文獻館典藏）https://tcmb.culture.tw/zh-tw/detail?indexCode=MOCCOLLECTIONS&id=144000010032 ；永樂町通 1931（國家圖書館臺灣記憶）https://tm.ncl.edu.tw/article?u=005_001_0000358919 ；迪化街（交通部觀光署）（查詢 2026-11-20）",
   "art_note": "日治時期（約 1930 年前後）的大稻埕永樂町，時光機關帶來的特殊事件場景，光 v2 黃昏暖光。**本圖的「.」一律是石板或夯土路面、院子空地，不是草地；整張圖沒有草皮。**【壓縮】霞海城隍廟、永樂市場、迪化街南街中街實際都在迪化街一段北段 300 公尺內，相對位置大致正確；茶行曬茶埕是大稻埕茶行的意象，實際散在各街。密集街區：中間東西向主街（迪化街意象，5 格寬，石板路）＋北側亭仔腳；北排連棟街屋立面（亭仔腳方柱重複、山牆頂端裝飾、漢字布旗與木招牌；不寫日文標語、不畫國旗與政治標語），北排後面再一進屋頂；北排中間偏東是很小的霞海城隍廟（正面拜亭＋屋脊輪廓，比街屋矮，不畫神像）；東邊永樂市場（木構大棚＋屋頂高窗，可進 TI4；畫前先看文獻館典藏照片）。主街南側兩排街屋，用三條、兩條 2 格寬的巷子接兩條後巷；後巷 2 南邊是晒布場（竹竿架掛布）、小孩跳格子的院子、一排背對後巷的街屋、茶行曬茶埕（竹篩一排排）。北排西段兩間街屋之間的窄縫通到隱藏後院。西緣主街接大稻埕碼頭。",
   "grid": [
    "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
    "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
    "TTRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
-   "TTRRRRRRRRRRRRRRRRRR........RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
-   "TTRRRRRRRRRRRRRRRRRR........RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
-   "TTRRRRRRRRRRRRRRRRRR........RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
-   "TTRRRRRRRRRRRRRRRRRR........RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
-   "TTRRRRRRRRRRRRRRRRRR........RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
-   "TTRRRRRRRRRRRRRRRRRRUURRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
-   "TTRRRRRRRRRRRRRRRRRRUURRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
-   "TTRRRRRRRRRRRRRRRRRRUURRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
-   "TTRRRRRRRRRRRRRRRRRRUURRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
-   "TTHHHHHHHHHHHHHHHHHHUUHHHHHHHHHHHRRRRRRHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHTT",
-   "TTHHHHHHHHHHHHHHHHHHUUHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHTT",
-   "TTHHHHHHHHHHHHHHHHHHUUHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHTT",
+   "TTRRRRRRRRRRRRRRRRRR.......RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
+   "TTRRRRRRRRRRRRRRRRRR.......RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
+   "TTRRRRRRRRRRRRRRRRRR..RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
+   "TTRRRRRRRRRRRRRRRRRR..RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
+   "TTRRRRRRRRRRRRRRRRRR..RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
+   "TTRRRRRRRRRRRRRRRRRR==RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
+   "TTRRRRRRRRRRRRRRRRRR==RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
+   "TTRRRRRRRRRRRRRRRRRR==RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
+   "TTRRRRRRRRRRRRRRRRRR==RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT",
+   "TTHHHHHHHHHHHHHHHHHH==HHHHHHHHHHHRRRRRRHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHTT",
+   "TTHHHHHHHHHHHHHHHHHH==HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHTT",
+   "TTHHHHHHHHHHHHHHHHHH==HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHTT",
    "TTHHDHHHHHDHHHHHDHHHUUHHDHHHHDHHHHHDDHHHHHDHHHHHHHHHHHH==HHHHHHHHHHDHHTT",
    "TT====================================================================TT",
    "======================================================================TT",
@@ -1802,14 +1799,14 @@ window.MAPS = {
    "TTHHHDHHHHHHHHDHHHHH==HHHHDHHHHHDHHHHHHHDHHHHH==HHHHDHHHHHHHDHHHHHDHHHTT",
    "TT====================================================================TT",
    "TT====================================================================TT",
-   "TTFFFFFF==FFFFFFFFFFFF==FFFFFFFRRRRRRRRRRRRRFFFFFF==FFFFFFFFFF==FFFFFFTT",
-   "TT..............F.............FRRRRRRRRRRRRRF%%%%%%%%%%%%%%%%%%%%%%%%%TT",
-   "TT..............F.............FRRRRRRRRRRRRRF%%*%%%*%%%*%%%*%%%*%%%*%%TT",
-   "TT...K..K..K..K.F.............FRRRRRRRRRRRRRF%%%%%%%%%%%%%%%%%%%%%%%%%TT",
-   "TT..............F.............FHHHHHHHHHHHHHF%%%%%%%%%%%%%%%%%%%%%%%%%TT",
-   "TT..............F.............FHHHHHHHHHHHHHF%%*%%%*%%%*%%%*%%%*%%%*%%TT",
-   "TT..............F.............FHHHHHHHHHHHHHF%%%%%%%%%%%%%%%%%%%%%%%%%TT",
-   "TT..............F.............FHHHHHHHHHHHHHF%%%%%%%%%%%%%%%%%%%%%%%%%TT",
+   "TTFFFFFF==FFFFFFFFFFFF==FFFFFFFRRRRRRRRRRRRR=FFFFF==FFFFFFFFFF==FFFFFFTT",
+   "TT..............F.............FRRRRRRRRRRRRR%%%%%%%%%%%%%%%%%%%%%%%%%%TT",
+   "TT..............F.............FRRRRRRRRRRRRR%%%*%%%*%%%*%%%*%%%*%%%*%%TT",
+   "TT..KK.KK.KK.KK.F.............FRRRRRRRRRRRRR%%%%%%%%%%%%%%%%%%%%%%%%%%TT",
+   "TT..............F.............FHHHHHHHHHHHHH%%%%%%%%%%%%%%%%%%%%%%%%%%TT",
+   "TT..............F.............FHHHHHHHHHHHHH%%%*%%%*%%%*%%%*%%%*%%%*%%TT",
+   "TT..............F.............FHHHHHHHHHHHHH%%%%%%%%%%%%%%%%%%%%%%%%%%TT",
+   "TT..............F.............FHHHHHHHHHHHHH%%%%%%%%%%%%%%%%%%%%%%%%%%TT",
    "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
    "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
   ],
@@ -1924,7 +1921,7 @@ window.MAPS = {
     "id": "c01_old_kid",
     "x": 20,
     "y": 19,
-    "sprite": "npc_grandpa",
+    "sprite": "npc_c01_old_kid",
     "dialog": "D_C01_OLDKID_IDLE",
     "quest": "Q4_C01_S6",
     "quests": [
@@ -1939,7 +1936,7 @@ window.MAPS = {
     "id": "c01_ddc_inn",
     "x": 15,
     "y": 36,
-    "sprite": "npc_grandpa",
+    "sprite": "npc_c01_ddc_inn",
     "dialog": "D_C01_DDCINN_IDLE",
     "quest": null,
     "quests": [],
@@ -1952,7 +1949,7 @@ window.MAPS = {
     "id": "c01_mob_t07a",
     "x": 54,
     "y": 41,
-    "sprite": "npc_grandpa",
+    "sprite": "npc_c01_cloth_aunt",
     "dialog": "D_C01_MOB_T07A",
     "quest": null,
     "quests": [],
@@ -1965,7 +1962,7 @@ window.MAPS = {
     "id": "c01_mob_t07b",
     "x": 42,
     "y": 18,
-    "sprite": "npc_grandpa",
+    "sprite": "npc_c01_porter",
     "dialog": "D_C01_MOB_T07B",
     "quest": null,
     "quests": [],
@@ -1978,7 +1975,7 @@ window.MAPS = {
     "id": "c01_mob_t07c",
     "x": 30,
     "y": 20,
-    "sprite": "npc_grandpa",
+    "sprite": "npc_c01_boatman",
     "dialog": "D_C01_MOB_T07C",
     "quest": null,
     "quests": [],
@@ -1991,7 +1988,7 @@ window.MAPS = {
     "id": "c01_mob_t07d",
     "x": 64,
     "y": 19,
-    "sprite": "npc_grandpa",
+    "sprite": "npc_c01_porter",
     "dialog": "D_C01_MOB_T07D",
     "quest": null,
     "quests": [],
@@ -2004,7 +2001,7 @@ window.MAPS = {
     "id": "c01_mob_t07e",
     "x": 8,
     "y": 28,
-    "sprite": "npc_grandpa",
+    "sprite": "npc_c01_boatman",
     "dialog": "D_C01_MOB_T07E",
     "quest": null,
     "quests": [],
@@ -2017,7 +2014,7 @@ window.MAPS = {
     "id": "c01_mob_t07f",
     "x": 24,
     "y": 41,
-    "sprite": "npc_grandpa",
+    "sprite": "npc_c01_old_kid",
     "dialog": "D_C01_MOB_T07F",
     "quest": null,
     "quests": [],
@@ -2072,62 +2069,6 @@ window.MAPS = {
     "cells": [
      [
       20,
-      8
-     ],
-     [
-      21,
-      8
-     ],
-     [
-      20,
-      9
-     ],
-     [
-      21,
-      9
-     ],
-     [
-      20,
-      10
-     ],
-     [
-      21,
-      10
-     ],
-     [
-      20,
-      11
-     ],
-     [
-      21,
-      11
-     ],
-     [
-      20,
-      12
-     ],
-     [
-      21,
-      12
-     ],
-     [
-      20,
-      13
-     ],
-     [
-      21,
-      13
-     ],
-     [
-      20,
-      14
-     ],
-     [
-      21,
-      14
-     ],
-     [
-      20,
       15
      ],
      [
@@ -2142,6 +2083,7 @@ window.MAPS = {
      5
     ],
     "trigger": "調查北排西段兩間街屋之間的窄縫 (20–21,15)（U 格 x20–21, y8–15）",
+    "obstacle": "obj_hd_crates",
     "chests": [
      "C_T07_H"
     ]
@@ -2262,8 +2204,8 @@ window.MAPS = {
    "~~~~~~~~~~~~~~~~~~====....RRRRRRRRRRRH..H.............TT",
    "~~~~~~~~~~~~~~~~~~====....RRRRRRRRRRRH..H.............TT",
    "~~~~~~~~~~K~~~~~~~====....HHHHHHHHHHHH..H.............TT",
-   "~~~~~~~~~~~~~~~~~~====....HHHHHDHHHHHH.HH.............TT",
-   "~~~~~~~~~~~~~~~~~~====................U...............TT",
+   "~~~~~~~~~~~~~~~~~~====....HHHHHDHHHHHHUHH.............TT",
+   "~~~~~~~~~~~~~~~~~~====................................TT",
    "~~~~~~~~~~~~~~~~~~====................................TT",
    "~~~~~~~~~~~~~~~~~~====................................TT",
    "~~~~~~~~~~~~~~~~~~====................................TT",
@@ -2358,7 +2300,7 @@ window.MAPS = {
     "id": "c01_mob_t08a",
     "x": 34,
     "y": 23,
-    "sprite": "npc_grandpa",
+    "sprite": "npc_c01_cloth_aunt",
     "dialog": "D_C01_MOB_T08A",
     "quest": null,
     "quests": [],
@@ -2412,12 +2354,12 @@ window.MAPS = {
     "name": "茶行倉庫後的夾縫",
     "at": {
      "x": 38,
-     "y": 34
+     "y": 32
     },
     "cells": [
      [
       38,
-      33
+      32
      ]
     ],
     "area": [
@@ -2427,6 +2369,7 @@ window.MAPS = {
      5
     ],
     "trigger": "調查 (38,34) 貨箱旁的木板縫（U 格 38,33）",
+    "obstacle": "obj_hd_crates",
     "chests": [
      "C_T08_H"
     ]
@@ -2681,7 +2624,7 @@ window.MAPS = {
     "id": "HD_C01_TI1_1",
     "name": "展板後的小角落",
     "at": {
-     "x": 4,
+     "x": 3,
      "y": 13
     },
     "cells": [
@@ -2697,6 +2640,7 @@ window.MAPS = {
      1
     ],
     "trigger": "調查 (4,13) 展板邊緣",
+    "obstacle": "obj_hd_panel",
     "content": "隱藏知識卡：翠玉白菜上的螽斯",
     "dialog": "D_C01_CARD_HID_KATYDID",
     "card": "D_C01_CARD_HID_KATYDID",
@@ -2852,7 +2796,7 @@ window.MAPS = {
     "id": "HD_C01_TI2_1",
     "name": "布幕後的小角落",
     "at": {
-     "x": 27,
+     "x": 28,
      "y": 14
     },
     "cells": [
@@ -2868,6 +2812,7 @@ window.MAPS = {
      2
     ],
     "trigger": "調查 (27,14) 布幕",
+    "obstacle": "obj_hd_curtain",
     "content": "隱藏知識卡：圓山天文臺（1963–2000）",
     "dialog": "D_C01_CARD_HID_OBSERVATORY",
     "card": "D_C01_CARD_HID_OBSERVATORY",
@@ -3016,7 +2961,7 @@ window.MAPS = {
     "id": "HD_C01_TI3_1",
     "name": "後頭小倉庫",
     "at": {
-     "x": 19,
+     "x": 20,
      "y": 14
     },
     "cells": [
@@ -3032,6 +2977,7 @@ window.MAPS = {
      1
     ],
     "trigger": "調查 (19,14) 的竹簾",
+    "obstacle": "obj_hd_blind",
     "content": "隱藏知識卡：TR 紅磚",
     "dialog": "D_C01_CARD_HID_TRBRICK",
     "card": "D_C01_CARD_HID_TRBRICK",
@@ -3149,7 +3095,7 @@ window.MAPS = {
     "id": "c01_grocer",
     "x": 22,
     "y": 8,
-    "sprite": "npc_grandpa",
+    "sprite": "npc_c01_grocer",
     "dialog": "D_C01_GROCER_IDLE",
     "quest": null,
     "quests": []
@@ -3184,7 +3130,7 @@ window.MAPS = {
     "id": "HD_C01_TI4_1",
     "name": "布匹後的小隔間",
     "at": {
-     "x": 4,
+     "x": 3,
      "y": 14
     },
     "cells": [
@@ -3200,6 +3146,7 @@ window.MAPS = {
      1
     ],
     "trigger": "調查 (4,14) 布匹堆",
+    "obstacle": "obj_hd_cloth",
     "content": "隱藏知識卡：大稻埕市場改名的年份",
     "dialog": "D_C01_CARD_HID_YONGLE_NAME",
     "card": "D_C01_CARD_HID_YONGLE_NAME",
@@ -3267,10 +3214,10 @@ window.MAPS = {
    "##.............#############..####################.....#",
    "##.............#############..####################.....#",
    "######...###################..####################.....#",
-   "######...###################..######################U###",
-   "######...###########.................###############U###",
-   "######...###########.................###############U###",
-   "######...###########....*............###############U###",
+   "######...###################..######################.###",
+   "######...###########.................###############.###",
+   "######...###########.................###############.###",
+   "######...###########....*............###############.###",
    "######...........................................###U###",
    "########................................................",
    "########.........................*......................",
@@ -3455,26 +3402,10 @@ window.MAPS = {
     "id": "HD_C01_TD1_1",
     "name": "暗門小室",
     "at": {
-     "x": 51,
+     "x": 52,
      "y": 19
     },
     "cells": [
-     [
-      52,
-      15
-     ],
-     [
-      52,
-      16
-     ],
-     [
-      52,
-      17
-     ],
-     [
-      52,
-      18
-     ],
      [
       52,
       19
@@ -3487,6 +3418,7 @@ window.MAPS = {
      5
     ],
     "trigger": "調查 (51,19) 有裂縫的牆 → U 通道 (52,15–19)",
+    "obstacle": "obj_hd_rocks",
     "dialog_again": "D_C01_TD1_CRACK_AGAIN",
     "chests": [
      "C_TD1_H"
@@ -3673,7 +3605,7 @@ window.MAPS = {
    "##............................................##",
    "##............................................##",
    "####U##################...######################",
-   "####U##################...######################",
+   "####.##################...######################",
    "#......################...######################",
    "#......################...######################",
    "#......#############.........###################",
@@ -3818,16 +3750,12 @@ window.MAPS = {
     "name": "西南牆後小室",
     "at": {
      "x": 4,
-     "y": 25
+     "y": 26
     },
     "cells": [
      [
       4,
       26
-     ],
-     [
-      4,
-      27
      ]
     ],
     "area": [
@@ -3837,6 +3765,7 @@ window.MAPS = {
      5
     ],
     "trigger": "走到西側廊南端 (4,25)，調查腳邊缺一塊的石磚（U 通道 4,26–27）",
+    "obstacle": "obj_hd_rocks",
     "chests": [
      "C_TD2_H"
     ]

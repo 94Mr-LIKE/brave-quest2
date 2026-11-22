@@ -24,6 +24,78 @@
     return { cells: cells, set: set };
   }
 
+  // B4 整合3（QA D-44）：剪影改看前景遮罩實際蓋到身體框的比例。mask＝{ w, h, k（每格取樣數）, data（0／1，一維）}
+  var FG_MASK_K = 8;
+  var GHOST_MIN_COVER = 0.12;   // 實測定（見 B4整合3_變更說明）：樹冠蓋腳、屋簷蓋頭多在 15% 以上；前景殘塊、格子角落的樹冠多半 < 10%
+  /** 身體框 rect（世界座標 px）被遮罩蓋到的比例 0–1（只數框內的取樣點；純函式） */
+  function fgCover(mask, rect, tile) {
+    if (!mask || !mask.data) return 0;
+    var s = tile / (mask.k || FG_MASK_K);
+    var x0 = Math.max(0, Math.floor(rect.x / s)), x1 = Math.min(mask.w, Math.ceil((rect.x + rect.w) / s));
+    var y0 = Math.max(0, Math.floor(rect.y / s)), y1 = Math.min(mask.h, Math.ceil((rect.y + rect.h) / s));
+    var n = 0, tot = 0;
+    for (var y = y0; y < y1; y++) for (var x = x0; x < x1; x++) { tot++; if (mask.data[y * mask.w + x]) n++; }
+    return tot ? n / tot : 0;
+  }
+  function ghostHit(mask, rect, tile, min) { return fgCover(mask, rect, tile) >= (min === undefined ? GHOST_MIN_COVER : min); }
+
+  // B4 整合3（審查 S-2）：舊存檔站在現在擋路的格子上 → 同一張地圖最近的可站格（純函式）
+  /** (x,y) 在還沒打開的隱藏區 area 裡嗎？isOpen(h) 回傳那個隱藏區開了沒 */
+  function inClosedHidden(map, x, y, isOpen) {
+    return ((map && map.hidden) || []).some(function (h) {
+      if (!h.area || (isOpen && isOpen(h))) return false;
+      var a = h.area;
+      return x >= a[0] && y >= a[1] && x < a[0] + a[2] && y < a[1] + a[3];
+    });
+  }
+  /** 從 (x,y) 往外找（4 方向 BFS，穿過牆也找）第一個 ok(x,y) 的格子；找不到回 null */
+  function nearestStandable(ok, w, h, x, y, maxSteps) {
+    if (x < 0 || y < 0 || x >= w || y >= h) return null;
+    var seen = {}, q = [[x, y]], n = 0;
+    seen[x + ',' + y] = true;
+    while (q.length && n++ < (maxSteps || w * h)) {
+      var p = q.shift();
+      if (ok(p[0], p[1])) return { x: p[0], y: p[1] };
+      [[1, 0], [-1, 0], [0, 1], [0, -1]].forEach(function (d) {
+        var nx = p[0] + d[0], ny = p[1] + d[1], k = nx + ',' + ny;
+        if (nx >= 0 && ny >= 0 && nx < w && ny < h && !seen[k]) { seen[k] = true; q.push([nx, ny]); }
+      });
+    }
+    return null;
+  }
+  /**
+   * 存檔位置 state.location 的格子現在不能走（地圖格子修正過）→ 換到同一張地圖最近的可站格：
+   * walk(map,x,y) 可走、不是出口、不在沒打開的隱藏區。回傳 { from, to } 或 null（沒換）
+   */
+  function relocateBlocked(state, maps, walk, isOpen) {
+    var loc = state && state.location, m = loc && maps[loc.map];
+    if (!m || loc.x === undefined || loc.x === null || walk(m, loc.x, loc.y)) return null;
+    var H = m.grid.length, W = m.grid[0].length;
+    var exitAt = function (x, y) { return (m.exits || []).some(function (e) { return e.x === x && e.y === y; }); };
+    // 只挑「從地圖起點走得到」的格子（沒打開的隱藏區封鎖格當牆），免得被放進木箱後面的窄巷之類關起來的地方
+    var closed = {};
+    (m.hidden || []).forEach(function (h) { if (!(isOpen && isOpen(h))) (h.cells || []).forEach(function (c) { closed[c[0] + ',' + c[1]] = true; }); });
+    var reach = null;
+    if (m.start && walk(m, m.start.x, m.start.y)) {
+      reach = {}; reach[m.start.x + ',' + m.start.y] = true;
+      var q = [[m.start.x, m.start.y]];
+      while (q.length) {
+        var p = q.shift();
+        [[1, 0], [-1, 0], [0, 1], [0, -1]].forEach(function (d) {
+          var nx = p[0] + d[0], ny = p[1] + d[1], k = nx + ',' + ny;
+          if (nx >= 0 && ny >= 0 && nx < W && ny < H && !reach[k] && !closed[k] && walk(m, nx, ny)) { reach[k] = true; q.push([nx, ny]); }
+        });
+      }
+    }
+    var to = nearestStandable(function (x, y) {
+      return walk(m, x, y) && !exitAt(x, y) && !closed[x + ',' + y] && !inClosedHidden(m, x, y, isOpen) && (!reach || reach[x + ',' + y]);
+    }, W, H, loc.x, loc.y);
+    if (!to) return null;
+    var from = { map: loc.map, x: loc.x, y: loc.y };
+    loc.x = to.x; loc.y = to.y;
+    return { from: from, to: { map: loc.map, x: to.x, y: to.y } };
+  }
+
   /** 一個矩形（像素）有沒有碰到前景格。tile＝每格幾像素 */
   function rectHitsCells(rect, set, tile) {
     var x0 = Math.floor(rect.x / tile), x1 = Math.floor((rect.x + rect.w - 1) / tile);
@@ -442,7 +514,7 @@
     return { x: view.x + Math.min(view.w - 1, Math.floor(px / cssW * view.w)), y: view.y + Math.min(view.h - 1, Math.floor(py / cssH * view.h)) };
   }
 
-  var MapInfo = { STATUE_SPRITE: STATUE_SPRITE, STATUE_NAME: STATUE_NAME, shrineSpots: shrineSpots, shrineAt: shrineAt, plaqueSpots: plaqueSpots, landmarks: landmarks, landmarkAt: landmarkAt, placeLabels: placeLabels, tileFromMinimap: tileFromMinimap, ANIMAL_SAY: ANIMAL_SAY, animalSpecs: animalSpecs, animalTiles: animalTiles, awayTarget: awayTarget, REC_LEVEL: REC_LEVEL, recLevel: recLevel, levelText: levelText, nameWithLevel: nameWithLevel, innDialog: innDialog, innSpeaker: innSpeaker, innKeeperSprite: innKeeperSprite, innSpeakerSprite: innSpeakerSprite, innKeeperName: innKeeperName, SAFE_RADIUS: SAFE_RADIUS, safePoints: safePoints, inSafeZone: inSafeZone, upperCells: upperCells, rectHitsCells: rectHitsCells, signSpots: signSpots, SIGN_TEXT: SIGN_TEXT, bgmFor: bgmFor, battleBgm: battleBgm, MAP_BGM: MAP_BGM,
+  var MapInfo = { STATUE_SPRITE: STATUE_SPRITE, STATUE_NAME: STATUE_NAME, shrineSpots: shrineSpots, shrineAt: shrineAt, plaqueSpots: plaqueSpots, landmarks: landmarks, landmarkAt: landmarkAt, placeLabels: placeLabels, tileFromMinimap: tileFromMinimap, ANIMAL_SAY: ANIMAL_SAY, animalSpecs: animalSpecs, animalTiles: animalTiles, awayTarget: awayTarget, REC_LEVEL: REC_LEVEL, recLevel: recLevel, levelText: levelText, nameWithLevel: nameWithLevel, innDialog: innDialog, innSpeaker: innSpeaker, innKeeperSprite: innKeeperSprite, innSpeakerSprite: innSpeakerSprite, innKeeperName: innKeeperName, SAFE_RADIUS: SAFE_RADIUS, safePoints: safePoints, inSafeZone: inSafeZone, upperCells: upperCells, rectHitsCells: rectHitsCells, FG_MASK_K: FG_MASK_K, GHOST_MIN_COVER: GHOST_MIN_COVER, fgCover: fgCover, ghostHit: ghostHit, inClosedHidden: inClosedHidden, nearestStandable: nearestStandable, relocateBlocked: relocateBlocked, signSpots: signSpots, SIGN_TEXT: SIGN_TEXT, bgmFor: bgmFor, battleBgm: battleBgm, MAP_BGM: MAP_BGM,
     wanderTarget: wanderTarget, petSpot: petSpot, glowRgb: glowRgb, lightSpots: lightSpots, scaleMap: scaleMap, scalePoint: scalePoint, snapCell: snapCell,
     LEGACY_DIMS: LEGACY_DIMS, currentDims: currentDims, remapPoint: remapPoint, migrateCoords: migrateCoords };
   if (typeof window !== 'undefined') { window.JQ = window.JQ || {}; window.JQ.MapInfo = MapInfo; }

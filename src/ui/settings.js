@@ -268,6 +268,78 @@
       body.appendChild(h('h3', { text: 'ℹ️ 關於本遊戲' }));
       body.appendChild(h('p.small', { text: J.CONFIG.GAME_TITLE + '　版本：' + (window.JQ_VERSION || '開發版') }));
       body.appendChild(h('p.small.author-line', {}, ['聯絡作者：', h('a.author-mail', { href: 'mailto:' + J.Feedback.EMAIL, text: J.Feedback.EMAIL })]));
+      if (J.TestMode && J.TestMode.supported(window)) {
+        body.appendChild(h('h3', { text: '🧪 測試模式（大人試玩用）' }));
+        if (J.TestMode.on()) {
+          var hasBackup = !!J.TestMode.backupRaw();
+          body.appendChild(h('p.small.testmode-note', { text: '測試模式開著：地圖出口不擋，可以直接前往地圖。' +
+            (hasBackup ? '開啟時已自動備份當時的存檔。' : '這次沒有備份成功，關掉時無法回到開啟前的存檔。') +
+            '去過的地方、站的位置與進度會照常存進現在這份存檔。' + (hasBackup ? '試完請按「關掉，回到開啟前的存檔」。' : '') }));
+          var targets = J.TestMode.mapTargets(G.data.maps);
+          if (targets.length) {
+            var mapSel = h('select.testmode-map', { 'aria-label': '測試模式：選擇要前往的地圖', style: { fontSize: '18px', minHeight: '44px', maxWidth: '100%' } });   // 手機也點得到、看得清楚
+            targets.forEach(function (t) { mapSel.appendChild(h('option', { value: t.id, text: t.id + ' ' + t.name })); });
+            if (G.state && G.state.location && targets.some(function (t) { return t.id === G.state.location.map; })) mapSel.value = G.state.location.map;
+            body.appendChild(h('div.row', {}, [mapSel, h('button.testmode-go', { style: { fontSize: '18px', minHeight: '44px', maxWidth: '100%' }, onclick: function () {
+              var t = targets.filter(function (x) { return x.id === mapSel.value; })[0];
+              if (!t || !G.mapScene || G.blocked() || G.inTrial || G.warping || G.mapChanging || G.mapScene.transitioning || document.querySelector('.quiz, .dialog, .opening')) { J.UI.toast('現在不能換地圖（戰鬥、對話、過場或答題中）。'); return; }
+              handle.close();
+              G.changeMap(t.id, t.x, t.y, 'down');
+            } }, ['前往地圖'])]));
+          }
+          if (hasBackup) body.appendChild(h('button.primary.testmode-restore', { onclick: function () {
+            return J.UI.confirm('會回到開啟測試模式那時候的存檔，測試期間的位置與進度不保留。', '確定還原', '取消').then(function (yes) {
+              if (!yes || !J.TestMode.on() || G.testModeRestoring) return;
+              var raw = J.TestMode.backupRaw();
+              if (!raw || J.Save.checkRaw(raw)) { J.UI.toast('備份讀不出來，沒有還原'); return; }
+              try { window.localStorage.setItem(J.Save.SAVE_KEY, raw); }
+              catch (e) { J.UI.toast('還原失敗，沒有更動存檔，請再試一次。'); return; }
+              // LocalSaveProvider 在呼叫時同步寫入；此後所有 G.save 都擋住，避免重新載入前蓋回測試進度。
+              G.testModeRestoring = true;
+              J.TestMode.clearBackup();
+              J.TestMode.disable();
+              J.TestMode.badge(document);
+              window.location.reload();
+            });
+          } }, ['關掉，回到開啟前的存檔（建議）']));
+          body.appendChild(h('div.row', {}, [h('button.testmode-off', { onclick: function () {
+            return J.UI.confirm('現在的位置與測試期間的進度會留在這份存檔；如果跳到主線還沒到的地圖，可能回不了主線。確定嗎？', '確定保留', '取消').then(function (yes) {
+              if (!yes || G.testModeRestoring) return;
+              J.TestMode.clearBackup(); J.TestMode.disable(); J.TestMode.badge(document); J.UI.toast('測試模式已關掉，保留現在的位置與進度'); render();
+            });
+          } }, ['關掉，保留現在的位置與進度'])]));
+        } else {
+          var tmRow = h('div.row', {}), tmMsg = h('p.small.testmode-msg', { text: '', 'aria-live': 'polite' });
+          tmRow.appendChild(h('button.testmode-open', { onclick: function () {
+            while (tmRow.firstChild) tmRow.removeChild(tmRow.firstChild);
+            var pw = h('input.testmode-pass', { type: 'password', autocomplete: 'off', 'aria-label': '測試模式密碼', style: { fontSize: '18px', minHeight: '44px' } });
+            var enabling = false;
+            var go = function () {
+              if (enabling || J.TestMode.on()) return Promise.resolve();
+              enabling = true;
+              return J.TestMode.enable(pw.value).then(function (ok) {
+                pw.value = '';
+                if (!ok) { enabling = false; tmMsg.textContent = '密碼不對。'; return; }
+                J.TestMode.clearBackup();
+                return G.save().then(function (saved) {
+                  // G.save 失敗／略過時不拿舊存檔冒充這次的備份。
+                  var backed = false;
+                  try { if (saved && saved.ok) backed = J.TestMode.backup(window.localStorage.getItem(J.Save.SAVE_KEY)); } catch (e) { /* 無法讀取也算備份失敗 */ }
+                  J.TestMode.badge(document);
+                  J.UI.toast(backed ? '測試模式已開啟，已備份開啟前的存檔' : '測試模式已開啟。這次沒有備份成功，關掉時無法回到開啟前的存檔', 6000);
+                  render();
+                });
+              });
+            };
+            pw.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
+            tmRow.appendChild(pw);
+            tmRow.appendChild(h('button.primary.testmode-on', { style: { minHeight: '44px' }, onclick: go }, ['確定']));
+            pw.focus();
+          } }, ['🧪 測試模式']));
+          body.appendChild(tmRow);
+          body.appendChild(tmMsg);
+        }
+      }
     }
     render();
   }

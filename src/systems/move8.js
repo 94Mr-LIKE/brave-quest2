@@ -31,6 +31,17 @@
     return (v + h) || null;
   }
 
+  /** NPC 對話轉向；虛擬角色與同格不轉向。純計算，不改角色資料。 */
+  function npcTalkFacing(npc, player) {
+    if (!npc || !player || npc.virtual) return null;
+    return dirOf(player.tx - npc.x, player.ty - npc.y);
+  }
+
+  /** 只有被對話轉過的 NPC 才回復，方向與建立 NPC 時相同。 */
+  function npcRestFacing(npc, turned) {
+    return turned ? (npc.facing || 'down') : null;
+  }
+
   /** 方向的橫向、縱向分量：{ h: 'left'|'right'|null, v: 'up'|'down'|null } */
   function parts(dir) {
     var d = DIRS[dir];
@@ -209,6 +220,7 @@
   }
 
   var Move8 = {
+    npcTalkFacing: npcTalkFacing, npcRestFacing: npcRestFacing,
     DIRS: DIRS, SECTORS: SECTORS, JOY_HYST_DEG: JOY_HYST_DEG, N8: N8, DIAG_SPOT_PENALTY: DIAG_SPOT_PENALTY,
     isDiag: isDiag, dirOf: dirOf, parts: parts, heldDir: heldDir, stepMs: stepMs, facingFor: facingFor, faceFor: faceFor,
     resolveStep: resolveStep, canStep: canStep, joyDir: joyDir, talkFacing: talkFacing, adjacent: adjacent,

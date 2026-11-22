@@ -126,6 +126,14 @@
 
   // ---------------------------------------------------------------- 隱藏區
   function hiddenAt(map, x, y) { return ((map && map.hidden) || []).filter(function (h) { return h.at && h.at.x === x && h.at.y === y; })[0] || null; }
+  /** B4 整合2：隱藏區的封鎖格 [{x,y}]（maps.js 的 cells 是 [x,y] 陣列） */
+  function hiddenCells(h) { return ((h && h.cells) || []).map(function (c) { return { x: c[0], y: c[1] }; }); }
+  /** B4 整合2（隱藏區障礙設計 5-1）：障礙圖鍵；沒寫依地圖種類 dungeon→落石、interior→屏風、town→木箱、其他→樹叢 */
+  function hiddenObstacle(map, h) {
+    if (h && h.obstacle) return h.obstacle;
+    var k = mapKind(map);
+    return k === 'dungeon' ? 'obj_hd_rocks' : k === 'interior' ? 'obj_hd_screen' : k === 'town' ? 'obj_hd_crates' : 'obj_hd_bush';
+  }
   function hiddenOpen(state, h) { return !!flags(state)[h.id]; }
   /** 調查：條件成立就打開（永遠開著）。回傳 'opened'｜'already'｜'locked' */
   function investigate(state, quests, h) {
@@ -476,7 +484,7 @@
     flags: flags, qstatus: qstatus, cond: cond, mapKind: mapKind, noMinimap: noMinimap, v06: v06,
     puzzle: puzzle, solved: solved, lampsLit: lampsLit, lampSorted: lampSorted, lampOn: lampOn, lampPress: lampPress, lampReset: lampReset,
     codeDigits: codeDigits, codeLabels: codeLabels, codeTry: codeTry, codeWrongDialog: codeWrongDialog, dialStep: dialStep, leverPull: leverPull, reward: reward,
-    hiddenAt: hiddenAt, hiddenOpen: hiddenOpen, investigate: investigate, hiddenBlocked: hiddenBlocked,
+    hiddenAt: hiddenAt, hiddenOpen: hiddenOpen, investigate: investigate, hiddenBlocked: hiddenBlocked, hiddenCells: hiddenCells, hiddenObstacle: hiddenObstacle,
     chestKind: chestKind, chestVisible: chestVisible, chestNeedsQuestion: chestNeedsQuestion, jokeGet: jokeGet, jokeList: jokeList,
     gateOpen: gateOpen, exitOpen: exitOpen, restOpts: restOpts, restAt: restAt, warpEvents: warpEvents, warpAt: warpAt, talkEvents: talkEvents, lockedRegions: lockedRegions, needsQuest: needsQuest, rescueRegion: rescueRegion,
     mrtStations: mrtStations, mrtLockExit: mrtLockExit,

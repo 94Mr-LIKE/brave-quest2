@@ -539,7 +539,7 @@ window.SPRITES = {
   ]
  },
  "npc_sage": {
-  "file": "assets/npcs/npc_sage.png",
+  "file": "assets/npcs/npc_sage_c01.png",
   "type": "walk",
   "frameW": 64,
   "frameH": 80,
@@ -587,7 +587,7 @@ window.SPRITES = {
   ]
  },
  "npc_grandpa": {
-  "file": "assets/npcs/npc_grandpa.png",
+  "file": "assets/npcs/npc_grandpa_c01.png",
   "type": "walk",
   "frameW": 64,
   "frameH": 80,
@@ -635,7 +635,7 @@ window.SPRITES = {
   ]
  },
  "npc_desk": {
-  "file": "assets/npcs/npc_desk.png",
+  "file": "assets/npcs/npc_desk_c01.png",
   "type": "walk",
   "frameW": 64,
   "frameH": 80,
@@ -683,7 +683,7 @@ window.SPRITES = {
   ]
  },
  "npc_mrt_staff": {
-  "file": "assets/npcs/npc_mrt_staff.png",
+  "file": "assets/npcs/npc_mrt_staff_c01.png",
   "type": "walk",
   "frameW": 64,
   "frameH": 80,
@@ -699,7 +699,7 @@ window.SPRITES = {
   ]
  },
  "npc_shop": {
-  "file": "assets/npcs/npc_shop.png",
+  "file": "assets/npcs/npc_shop_c01.png",
   "type": "walk",
   "frameW": 64,
   "frameH": 80,
@@ -715,7 +715,7 @@ window.SPRITES = {
   ]
  },
  "npc_inn": {
-  "file": "assets/npcs/npc_inn.png",
+  "file": "assets/npcs/npc_inn_c01.png",
   "type": "walk",
   "frameW": 64,
   "frameH": 80,
@@ -731,7 +731,7 @@ window.SPRITES = {
   ]
  },
  "npc_traveler": {
-  "file": "assets/npcs/npc_traveler.png",
+  "file": "assets/npcs/npc_traveler_c01.png",
   "type": "walk",
   "frameW": 64,
   "frameH": 80,
@@ -1032,6 +1032,48 @@ window.SPRITES = {
  },
  "obj_crack_bush": {
   "file": "assets/ui/obj_crack_bush.png",
+  "type": "single",
+  "frameW": 48,
+  "frameH": 72
+ },
+ "obj_hd_bush": {
+  "file": "assets/ui/obj_hd_bush.png",
+  "type": "single",
+  "frameW": 48,
+  "frameH": 72
+ },
+ "obj_hd_crates": {
+  "file": "assets/ui/obj_hd_crates.png",
+  "type": "single",
+  "frameW": 48,
+  "frameH": 72
+ },
+ "obj_hd_rocks": {
+  "file": "assets/ui/obj_hd_rocks.png",
+  "type": "single",
+  "frameW": 48,
+  "frameH": 72
+ },
+ "obj_hd_panel": {
+  "file": "assets/ui/obj_hd_panel.png",
+  "type": "single",
+  "frameW": 48,
+  "frameH": 72
+ },
+ "obj_hd_curtain": {
+  "file": "assets/ui/obj_hd_curtain.png",
+  "type": "single",
+  "frameW": 48,
+  "frameH": 72
+ },
+ "obj_hd_blind": {
+  "file": "assets/ui/obj_hd_blind.png",
+  "type": "single",
+  "frameW": 48,
+  "frameH": 72
+ },
+ "obj_hd_cloth": {
+  "file": "assets/ui/obj_hd_cloth.png",
   "type": "single",
   "frameW": 48,
   "frameH": 72
@@ -1437,48 +1479,175 @@ window.SPRITES = {
    "right",
    "downright"
   ]
+ },
+ "npc_c01_ddc_inn": {
+  "file": "assets/npcs/npc_c01_ddc_inn.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": [
+   "down",
+   "downleft",
+   "left",
+   "upleft",
+   "up",
+   "upright",
+   "right",
+   "downright"
+  ]
+ },
+ "npc_c01_grocer": {
+  "file": "assets/npcs/npc_c01_grocer.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": [
+   "down",
+   "downleft",
+   "left",
+   "upleft",
+   "up",
+   "upright",
+   "right",
+   "downright"
+  ]
+ },
+ "npc_c01_herb_aunt": {
+  "file": "assets/npcs/npc_c01_herb_aunt.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": [
+   "down",
+   "downleft",
+   "left",
+   "upleft",
+   "up",
+   "upright",
+   "right",
+   "downright"
+  ]
+ },
+ "npc_c01_old_kid": {
+  "file": "assets/npcs/npc_c01_old_kid.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": [
+   "down",
+   "downleft",
+   "left",
+   "upleft",
+   "up",
+   "upright",
+   "right",
+   "downright"
+  ]
+ },
+ "npc_c01_smith": {
+  "file": "assets/npcs/npc_c01_smith.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": [
+   "down",
+   "downleft",
+   "left",
+   "upleft",
+   "up",
+   "upright",
+   "right",
+   "downright"
+  ]
+ },
+ "npc_c01_snack": {
+  "file": "assets/npcs/npc_c01_snack.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": [
+   "down",
+   "downleft",
+   "left",
+   "upleft",
+   "up",
+   "upright",
+   "right",
+   "downright"
+  ]
+ },
+ "npc_c01_star_kid": {
+  "file": "assets/npcs/npc_c01_star_kid.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": [
+   "down",
+   "downleft",
+   "left",
+   "upleft",
+   "up",
+   "upright",
+   "right",
+   "downright"
+  ]
+ },
+ "npc_c01_runner": {
+  "file": "assets/npcs/npc_c01_runner.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": ["down", "downleft", "left", "upleft", "up", "upright", "right", "downright"]
+ },
+ "npc_c01_mob_t04a": {
+  "file": "assets/npcs/npc_c01_mob_t04a.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": ["down", "downleft", "left", "upleft", "up", "upright", "right", "downright"]
+ },
+ "npc_c01_mob_t04b": {
+  "file": "assets/npcs/npc_c01_mob_t04b.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": ["down", "downleft", "left", "upleft", "up", "upright", "right", "downright"]
+ },
+ "npc_c01_mob_t04c": {
+  "file": "assets/npcs/npc_c01_mob_t04c.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": ["down", "downleft", "left", "upleft", "up", "upright", "right", "downright"]
+ },
+ "npc_c01_mob_t04d": {
+  "file": "assets/npcs/npc_c01_mob_t04d.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": ["down", "downleft", "left", "upleft", "up", "upright", "right", "downright"]
+ },
+ "npc_c01_mob_t05a": {
+  "file": "assets/npcs/npc_c01_mob_t05a.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": ["down", "downleft", "left", "upleft", "up", "upright", "right", "downright"]
+ },
+ "npc_c01_mob_t05b": {
+  "file": "assets/npcs/npc_c01_mob_t05b.png",
+  "type": "walk",
+  "frameW": 64,
+  "frameH": 80,
+  "rows": ["down", "downleft", "left", "upleft", "up", "upright", "right", "downright"]
  }
+ // B4 整合3：NPC 第二批（美術\NPC_v2比例統一）——npc_grandpa／npc_sage／npc_traveler 和切片舊檔同名，file 改指 <鍵>_c01.png
+ // B4 整合1：NPC 比例統一重畫（美術\NPC_v2比例統一）——npc_desk／npc_mrt_staff／npc_shop／npc_inn 和切片舊檔同名，file 改指 <鍵>_c01.png（比照館長），切片舊檔不覆蓋
  // BQ2 v0.6 整合：台北章怪物美術（美術\怪物\ M1、M2 交件）。battle_sheet＝戰鬥 2 列（待機 4、攻擊 8，格寬＝圖寬÷8）；
  // map_sheet＝地圖 4×4（列序 down、left、right、up，不含影子）——引擎還沒讀 map_sheet，地圖暫用 file 單張（見整合1_變更說明）
 };
 // ── BQ2 v0.6 台北章：要新畫的圖鍵名（由 tools/build_content.js 產生；圖還沒畫前地圖用 fallback）──
 window.SPRITES_C01_TODO = {
- "npc_c01_star_kid": {
-  "fallback": "npc_classmate",
-  "npc": "c01_star_kid"
- },
- "npc_c01_smith": {
-  "fallback": "npc_desk",
-  "npc": "c01_smith"
- },
- "npc_c01_mob_t04a": {
-  "fallback": "npc_classmate",
-  "npc": "c01_mob_t04a"
- },
- "npc_c01_mob_t04b": {
-  "fallback": "npc_desk",
-  "npc": "c01_mob_t04b"
- },
- "npc_c01_mob_t04c": {
-  "fallback": "npc_desk",
-  "npc": "c01_mob_t04c"
- },
- "npc_c01_mob_t04d": {
-  "fallback": "npc_desk",
-  "npc": "c01_mob_t04d"
- },
- "npc_c01_herb_aunt": {
-  "fallback": "npc_desk",
-  "npc": "c01_herb_aunt"
- },
- "npc_c01_mob_t05a": {
-  "fallback": "npc_classmate",
-  "npc": "c01_mob_t05a"
- },
- "npc_c01_mob_t05b": {
-  "fallback": "npc_desk",
-  "npc": "c01_mob_t05b"
- },
  "npc_c01_mob_t05c": {
   "fallback": "npc_desk",
   "npc": "c01_mob_t05c"
@@ -1487,49 +1656,33 @@ window.SPRITES_C01_TODO = {
   "fallback": "npc_desk",
   "npc": "c01_mob_t05d"
  },
- "npc_c01_runner": {
-  "fallback": "npc_desk",
-  "npc": "c01_runner"
- },
- "npc_c01_old_kid": {
-  "fallback": "npc_grandpa",
-  "npc": "c01_old_kid"
- },
- "npc_c01_ddc_inn": {
-  "fallback": "npc_grandpa",
-  "npc": "c01_ddc_inn"
- },
  "npc_c01_mob_t07a": {
-  "fallback": "npc_grandpa",
+  "fallback": "npc_c01_cloth_aunt",
   "npc": "c01_mob_t07a"
  },
  "npc_c01_mob_t07b": {
-  "fallback": "npc_grandpa",
+  "fallback": "npc_c01_porter",
   "npc": "c01_mob_t07b"
  },
  "npc_c01_mob_t07c": {
-  "fallback": "npc_grandpa",
+  "fallback": "npc_c01_boatman",
   "npc": "c01_mob_t07c"
  },
  "npc_c01_mob_t07d": {
-  "fallback": "npc_grandpa",
+  "fallback": "npc_c01_porter",
   "npc": "c01_mob_t07d"
  },
  "npc_c01_mob_t07e": {
-  "fallback": "npc_grandpa",
+  "fallback": "npc_c01_boatman",
   "npc": "c01_mob_t07e"
  },
  "npc_c01_mob_t07f": {
-  "fallback": "npc_grandpa",
+  "fallback": "npc_c01_old_kid",
   "npc": "c01_mob_t07f"
  },
  "npc_c01_mob_t08a": {
-  "fallback": "npc_grandpa",
+  "fallback": "npc_c01_cloth_aunt",
   "npc": "c01_mob_t08a"
- },
- "npc_c01_grocer": {
-  "fallback": "npc_grandpa",
-  "npc": "c01_grocer"
  }
 };
 // ── 台北章鍵名結束 ──

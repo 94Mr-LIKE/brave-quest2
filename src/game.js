@@ -156,6 +156,12 @@
     var st = G.state;
     J.Daily.ensure(st.daily, Date.now());
     // 整合3（審查 S-6、S-7）：位置、旅店的地圖不存在或不可走 → start_map（貼入被改過的存檔碼也不會全黑）；讀到體力 0 先照累倒處理
+    // B4 整合3（審查 S-2）：舊存檔站的格子後來變擋路（格子修正）→ 同一張地圖最近的可站格，不要整個送回 start_map
+    // （地圖尺寸改過的舊存檔交給後面的 migrateCoords 換算，這裡不動）
+    var dimsNow = J.MapInfo.currentDims(G.data.maps), dimsSaved = (st.mapDims && Object.keys(st.mapDims).length) ? st.mapDims : J.MapInfo.LEGACY_DIMS;
+    var lm = st.location && st.location.map, sameDims = lm && (!dimsSaved[lm] || (dimsNow[lm] && dimsSaved[lm][0] === dimsNow[lm][0] && dimsSaved[lm][1] === dimsNow[lm][1]));
+    var reloc = sameDims && J.MapInfo.relocateBlocked(st, G.data.maps, function (m, x, y) { return J.World.isWalkable(G.data.tilesets, m, x, y); }, function (h) { return J.Puzzle.hiddenOpen(st, h); });
+    if (reloc) { G.relocLog = reloc; console.info('[存檔] 站的格子現在不能走，移到最近的可站格：', reloc); }
     var badPlaces = J.Character.fixPlaces(st, G.data.maps, function (m, x, y) { return J.World.isWalkable(G.data.tilesets, m, x, y); });
     if (badPlaces.length) console.info('[存檔] 位置無效，改回起點：', badPlaces);
     J.Character.reviveIfDown(st, G.data, { map: G.data.startMap, x: undefined, y: undefined });
@@ -250,6 +256,7 @@
    * 戰鬥結束（G.bend）才寫。戰鬥中途重新整理 → 回到戰鬥前的狀態（這場答題的金幣、經驗值都還沒寫入，不會重複拿）。
    */
   G.save = function (force) {
+    if (G.testModeRestoring) return Promise.resolve(false);   // 還原後直到重新載入，定時／切背景／其他存檔都不可蓋掉備份
     if (!G.state) return Promise.resolve();
     if (G.inBattle()) { G.saveSkipped = (G.saveSkipped || 0) + 1; return Promise.resolve(false); }
     G.lastSave = Date.now();
@@ -932,7 +939,8 @@
   };
 
   /** 出口能不能走（maps.js exits[].requires：要先完成的委託） */
-  G.exitOpen = function (ex) { return J.Puzzle ? J.Puzzle.exitOpen(G.state, G.data.quests, ex) : (!ex.requires || G.isDone(ex.requires)); };   // v0.6：requires 也接受 cond
+  G.testModeOn = function () { return !!(J.TestMode && J.TestMode.on()); };
+  G.exitOpen = function (ex) { if (G.testModeOn()) return true; return J.Puzzle ? J.Puzzle.exitOpen(G.state, G.data.quests, ex) : (!ex.requires || G.isDone(ex.requires)); };   // v0.6：requires 也接受 cond
   G.exitLocked = function (ex) { G.lastExitLocked = ex.to; return G.say(ex.locked_dialog, [{ who: 'agu', text: '還不能過去喔。' }]); };
   /** 柵門（maps.js gates）：委託完成＝打開 */
   G.gateOpen = function (gt) { return J.Puzzle ? J.Puzzle.gateOpen(G.state, G.data.quests, gt) : (!gt.quest || G.isDone(gt.quest)); };   // v0.6：open（cond）
@@ -1174,8 +1182,15 @@
     G.save(true);
     G.hiddenLog = (G.hiddenLog || []).concat([hd.id]);   // 測試用
     J.Audio.play('warp');
-    scene.refreshV06();
-    return G.say(hd.dialog, [{ who: 'agu', text: '牆後面有一條小路！' }]);
+    // B4 整合2（隱藏區障礙設計 5-2-3）：先播障礙移開的演出（期間鎖操作），演出完才解除封鎖、播對話
+    var BF = J.BattleFlow, reduce = !!(BF && BF.reduceMotion && BF.reduceMotion(G.state.settings, BF.systemReducedMotion()));
+    G.busy = true;
+    var fx = scene.openHiddenFx ? scene.openHiddenFx(hd, reduce) : Promise.resolve();
+    return fx.catch(function () {}).then(function () {
+      G.busy = false;
+      if (scene.sys && scene.sys.isActive()) scene.refreshV06();
+      return G.say(hd.dialog, [{ who: 'agu', text: '牆後面有一條小路！' }]);
+    });
   };
   /** 惡作劇寶箱（冷笑話卡）、機關寶箱：直接開，不出題 */
   G.openChestFree = function (chest, scene) {

@@ -3,7 +3,7 @@
   'use strict';
   function start() {
     window.JQ.Assets.preparePack().then(function () {
-      try { window.JQ.Game.boot(); }
+      try { window.JQ.Game.boot(); if (window.JQ.TestMode) window.JQ.TestMode.badge(document); }
       catch (e) {
         console.error(e);
         var p = document.createElement('p');
