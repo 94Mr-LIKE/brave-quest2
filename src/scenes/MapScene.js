@@ -1591,12 +1591,24 @@
       });
     }
 
-    /** 戰鬥結束：怪物清醒跑走，30 秒後在範圍內重生（頭目淨化後不再出現） */
+    /** 戰鬥結束：打贏時原地消散，其他結果跑走；30 秒後在範圍內重生（頭目淨化後不再出現） */
     monsterRunAway(mob, defeated) {
       if (!mob || !mob.sprite) return;
       mob.active = false;
-      var dx = mob.sprite.x >= this.player.x ? T * 2.5 : -T * 2.5;
-      this.tweens.add({ targets: mob.sprite, x: mob.sprite.x + dx, y: mob.sprite.y - T / 3, alpha: 0, duration: 900, onComplete: function () { mob.sprite.setVisible(false); } });
+      if (defeated) {
+        // 地圖睡眠前可能還有一格沒走完，先取消遊走，確保原地消散。
+        this.tweens.killTweensOf(mob.sprite);
+        mob.moving = false; mob.bob = null;
+        mob.sprite.setScale(mob.sprite.scaleX);
+        var BF = J.BattleFlow, st = G().state;
+        var reduce = BF.reduceMotion(st && st.settings, BF.systemReducedMotion());
+        var fade = { targets: mob.sprite, alpha: 0, duration: reduce ? 300 : 700, onComplete: function () { mob.sprite.setVisible(false); } };
+        if (!reduce) fade.y = mob.sprite.y - T / 3;
+        this.tweens.add(fade);
+      } else {
+        var dx = mob.sprite.x >= this.player.x ? T * 2.5 : -T * 2.5;
+        this.tweens.add({ targets: mob.sprite, x: mob.sprite.x + dx, y: mob.sprite.y - T / 3, alpha: 0, duration: 900, onComplete: function () { mob.sprite.setVisible(false); } });
+      }
       if (mob.boss && defeated) mob.respawnAt = 0;
       else mob.respawnAt = this.time.now + RESPAWN_MS;
       // BQ2 v0.6 前端B：v0.6 地圖（有 kind）同一張圖停留時不重生，離開地圖再進來（或迷宮休息點休息）才重生；精英、頭目打倒後記進存檔

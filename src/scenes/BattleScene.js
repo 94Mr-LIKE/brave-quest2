@@ -199,7 +199,7 @@
       var labelH = nameH + 18;   // 名字＋體力條
       var P = J.BattleFlow.foeSlots(this.W, this.safe.top, this.safe.bottom, n, boss, labelH, 30, portrait, MIN_TOUCH, portrait ? 1.35 : 1);
       list.forEach(function (f, i) {
-        var v = self.views[f.slot]; if (!v) return;
+        var v = self.views[f.slot]; if (!v || !v.alive) return;
         var pos = P[i], x = pos.x, img = v.img, footY = pos.footY;
         v.x = x; v.footY = footY;
         var s = pos.imgH / img.height, maxW = Math.max(MIN_TOUCH, pos.w - 12);
@@ -228,7 +228,8 @@
     }
 
     destroyView(v) {
-      ['img', 'shadow', 'name', 'barBg', 'bar', 'hit', 'down'].forEach(function (k) { if (v[k]) { try { v[k].destroy(); } catch (e) { /* 忽略 */ } } });
+      ['img', 'shadow', 'name', 'barBg', 'bar', 'hit', 'down'].forEach(function (k) { if (v[k]) { this.tweens.killTweensOf(v[k]); try { v[k].destroy(); } catch (e) { /* 忽略 */ } } }, this);
+      if (v.flashTw) this.time.removeEvent(v.flashTw);
       if (v.idle) v.idle.stop();
     }
 
@@ -302,16 +303,30 @@
       this.time.delayedCall(700, function () { em.destroy(); });
     }
 
-    /** 敵人停機：變灰、倒下、名稱旁寫「停機」 */
+    /** 敵人停機：短暫變灰後消散，名字與體力條一起退場。 */
     downEffect(slot) {
       var v = this.view(slot); if (!v || !v.alive) return;
       v.alive = false;
+      var reduce = this.calm(), duration = reduce ? 300 : 700;
       if (v.idle) v.idle.stop();
+      // 受擊閃爍會把 alpha 還原成 1，必須先停掉，避免消散後又亮回來。
+      if (v.flashTw) { this.time.removeEvent(v.flashTw); v.flashTw = null; }
+      if (v.shakeTw) { v.shakeTw.stop(); v.shakeTw = null; }
+      this.tweens.killTweensOf(v.img);
       if (v.img.anims) try { v.img.anims.stop(); } catch (e) { /* 忽略 */ }
       v.img.setTint(0x777777);
-      this.tweens.add({ targets: v.img, alpha: 0.35, angle: 8, y: v.footY + 4, duration: 420 });
+      var fade = { targets: v.img, alpha: 0, duration: duration, onComplete: function () { v.img.setVisible(false); } };
+      if (!reduce) { fade.y = v.img.y - 18; fade.scale = v.baseScale * 1.06; }
+      this.tweens.add(fade);
       v.down = this.add.text(v.x, v.footY - 40, '停機', { fontFamily: 'sans-serif', fontSize: '18px', fontStyle: 'bold', color: '#ffffff', backgroundColor: '#3a3a4a', padding: { x: 6, y: 2 } }).setOrigin(0.5).setDepth(45);
-      if (v.hit) v.hit.disableInteractive();
+      var attached = [v.shadow, v.name, v.barBg, v.bar].filter(Boolean);
+      this.tweens.add({ targets: attached, alpha: 0, duration: duration, onComplete: function () { attached.forEach(function (o) { o.setVisible(false); }); } });
+      this.tweens.add({ targets: v.down, alpha: 0, delay: reduce ? 0 : 500, duration: reduce ? 300 : 200, onComplete: function () { v.down.setVisible(false); } });
+      if (v.hit) { v.hit.disableInteractive(); v.hit.setVisible(false); }
+      if (this.targetSlot === slot) {
+        var foes = Object.keys(this.views).map(function (k) { var o = this.views[k]; return { slot: o.slot, hp: o.alive ? 1 : 0 }; }, this);
+        this.setTarget(J.BattleV06.nextTargetAfterKill(foes, slot), J.BattleV06.showCursor(foes) && !v.mon.boss);
+      }
     }
 
     /** 敵方回合：出手的那幾隻往前撲（有攻擊列就播攻擊列），畫面紅閃與否看受傷程度 */
@@ -368,17 +383,18 @@
       this.flash(250, 120, 255, 140);
     }
 
-    /** 全部停機：開心跑走 */
+    /** 全部停機：保留勝利音效與原本 200＋800ms 的完成時機，不讓已消散的怪再跑走。 */
     wakeEffect(done) {
       var self = this, list = Object.keys(this.views).map(function (k) { return self.views[k]; });
       J.Audio.play('win');
       this.cry('wake');
       if (this.cursor) this.cursor.setVisible(false);
-      var left = list.length || 1, fin = function () { left--; if (left <= 0 && done) done(); };
+      var left = list.length || 1, fin = function () { left--; if (left === 0 && done) done(); };
       if (!list.length) { fin(); return; }
       list.forEach(function (v) {
-        if (v.idle) v.idle.stop();
-        self.tweens.add({ targets: [v.img, v.shadow, v.down].filter(Boolean), x: '+=420', alpha: 0, duration: 800, delay: 200, onComplete: fin });
+        // 頭目最後一段由勝利入口消散；一般怪已經退場的 view 不重播。
+        if (v.alive) self.downEffect(v.slot);
+        self.time.delayedCall(1000, fin);
       });
     }
 

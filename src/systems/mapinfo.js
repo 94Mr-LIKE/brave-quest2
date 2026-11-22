@@ -65,7 +65,7 @@
   }
   /**
    * 存檔位置 state.location 的格子現在不能走（地圖格子修正過）→ 換到同一張地圖最近的可站格：
-   * walk(map,x,y) 可走、不是出口、不在沒打開的隱藏區。回傳 { from, to } 或 null（沒換）
+   * walk(map,x,y) 可走、不是出口、不在沒打開的隱藏區、不是 NPC／寶箱／告示站的格子。回傳 { from, to } 或 null（沒換）
    */
   function relocateBlocked(state, maps, walk, isOpen) {
     var loc = state && state.location, m = loc && maps[loc.map];
@@ -87,8 +87,10 @@
         });
       }
     }
+    // B5 整合1：game.js 傳進來的 walk 不含固定物件；不要把舊存檔搬到 NPC／寶箱／告示站的那一格（例：屋簷修正後 TI3 (17,4) 最近的是告示 (18,4)）
+    var blk = World.blockers(m);
     var to = nearestStandable(function (x, y) {
-      return walk(m, x, y) && !exitAt(x, y) && !closed[x + ',' + y] && !inClosedHidden(m, x, y, isOpen) && (!reach || reach[x + ',' + y]);
+      return walk(m, x, y) && !exitAt(x, y) && !closed[x + ',' + y] && !blk[x + ',' + y] && !inClosedHidden(m, x, y, isOpen) && (!reach || reach[x + ',' + y]);
     }, W, H, loc.x, loc.y);
     if (!to) return null;
     var from = { map: loc.map, x: loc.x, y: loc.y };
